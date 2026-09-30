@@ -1,5 +1,5 @@
 # Software Requirements Specification — Christmas Prototype Freeze
-Status: FROZEN candidate / Issue #64. Authority: Supervisor decision Issue #57 comment 5914691381 (2026-09-30). Supersedes incompatible pre-Christmas #13 requirements for this prototype; historical Git remains evidence.
+Status: FROZEN / SEMANTIC_ACCEPTED at PR #71 HEAD `09061b4ba372de41fb142ab4c43f1b4302f58083`. Authority: Supervisor decision Issue #57 comment 5914691381 (2026-09-30). Supersedes incompatible pre-Christmas #13 requirements for this prototype; historical Git remains evidence.
 
 ## Product boundary
 SRS-PROD-001 [FROZEN] Playable Android-only 3D runner prototype delivered as installable APK.
