@@ -1,20 +1,20 @@
 # SESSION_HANDOFF
 DATE: 2026-09-30
 PROGRAM ISSUE: #20
-WORK ITEM: #13
+WORK ITEM: #14
 STATE: READY_FOR_REVIEW
-BASE: `research/issue-12-consolidation-gates`
-BRANCH: `research/issue-13-specifications`
+BASE: `research/issue-13-specifications`
+BRANCH: `research/issue-14-reuse-provenance`
 HEAD SHA: obtain from PR
 PR: pending
 
 ## Artifacts
-All required files under `docs/specifications/`: INDEX, SRS, GAMEPLAY, SOFTWARE_ARCHITECTURE, TECHNICAL, PERFORMANCE, DATA_AND_PROGRESSION, VERIFICATION.
+`reuse/INDEX.md`; `reuse/REUSE_MATRIX.md`.
 ## Verification
-PASS: stable requirement IDs and evidence links present; architecture marked PROPOSED/DRAFT; unresolved product/performance/package choices explicit PENDING/TBD; no proprietary formulas invented; no product code.
+PASS: REP-001..007 plus proprietary Top Lords material classified with SHA/path/license/provenance. UNKNOWN_LICENSE never reusable. MIT repositories deliberately REFERENCE_ONLY; GPL repository REFERENCE_ONLY under current unspecified product-license baseline. No external code copied.
 ## Open questions
-GAP-001..008 / RG-001..007 remain where applicable. Numeric performance/economy targets are not fabricated.
+Future COPY/ADAPT proposal, if any, requires exact destination/modifications/attribution review; none currently proposed.
 ## Blockers
-None for #14 execution.
+None.
 ## Next executable
-#14.
+#15.
