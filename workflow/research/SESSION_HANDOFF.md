@@ -4,7 +4,7 @@ WORK ITEM: #65
 STATE: GO / READY_FOR_REVIEW
 BRANCH: audit/issue-65-preimplementation
 PR: #72
-AUDITED_SPEC_HEAD: e2fb8338d3e7ad47b1bf32cf650cf5a5ddbe6e8e
+AUDITED_SPEC_HEAD: 09061b4ba372de41fb142ab4c43f1b4302f58083
 AUTHORITY: Issue #57 comment 5914691381.
 AUDIT: PASS; no material product decision remains before technical Bootstrap + synthetic non-production performance/architecture spike.
 COLD HANDOFF: PASS.
