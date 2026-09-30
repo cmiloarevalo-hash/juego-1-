@@ -1,0 +1,85 @@
+name: Research dispatcher
+
+on:
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Report candidate without changing Issue state"
+        required: true
+        default: true
+        type: boolean
+      allow_claim_without_worker:
+        description: "Explicit manual diagnostic only; reserve READY issue even though worker launcher is unavailable"
+        required: true
+        default: false
+        type: boolean
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: research-dispatch
+  cancel-in-progress: false
+
+jobs:
+  dispatch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Select next READY research issue
+        id: select
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          # #20 explicitly pauses #3-#18 until orchestration is reviewed.
+          # This workflow is safe-by-default: manual dry-run only until that
+          # program-level pause is removed in persisted control state.
+          issues="$(gh api --paginate "repos/$REPO/issues?state=open&per_page=100")"
+          candidate="$(jq -r '
+            map(select(.pull_request == null))
+            | map(select(.number >= 3 and .number <= 18))
+            | map(select(any(.labels[]?; .name == "research:state:READY")))
+            | map(select(all(.labels[]?; (.name != "research:state:CLAIMED" and .name != "research:state:IN_PROGRESS"))))
+            | sort_by(.number)
+            | .[0].number // empty
+          ' <<<"$issues")"
+          echo "issue=$candidate" >> "$GITHUB_OUTPUT"
+          if [[ -z "$candidate" ]]; then
+            echo "No READY candidate."
+          else
+            echo "Candidate: #$candidate"
+          fi
+
+      - name: Claim selected issue
+        if: steps.select.outputs.issue != '' && inputs.dry_run == false && inputs.allow_claim_without_worker == true
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          ISSUE: ${{ steps.select.outputs.issue }}
+          RUN_ID: ${{ github.run_id }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          issue="$(gh api "repos/$REPO/issues/$ISSUE")"
+          if ! jq -e 'any(.labels[]?; .name == "research:state:READY")' <<<"$issue" >/dev/null; then
+            echo "Issue is no longer READY; refusing claim." >&2
+            exit 1
+          fi
+          if jq -e 'any(.labels[]?; (.name == "research:state:CLAIMED" or .name == "research:state:IN_PROGRESS"))' <<<"$issue" >/dev/null; then
+            echo "Issue already claimed/in progress; refusing duplicate." >&2
+            exit 1
+          fi
+          labels="$(jq -c '[.labels[].name | select(startswith("research:state:") | not)] + ["research:state:CLAIMED"]' <<<"$issue")"
+          gh api --method PUT "repos/$REPO/issues/$ISSUE/labels" --input - <<<"{\"labels\":$labels}"
+          gh api --method POST "repos/$REPO/issues/$ISSUE/comments" -f body="research:claim:$RUN_ID — diagnostic reservation by serialized dispatcher; concrete worker launcher is not configured."
+          echo "Claimed #$ISSUE for diagnostic purposes only."
+
+      - name: Worker invocation boundary
+        if: steps.select.outputs.issue != '' && inputs.dry_run == false
+        shell: bash
+        run: |
+          echo "BLOCKED integration boundary: no verified concrete worker launcher/API/credential is configured."
+          echo "See workflow/research/ORCHESTRATION.md."
