@@ -2,29 +2,28 @@
 
 DATE: 2026-09-30  
 PROGRAM ISSUE: #20  
-WORK ITEM: #6  
+WORK ITEM: #7  
 STATE: READY_FOR_REVIEW  
-BASE: `research/issue-5-code-analysis`  
-BRANCH: `research/issue-6-input-crowd-formation`  
-HEAD SHA: obtain from PR after final commit  
+BASE: `research/issue-6-input-crowd-formation`  
+BRANCH: `research/issue-7-gates-spawning-army`  
+HEAD SHA: obtain from PR  
 PR: pending
 
 ## Sources
-TL-001/TL-002; REP-002..REP-007 code evidence; UNITY-001..UNITY-004 official documentation.
+TL-001/TL-002; REP-001 lifecycle/gate arithmetic; REP-004/006/007 spawn evidence; UNITY-004/005/006.
 
 ## Artifacts
-- `research/mechanics/INPUT_MOVEMENT_CROWD_FORMATION.md`
-- `analysis/comparisons/CROWD_FORMATION_ALTERNATIVES.md`
-- updated source/index/state documents.
+- `research/mechanics/GATES_SPAWNING_ARMY_MUTATION.md`
+- `analysis/comparisons/GATE_ARMY_LIFECYCLE_ALTERNATIVES.md`
 
 ## Verification
-PASS against Issue #6: input and crowd/formation alternatives compared across behavior, complexity, performance evidence, determinism, mobile suitability and dependencies. Facts/code observations/inferences/unknowns separated. EXP-CROWD-001/002 are explicitly PROPOSED/NOT RUN; no benchmark invented. No product code.
+PASS: gate models, detection ownership, spawn/despawn/pooling alternatives, mutation transaction, edge cases and candidate requirements documented. EXP-GATE-001/002 explicitly PROPOSED/NOT RUN. Unsupported Top Lords internals remain UNKNOWN. No product code.
 
 ## Open questions
-Target Unity/package versions, target device tiers, approved crowd-size/performance requirements, and measured winner remain UNKNOWN pending #9/#12/#13 Research Gates/specification.
+Exact product gate formula/rounding/min/max/capacity and chosen lifecycle remain unresolved pending consolidation/specification/performance evidence.
 
 ## Blockers
-None for #6. WORKER_AUTO_REINVOCATION remains partial BLOCKED/UNKNOWN only.
+None. UNKNOWN_LICENSE code remains reference-only.
 
-## Next executable work
-#7, #8, #9, #10 and #11 are executable from existing artifacts. Claim #7 after opening #6 PR.
+## Next executable
+#8, #9, #10, #11.
