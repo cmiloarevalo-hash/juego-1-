@@ -130,3 +130,31 @@ DATE ACCESSED: 2026-09-30
 VERSION: current route; target Unity version not fixed  
 RELEVANT CLAIMS: stack-based object pool exposes Get/Release and active/inactive counts; pool may create when empty and destroy on release when full.  
 NOTES: exact API availability/version requires later Research Gate.
+
+## UNITY-007 — Profiler overview
+AUTHOR/OWNER: Unity Technologies  
+SOURCE TYPE: official manual  
+URL: https://docs.unity3d.com/Manual/Profiler.html  
+DATE ACCESSED: 2026-09-30  
+RELEVANT CLAIMS: Unity Profiler exposes CPU/GPU/rendering/physics/memory modules; additional profiling tools can deepen analysis.  
+
+## UNITY-008 — SRP Batcher / GPU instancing documentation
+AUTHOR/OWNER: Unity Technologies  
+SOURCE TYPE: official manual  
+URLS: https://docs.unity3d.com/Manual/SRPBatcher.html ; https://docs.unity3d.com/Manual/GPUInstancing.html  
+DATE ACCESSED: 2026-09-30  
+RELEVANT CLAIMS: SRP Batcher reduces CPU rendering state setup for compatible SRP shaders; GPU instancing targets repeated mesh/material draws; documented compatibility/priority varies by pipeline/version and must be profiled.  
+
+## UNITY-009 — Animator culling/performance
+AUTHOR/OWNER: Unity Technologies  
+SOURCE TYPE: official manual/API  
+URL: https://docs.unity3d.com/ScriptReference/AnimatorCullingMode.html  
+DATE ACCESSED: 2026-09-30  
+RELEVANT CLAIMS: culling modes can suppress offscreen transform/animation evaluation to differing degrees.  
+
+## UNITY-010 — Physics optimization: collision layers and fixed timestep
+AUTHOR/OWNER: Unity Technologies  
+SOURCE TYPE: official manual  
+URLS: https://docs.unity3d.com/Manual/physics-optimization-cpu-collision-layers.html ; https://docs.unity3d.com/Manual/TimeFrameManagement.html  
+DATE ACCESSED: 2026-09-30  
+RELEVANT CLAIMS: layer filtering reduces unnecessary collision work; lower fixed timestep increases physics update frequency/CPU cost while affecting precision.  
