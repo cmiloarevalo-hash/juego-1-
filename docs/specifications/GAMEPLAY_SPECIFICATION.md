@@ -1,5 +1,5 @@
 # Gameplay Specification — Christmas Prototype Freeze
-Status: FROZEN candidate / #64. Authority: Issue #57 comment 5914691381.
+Status: FROZEN / SEMANTIC_ACCEPTED at PR #71 HEAD `09061b4ba372de41fb142ab4c43f1b4302f58083`. Authority: Issue #57 comment 5914691381.
 
 ## Run and input
 GAME-RUN-001 [FROZEN] Initialize → onboarding/traversal → army/gate/obstacle/combat interactions → final boss → terminal result.
