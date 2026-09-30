@@ -3,35 +3,34 @@ DATE: 2026-09-30
 WORK ITEM: #83 — Documentation readiness gate
 BRANCH: docs/documentation-readiness-gate
 BASE SHA: c8af0b68bf87c6560a5f8b9d42699ccd65210940
-STATE: READY_FOR_REVIEW
-GLOBAL HOLD: ACTIVE. Issue #83 remains the only active Work Item until Supervisor decision DOCUMENTATION_GATE_ACCEPTED.
+PREVIOUS SUPERVISOR-REVIEWED HEAD: b7609a05ee34ce60c6f5b56180573e024d1d3b39
+SUPERVISOR REVIEW: 5370716635
+SUPERVISOR DECISION: REWORK_REQUIRED / DOCUMENTATION_GATE_NOT_ACCEPTED
+STATE: REWORK COMPLETE / READY_FOR_REVIEW
+GLOBAL HOLD: ACTIVE until explicit DOCUMENTATION_GATE_ACCEPTED.
 
-EVIDENCE:
-- analysis/findings/DOCUMENTATION_READINESS_AUDIT.md
-- docs/DOCUMENTATION_AUTHORITY_MAP.md
-- docs/CURRENT_TRACEABILITY_MATRIX.md
-- analysis/findings/BLOCKING_GAP_REGISTER.md
-- docs/specifications/VISUAL_UX_CONTENT_SPECIFICATION.md
-- docs/specifications/QUALITY_ACCEPTANCE_SPECIFICATION.md
-- repaired root/spec/plan/inventory/state/navigation documentation
-- historical ADR/research/comparison supersession banners
+REWORK COMPLETED:
+- VUX-001..008 incorporated exactly from Supervisor review into VISUAL_UX_CONTENT_SPECIFICATION.
+- Observable QA-VUX-* acceptance IDs added.
+- VUX-EVID-001..009 future evidence requirements added.
+- BG-001..008 = RESOLVED_BY_SUPERVISOR_DECISION.
+- BG-009 = MEASUREMENT_REQUIRED.
+- BG-010 = MEASUREMENT_REQUIRED.
+- BG-011 = EXTERNAL_PROVENANCE_REQUIRED.
+- Current traceability, SRS, Gameplay, Verification, plan, inventory and authority references updated only for consistency.
 
-RESULTS:
-- 28 documentary contradictions found; 28 deterministic contradictions fixed.
-- Cold handoff: PASS.
-- Wrong-path: PASS.
-- Ordinary-application prevention: PASS WITH EXPLICIT BLOCKING GAPS.
-- Scope contamination: PASS.
-- Traceability: PASS.
+TESTS RERUN:
+COLD_HANDOFF: PASS
+WRONG_PATH_TEST: PASS
+ORDINARY_APPLICATION_PREVENTION_TEST: PASS
+SCOPE_CONTAMINATION_TEST: PASS
+TRACEABILITY_TEST: PASS
 
-BLOCKERS REMAINING:
-BG-001..008 PRODUCT_DECISION_REQUIRED for detailed product-facing visual/UX/content quality.
-BG-009..010 MEASUREMENT_REQUIRED.
-BG-011 EXTERNAL_PROVENANCE_REQUIRED.
-These are explicit blockers, not permission to invent.
+LIMITATIONS:
+No measurements/device results/assets/licenses are invented. VUX-EVID-001..009 are future evidence requirements, not completed evidence.
 
 RESTRICTIONS PRESERVED:
-documentation only; no gameplay/product code, Unity product scene/content changes, Astra/performance experiments, asset import, Stage 2 continuation, Stage 3, merge, self-approval or workflow modification.
+documentation only; no gameplay/product code, Unity product scenes/content, Astra execution, performance experiments, Stage 2 continuation, Stage 3, asset import, APK, merge, self-approval or workflow modification.
 
 NEXT EXACT ACTION:
-Open/update #83 PR against tech/issue-73-unity-android-bootstrap, record exact HEAD, return to Supervisor, and stop. Only Supervisor may issue DOCUMENTATION_GATE_ACCEPTED.
+Return exact new PR #84 HEAD to Supervisor and stop. Await explicit DOCUMENTATION_GATE_ACCEPTED.
