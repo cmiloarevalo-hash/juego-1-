@@ -1,55 +1,54 @@
 # Christmas Prototype — Preimplementation Audit
-
 Issue #65
 Date: 2026-09-30
-Result: **HOLD**
+AUDITED_SPEC_HEAD = `e2fb8338d3e7ad47b1bf32cf650cf5a5ddbe6e8e`
+Audited source: PR #71 / branch docs/issue-64-spec-freeze at exact SHA above.
+Result: **GO for Stage 2 Bootstrap + non-production performance/architecture spike, subject to Supervisor review.** GO is not product-development authorization.
 
-## Dependency check
-Specification Freeze #64 result = NOT FROZEN / BLOCKED_BY_HUMAN_DECISION. Therefore implementation GO is impossible in this audit. Audit still records independent gaps for future resumption.
+## Dependency/freeze check
+#64 is FROZEN / READY_FOR_REVIEW. Supervisor authority = Issue #57 comment 5914691381. Active specifications and SPEC_FREEZE_MATRIX at AUDITED_SPEC_HEAD contain no material human product PENDING/TBD/UNKNOWN before Bootstrap/Spike.
 
-## Traceability sample/current state
-| Requirement/product decision | Evidence | Architecture/ADR | Component | Reuse/New | Verification | Future WI |
-|---|---|---|---|---|---|---|
-| Android APK prototype | #57 | TECH baseline pending #62 | Build/platform | NEW config | Android install/device test | create after GO |
-| runner+army+gates | #39/#59 | prior ARCH proposed | Run/Army/Gate | NEW | gate/army tests | after freeze |
-| boss required | Supervisor reviews/#57/#59 | boss ADR absent/current spec stale | Boss Encounter | NEW | boss victory/defeat tests | BLOCKED semantics |
-| original identity | #42/#45/#61 | art pipeline proposed | presenters/assets/UI | NEW + eligible assets | ORIG/VIS tests | BLOCKED art approval |
-| performance | #46/#62 | backend pending | crowd/render/physics | NEW + refs | X46-01..06 | BLOCKED spike |
-| external reuse | #43/#44/#63 | no adopted dep | optional | none adopted | provenance/license | only if selected |
+## Traceability audit
+| Product decision | Requirement/spec | Architecture/component | Reuse/New | Verification | Future Stage 2 |
+|---|---|---|---|---|---|
+| Android APK, Unity 6.3/URP/Input/landscape | SRS-TECH, TECH-* | platform/bootstrap | NEW config | VER-BUILD | 2A/2B |
+| Santa army protection, zero defeat | SRS-HEALTH, GAME-HEALTH/DEFEAT | Army+Run | NEW | VER-ARMY/ZERO/DEFEAT | later product implementation, not Stage 2 spike |
+| +N/×N idempotent gates | SRS-GATE, GAME-GATE | Gate Resolver | NEW | VER-GATE-* | later product implementation |
+| hammer authored destruction | SRS-OBS, GAME-HAMMER | Obstacle/Tool | NEW | VER-HAMMER | synthetic comparison only 2C |
+| snowball combat | SRS-TOOL, GAME-SNOW | Combat | NEW | VER-SNOW/COMBAT | later product implementation |
+| one-phase final boss | SRS-BOSS, GAME-BOSS | Boss+Result | NEW | VER-BOSS/VICTORY | later product implementation |
+| one village/workshop slice | SRS-SCOPE, GAME-STAGE | Run/authoring | NEW | loop coverage | later vertical slice |
+| original low-poly toy/diorama | SRS-ART/ORIG | Presentation | NEW + approved candidates later | VER-ORIG/MOBILE | asset spike only after provenance |
+| 30 FPS/thermal | SRS-PERF, PERF | Instrumentation | NEW | VER-PERF/THERM | 2C/2D |
+| crowd backend/cap | PERF measurement-derived | Formation/Movement backend | NEW | VER-CAP/X46 | 2C |
+| reuse policy | SRS-REUSE | dependency boundary | NEW baseline | VER-PROV | asset/code selection later |
 
 ## Findings
-1. **BLOCKER:** Santa health/damage/defeat and zero-army semantics unresolved.
-2. **BLOCKER:** gate operations/rounding/caps unresolved.
-3. **BLOCKER:** boss mechanics/placement/complexity unresolved despite boss existence confirmed.
-4. **BLOCKER:** content scope/stage count/scenarios/duration unresolved.
-5. **BLOCKER:** final art direction/originality approval not complete.
-6. **BLOCKER:** engine exact patch/packages/Android target/device/performance acceptance unresolved.
-7. **BLOCKER:** X46-01..06 cannot run before separately authorized minimal performance spike.
-8. Existing #13 specs contain stale metagame/progression and boss-optional language.
-9. ADR-001..007 are PROPOSED/PENDING historical architecture, not accepted.
-10. No external code/assets are approved/imported; license posture is safe by non-use, with candidate-specific blockers recorded.
-11. No productive implementation work item should be created yet.
+- Contradictions: historical boss OPTIONAL/metagame specs are superseded; active frozen specs do not retain them as requirements.
+- Material TBD/PENDING/UNKNOWN: none.
+- BOOTSTRAP_PIN is correctly limited to exact editor patch, package lock, Android API/ABI/backend config.
+- MEASUREMENT_DERIVED values are correctly non-numeric: army cap, CPU/GPU/memory, detailed thermal/device thresholds, pacing/tuning.
+- Architecture is not prematurely committed to ECS/Jobs/central/GameObject; contracts permit backend replacement.
+- External code/assets are not adopted/imported by freeze. Reuse policy matches Supervisor decision.
+- X46-01..06 are NOT_RUN; authorization is future spike only.
+- Verification covers input, army, zero, gates, duplicate gate, obstacle/hammer/snowball, combat/death, boss, victory/defeat/result exactly-once, ES/EN, originality/provenance/mobile readability, Android build, 30 FPS, thermal and future capacity.
+- No fabricated benchmark or performance resource budget found in active freeze.
 
-## Orphan/contradiction audit
-- Boss research optional vs human boss YES: resolved in #57 authority map; specs still need freeze update.
-- Metagame old SRS vs OUT_OF_SCOPE: unresolved in frozen specs; #64 owns correction after decision set.
-- Performance experiments required vs no executable project: explicitly BLOCKED_BY_IMPLEMENTATION_SPIKE, not falsely complete.
-- Reuse candidates vs no import approval: consistent.
-- Art candidates vs original identity: consistent only if originality gate enforced before selection.
+## Cold handoff #65
+Repository-only answers:
+- WHAT: playable Android 3D Christmas runner APK prototype; Santa + helper army.
+- SCOPE: exactly one original Santa village/workshop vertical slice; stages 2/3/forest/fortress deferred; no kingdom/metagame.
+- GAMEPLAY: army protects Santa; zero=defeat; +N/×N; hammer authored break; snowball ranged combat; final one-phase boss; exactly-once terminal result.
+- OUT_OF_SCOPE: strategic meta/economy, runtime fracture, extra gate families/tools, boss adds/multiphase.
+- DEFERRED: additional stages/environments, Play Store/commercialization.
+- MEASUREMENT_DERIVED: army cap, CPU/GPU/memory, detailed thermal/device thresholds, pacing/tuning.
+- TECH BASELINE: Unity 6.3 LTS family, URP, Input System, Android landscape.
+- BOOTSTRAP PIN: exact editor patch/packages/API/ABI/graphics config.
+- EXPERIMENTS: X46-01..06 NOT_RUN; 01–04 after bootstrap, 05 after device selection, 06 after representative asset selection.
+- REUSE: game logic NEW; fracture/SST reference only; Kenney/Poly Haven adapt-eligible after exact provenance; conditional sources remain blocked until exact terms/item; unknown-license no copy/adapt.
+- NEXT AUTHORIZED TASK after Supervisor review: Stage 2A Unity/Android technical bootstrap, followed by smoke build and non-production synthetic spike. No product gameplay/vertical slice.
 
-## Cold handoff test #65
-A new agent reading PROJECT_AUTHORITY.md + #64 assessment + this audit reconstructs:
-PRODUCT: Android APK Christmas 3D crowd runner with Santa/helpers, ES+EN, boss YES.
-SCOPE: no kingdom/meta; exact stage scope pending.
-GAMEPLAY: high-level loop confirmed; Santa/gate/boss/tool semantics pending.
-STATE: research accepted; gates partial/pending; specs not frozen; implementation unauthorized.
-EVIDENCE: #39–#47, #57, #59–#63.
-DECISIONS: explicit confirmed set in PROJECT_AUTHORITY.
-UNKNOWN: listed gate blockers.
-GATES: none fully closed for implementation.
-NEXT: Supervisor decisions → resume #64 spec freeze → rerun #65 audit.
-Result: **PASS as handoff; HOLD as implementation readiness.**
+Cold handoff result: **PASS**.
 
-## Final verdict
-**HOLD** for creation of first implementation tranche.
-This does not prohibit future research or Supervisor decisions. It prohibits treating current recommendations as frozen requirements. After #64 becomes FROZEN/READY_FOR_REVIEW, rerun this audit at the resulting exact HEAD and issue GO/HOLD again. Even GO requires Supervisor review before implementation.
+## GO rationale
+The remaining unknowns are technical pins or measurements that Stage 2 is specifically designed to establish. No unresolved human product decision is required to begin a minimal technical bootstrap and synthetic non-production spike. Therefore **GO** under the user's criterion, but Supervisor review is still required before executing Stage 2.
