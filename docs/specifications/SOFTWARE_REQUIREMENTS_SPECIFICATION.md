@@ -1,28 +1,32 @@
-# Software Requirements Specification
+# Software Requirements Specification — Christmas Prototype Freeze
+Status: FROZEN candidate / Issue #64. Authority: Supervisor decision Issue #57 comment 5914691381 (2026-09-30). Supersedes incompatible pre-Christmas #13 requirements for this prototype; historical Git remains evidence.
 
 ## Product boundary
-Original mobile single-player strategy-runner inspired by observable high-level mechanics, not proprietary Top Lords code/assets/balance.
+SRS-PROD-001 [FROZEN] Playable Android-only 3D runner prototype delivered as installable APK.
+SRS-PROD-002 [FROZEN] Christmas theme; original Santa protagonist; original elf/Christmas-helper army; Spanish + English.
+SRS-PROD-003 [OUT_OF_SCOPE] Kingdom/metagame/strategic economy. Play Store/commercialization [DEFERRED].
+SRS-SCOPE-001 [FROZEN] Exactly one complete vertical-slice stage: original Santa Christmas village/workshop under attack. Stage 2/3, snow forest, ice fortress [DEFERRED]. Duration [MEASUREMENT_DERIVED] by pacing/playtest.
+SRS-LOOP-001 [FROZEN] onboarding/control → army growth → +/× gate choice → avoidable obstacle → hammer break → combat/snowball → final boss → result.
 
-## Functional requirements
-SRS-INPUT-001 The runtime SHALL accept one-hand lateral/path-choice intent through an input abstraction. [Evidence: TL-001/002,#6]
-SRS-RUN-001 A run SHALL progress through authored ordered level segments. [#10]
-SRS-ARMY-001 The runtime SHALL maintain an authoritative logical army count/state independent of presentation object count. [#7,#12]
-SRS-GATE-001 A gate SHALL apply an authored deterministic army mutation at most once per gate per run. [REP-001,#7]
-SRS-FORM-001 Active visual units SHALL receive formation targets after army mutations. [REP-005,#6/#7]
-SRS-COMBAT-001 Combat SHALL expose explicit target, attack, damage, health and death state transitions. [#8]
-SRS-RESULT-001 A run SHALL emit one immutable result snapshot used for rewards/progression. [#8/#11]
-SRS-LEVEL-001 Levels SHALL use stable IDs and validated authored definitions. [#10]
-SRS-SAVE-001 Durable profile data SHALL be versioned and loadable across sessions. [UNITY-014..016,#11]
-SRS-PROG-001 Progression/unlock/upgrade data SHALL use stable IDs and validated prerequisites. [#11]
-SRS-UX-001 Gate operation and critical decisions SHALL be readable before commitment and not rely only on color. [#7/#10]
+## Functional
+SRS-INPUT-001 [FROZEN] Runtime SHALL map player lateral/path-choice intent through an input abstraction and remain controllable during traversal except explicit authored locks.
+SRS-ARMY-001 [FROZEN] Maintain authoritative non-negative integer helper count independent of presentation objects.
+SRS-HEALTH-001 [FROZEN] Army is Santa's baseline protection; ordinary damage removes helpers first; no independent Santa HP/hearts baseline; count reaching zero causes immediate defeat; no baseline solo-Santa state.
+SRS-GATE-001 [FROZEN] Gates SHALL apply exactly once per gate/run and support only positive-integer +N and ×N baseline operations. Subtraction, percentage, conditional and fractional semantics are OUT_OF_SCOPE.
+SRS-GATE-002 [MEASUREMENT_DERIVED] A configurable technical army capacity SHALL exist; numeric value comes from profiling/spike, never silent tuning.
+SRS-FORM-001 [FROZEN] Formation representation SHALL update after army mutation/death while leaving exact crowd backend replaceable.
+SRS-TOOL-001 [FROZEN] Snowball provides ranged/combat verb; toy-maker hammer provides obstacle-breaking verb. Candy-cane melee, axe, sleigh/ram and extra tools OUT_OF_SCOPE baseline.
+SRS-OBS-001 [FROZEN] Destruction SHALL use authored state transition/mesh swap/prepared broken representation; runtime mesh fracture OUT_OF_SCOPE.
+SRS-COMBAT-001 [FROZEN] Combat SHALL expose authoritative targeting/attack/damage/death semantics; animation/presentation SHALL NOT be gameplay authority.
+SRS-BOSS-001 [FROZEN] Required final encounter: one phase, readable telegraphed attacks, army participates, no adds/multiple phases baseline.
+SRS-RESULT-001 [FROZEN] Boss defeat SHALL produce victory/result exactly once; zero army SHALL produce defeat/result exactly once; post-result gameplay mutation stops.
+SRS-UX-001 [FROZEN] Gates use symbol/value plus shape/border and never rely on color alone.
+SRS-LOC-001 [FROZEN] Player-facing critical UI SHALL support ES+EN including required Spanish glyphs/overflow validation.
+SRS-ART-001 [FROZEN] Baseline visual grammar is low-poly + toy-workshop/diorama with original Santa/helpers/enemies/boss/UI/level composition and mostly opaque/matte materials.
 
-## Non-functional requirements
-SRS-PERF-001 Performance acceptance SHALL be measured on representative target mobile devices, not inferred from Editor measurements. [UNITY-003/007,#9]
-SRS-PERF-002 Runtime SHALL avoid avoidable per-frame managed allocation in crowd/combat hot paths where profiling identifies it as material. [REP-002,#9]
-SRS-TEST-001 Deterministic domain logic SHALL be testable without animation being authoritative. [#7/#8]
-SRS-LIC-001 No external code/assets SHALL be copied/adapted unless #14 verifies license/provenance. [program rule]
-
-## Pending product constraints
-SRS-TBD-001 exact min devices/FPS/memory/crowd capacity: PENDING GAP-002/003.
-SRS-TBD-002 exact combat/boss rules: PENDING GAP-004.
-SRS-TBD-003 exact metagame depth/economy values: PENDING GAP-005/007.
+## Technical/non-functional
+SRS-TECH-001 [FROZEN] Unity 6.3 LTS family + URP + Unity Input System; Android; landscape. Exact patch/packages/API/ABI/backend config = BOOTSTRAP_PIN.
+SRS-PERF-001 [FROZEN] Acceptance baseline: stable 30 FPS on selected lower representative Android target device and no sustained thermal collapse in defined sustained test. 60 FPS NON_BLOCKING_STRETCH.
+SRS-PERF-002 [MEASUREMENT_DERIVED] Max army, CPU/GPU budgets, memory ceiling and exact thermal/device thresholds derive from X46 evidence.
+SRS-REUSE-001 [FROZEN] Runner/army/gates/combat/boss/level logic NEW code baseline. Unknown-license repositories DO_NOT_COPY/ADAPT.
+SRS-ORIG-001 [FROZEN] No Grinch/distinctive third-party character, Top Lords identity/proprietary asset/UI, recognizable third-party composition or trade dress.
