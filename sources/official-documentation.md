@@ -180,3 +180,24 @@ URL: https://docs.unity3d.com/Manual/com.unity.addressables.html
 DATE ACCESSED: 2026-09-30  
 RELEVANT CLAIMS: Addressables provide address-based asynchronous asset/dependency loading.  
 NOTES: availability is not evidence that target product requires it.
+
+## UNITY-014 — PlayerPrefs
+AUTHOR/OWNER: Unity Technologies  
+SOURCE TYPE: official Scripting API  
+URL: https://docs.unity3d.com/ScriptReference/PlayerPrefs.html  
+DATE ACCESSED: 2026-09-30  
+RELEVANT CLAIMS: persists string/int/float preferences across sessions; local storage is not encrypted and should not hold sensitive data.  
+
+## UNITY-015 — Application.persistentDataPath
+AUTHOR/OWNER: Unity Technologies  
+SOURCE TYPE: official Scripting API  
+URL: https://docs.unity3d.com/ScriptReference/Application-persistentDataPath.html  
+DATE ACCESSED: 2026-09-30  
+RELEVANT CLAIMS: path intended for data retained between runs; mobile paths persist across app updates with stable bundle identifier, subject to user actions.  
+
+## UNITY-016 — JsonUtility
+AUTHOR/OWNER: Unity Technologies  
+SOURCE TYPE: official Scripting API  
+URL: https://docs.unity3d.com/ScriptReference/JsonUtility.html  
+DATE ACCESSED: 2026-09-30  
+RELEVANT CLAIMS: converts supported objects/fields to/from JSON using Unity serializer rules.  
