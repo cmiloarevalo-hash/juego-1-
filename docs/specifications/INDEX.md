@@ -1,13 +1,19 @@
 # Product Specifications
 
-Status: DRAFT / derived from research #2–#12. Supervisor semantic acceptance is PENDING.
+Status: **FROZEN / SEMANTIC_ACCEPTED** at PR #71 HEAD `09061b4ba372de41fb142ab4c43f1b4302f58083`, Supervisor review 5368899526.
+Current execution is separately blocked by Issue #83 documentation hold.
 
-- [SRS](SOFTWARE_REQUIREMENTS_SPECIFICATION.md)
+## Canonical accepted specifications
+- [Software Requirements](SOFTWARE_REQUIREMENTS_SPECIFICATION.md)
 - [Gameplay](GAMEPLAY_SPECIFICATION.md)
 - [Architecture](SOFTWARE_ARCHITECTURE.md)
 - [Technical](TECHNICAL_SPECIFICATION.md)
 - [Performance](PERFORMANCE_SPECIFICATION.md)
 - [Data and Progression](DATA_AND_PROGRESSION_SPECIFICATION.md)
 - [Verification](VERIFICATION_SPECIFICATION.md)
+- [Spec Freeze Matrix](SPEC_FREEZE_MATRIX.md)
 
-Traceability basis: TL-001/002, REP-001..007, UNITY-001..016, #6–#11 research, consolidated findings, RG-001..007.
+## #83 completeness extension
+- [Visual / UX / Content Specification](VISUAL_UX_CONTENT_SPECIFICATION.md) — restates accepted baseline and explicitly blocks unresolved quality decisions; it does not alter the #64 freeze.
+
+Read [Documentation Authority Map](../DOCUMENTATION_AUTHORITY_MAP.md) before historical research/ADRs. Historical pre-freeze requirements do not override this set.
