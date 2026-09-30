@@ -6,7 +6,7 @@ Issue #83 global hold overrides every sequence below until `DOCUMENTATION_GATE_A
 P0. Documentation gate #83 accepted by Supervisor.
 P1. Canonical product spec remains PR #71 HEAD `09061b4ba372de41fb142ab4c43f1b4302f58083` unless a later explicit decision supersedes it.
 P2. Bounded Stage 2 technical readiness is completed/accepted as applicable: bootstrap/build evidence and X46 measurements. No benchmark value may be inferred.
-P3. Required VUX gaps for the product surface being implemented are explicitly resolved; see `VISUAL_UX_CONTENT_SPECIFICATION.md`.
+P3. Supervisor review 5370716635 resolves VUX-001..008. Future product-facing implementation must satisfy the corresponding VUX-* requirements and QA-VUX-* evidence; BG-009/010/011 remain unresolved measurement/provenance gates.
 P4. Any external asset/code item has exact provenance/license approval before import.
 P5. Separate implementation Work Item authorization exists.
 
@@ -42,7 +42,7 @@ Original authoritative target/attack/damage/death domain; snowball is ranged/com
 One phase, readable/telegraphed, army participates, no adds/multiphase. Boss defeat produces Victory/result exactly once.
 
 ### IMP-11 Presentation/localization
-Only after relevant VUX blocking decisions are resolved. Must satisfy originality, mobile readability, gate multi-cue semantics, ES+EN and accepted camera/HUD/animation/VFX/audio quality requirements.
+Implement only under later explicit product authorization and after applicable Stage 2 prerequisites. Must satisfy VUX-CHAR/CAM/UI/ANIM/FX/TYPE/ENV/PACE, originality, mobile readability, gate multi-cue semantics, ES+EN, and produce VUX-EVID-001..009 as applicable. Exact assets remain BG-011 provenance-gated; exact numeric/device/performance values remain BG-009/010 measurement-gated.
 
 ### IMP-12 Verification and acceptance
 Execute current VER-* suite, traceability, provenance/originality and device/performance gates. Product cannot be accepted by functional correctness alone while a VUX blocking decision remains unresolved.
