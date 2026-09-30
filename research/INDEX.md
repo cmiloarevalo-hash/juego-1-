@@ -27,3 +27,6 @@ Every material research statement must be classified when needed as VERIFIED FAC
 ## Mechanics
 - [Input, movement, crowd and formation](mechanics/INPUT_MOVEMENT_CROWD_FORMATION.md)
 - [Crowd/formation alternatives](../analysis/comparisons/CROWD_FORMATION_ALTERNATIVES.md)
+
+- [Gates, spawning and army mutation](mechanics/GATES_SPAWNING_ARMY_MUTATION.md)
+- [Gate/army lifecycle alternatives](../analysis/comparisons/GATE_ARMY_LIFECYCLE_ALTERNATIVES.md)
