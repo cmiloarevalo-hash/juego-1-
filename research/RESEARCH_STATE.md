@@ -2,7 +2,7 @@
 
 CURRENT DATE: 2026-09-30
 ACTIVE WORK ITEM: **#83 — Documentation readiness gate**
-GLOBAL STATE: **#83 READY_FOR_REVIEW — all other project work remains suspended**
+GLOBAL STATE: **#83 REWORK COMPLETE / READY_FOR_REVIEW — all other project work remains suspended**
 BRANCH: `docs/documentation-readiness-gate`
 BASE CHECKPOINT: `c8af0b68bf87c6560a5f8b9d42699ccd65210940`
 
@@ -21,3 +21,14 @@ Functional product semantics are largely frozen, but current navigation/plan/inv
 
 ## Next exact action
 Supervisor reviews the #83 documentation-only PR. Do not resume Stage 2, Stage 3 or product work. Only Supervisor may issue `DOCUMENTATION_GATE_ACCEPTED`.
+
+
+## Supervisor rework — review 5370716635
+- Previous reviewed HEAD: b7609a05ee34ce60c6f5b56180573e024d1d3b39.
+- Decision: REWORK_REQUIRED / DOCUMENTATION_GATE_NOT_ACCEPTED.
+- 28 deterministic contradiction repairs accepted.
+- VUX-001..008 decisions supplied and incorporated.
+- BG-001..008 now RESOLVED_BY_SUPERVISOR_DECISION.
+- BG-009/010 remain MEASUREMENT_REQUIRED; BG-011 remains EXTERNAL_PROVENANCE_REQUIRED.
+- Mandatory tests rerun: cold handoff PASS; wrong-path PASS; ordinary-application prevention PASS; scope contamination PASS; traceability PASS.
+- Global hold remains active pending explicit DOCUMENTATION_GATE_ACCEPTED.
