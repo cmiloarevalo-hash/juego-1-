@@ -4,7 +4,7 @@ PROGRAM ISSUE: #20 (operational controller); #1 remains master requirements/hist
 CURRENT DATE: 2026-09-30
 BASE: `research/issue-2-bootstrap@d02ba00ca28a1ee23c41e62276edff313dfeb5f2`
 CURRENT HEAD: Issue #20 branch; PR #21 handoff records reviewed orchestration HEAD
-ACTIVE WORK ITEM: #16 — proposed ADRs
+ACTIVE WORK ITEM: #16 — verification/handoff
 ACTIVE PROGRAM CONTROLLER: #20
 ACTIVE PRS: #19 bootstrap; #21 orchestration
 
@@ -29,8 +29,9 @@ READY_FOR_REVIEW is not a global stop condition.
 - #13 — READY_FOR_REVIEW: SRS/gameplay/architecture/technical/performance/data/verification specs with stable IDs persisted; PR pending.
 - #14 — READY_FOR_REVIEW: complete provenance/reuse matrix persisted; PR pending.
 - #15 — READY_FOR_REVIEW: NC-001..NC-018 inventory persisted with requirements/interfaces/dependencies/tests/risks; PR pending.
-- #16 — IN_PROGRESS: inputs available; Supervisor status remains PENDING.
-- #17–#18 — dependency-gated.
+- #16 — READY_FOR_REVIEW: ADR-001..007 PROPOSED/PENDING persisted; ADR-006 explicitly blocked on RG-001 refresh before implementation.
+- #17 — READY for a conditional implementation plan: specs/reuse/inventory/ADRs exist; plan must carry PENDING gates as prerequisites.
+- #18 — dependency-gated.
 
 ## Dependency semantics
 EXECUTION_DEPENDENCY: satisfied by required usable GitHub artifact; upstream review alone does not block.
@@ -62,4 +63,4 @@ No globally blocking condition. Only worker auto-reinvocation integration is par
 GH-001..GH-007 in `sources/official-documentation.md`.
 
 ## Next exact action
-Draft material ADRs with context/requirements/evidence/options/proposed decision/consequences/risks/references and Supervisor status PENDING.
+Open #16 PR; claim #17 and derive dependency-ordered implementation plan with explicit Supervisor/Research-Gate prerequisites.
