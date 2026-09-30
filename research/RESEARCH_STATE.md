@@ -4,7 +4,7 @@ PROGRAM ISSUE: #20 (operational controller); #1 remains master requirements/hist
 CURRENT DATE: 2026-09-30
 BASE: `research/issue-2-bootstrap@d02ba00ca28a1ee23c41e62276edff313dfeb5f2`
 CURRENT HEAD: Issue #20 branch; PR #21 handoff records reviewed orchestration HEAD
-ACTIVE WORK ITEM: #13 — complete product specifications
+ACTIVE WORK ITEM: #13 — verification/handoff
 ACTIVE PROGRAM CONTROLLER: #20
 ACTIVE PRS: #19 bootstrap; #21 orchestration
 
@@ -26,8 +26,9 @@ READY_FOR_REVIEW is not a global stop condition.
 - #10 — READY_FOR_REVIEW: level/camera/authoring/UX alternatives and candidate validation model persisted; PR pending.
 - #11 — READY_FOR_REVIEW: progression/economy/persistence boundaries and candidate data model persisted; PR pending.
 - #12 — READY_FOR_REVIEW: contradictions/gaps/traceability seeds and RG-001..007 DRAFT persisted; PR pending.
-- #13 — IN_PROGRESS: consolidation dependency satisfied; unresolved gates remain explicit PENDING.
-- #14–#18 — dependency-gated.
+- #13 — READY_FOR_REVIEW: SRS/gameplay/architecture/technical/performance/data/verification specs with stable IDs persisted; PR pending.
+- #14 — READY: specifications plus repository/license analysis exist.
+- #15–#18 — dependency-gated.
 
 ## Dependency semantics
 EXECUTION_DEPENDENCY: satisfied by required usable GitHub artifact; upstream review alone does not block.
@@ -59,4 +60,4 @@ No globally blocking condition. Only worker auto-reinvocation integration is par
 GH-001..GH-007 in `sources/official-documentation.md`.
 
 ## Next exact action
-Derive SRS/gameplay/architecture/technical/performance/data/verification specifications with stable IDs and evidence traceability; preserve unresolved gates as TBD/PENDING.
+Open #13 PR; claim #14 and build provenance/reuse matrix without treating UNKNOWN_LICENSE as reusable.
