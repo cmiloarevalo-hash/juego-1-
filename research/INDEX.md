@@ -30,3 +30,6 @@ Every material research statement must be classified when needed as VERIFIED FAC
 
 - [Gates, spawning and army mutation](mechanics/GATES_SPAWNING_ARMY_MUTATION.md)
 - [Gate/army lifecycle alternatives](../analysis/comparisons/GATE_ARMY_LIFECYCLE_ALTERNATIVES.md)
+
+- [Combat, targeting, death and bosses](mechanics/COMBAT_TARGETING_DEATH_BOSSES.md)
+- [Combat/targeting alternatives](../analysis/comparisons/COMBAT_TARGETING_ALTERNATIVES.md)

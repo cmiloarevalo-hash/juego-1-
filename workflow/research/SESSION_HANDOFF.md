@@ -2,28 +2,28 @@
 
 DATE: 2026-09-30  
 PROGRAM ISSUE: #20  
-WORK ITEM: #7  
+WORK ITEM: #8  
 STATE: READY_FOR_REVIEW  
-BASE: `research/issue-6-input-crowd-formation`  
-BRANCH: `research/issue-7-gates-spawning-army`  
+BASE: `research/issue-7-gates-spawning-army`  
+BRANCH: `research/issue-8-combat-targeting-bosses`  
 HEAD SHA: obtain from PR  
 PR: pending
 
 ## Sources
-TL-001/TL-002; REP-001 lifecycle/gate arithmetic; REP-004/006/007 spawn evidence; UNITY-004/005/006.
+TL-001/TL-002 primary storefront claims plus repository architecture evidence from #5. Detailed unverified secondary Top Lords combat-guide claims were intentionally not promoted to facts.
 
 ## Artifacts
-- `research/mechanics/GATES_SPAWNING_ARMY_MUTATION.md`
-- `analysis/comparisons/GATE_ARMY_LIFECYCLE_ALTERNATIVES.md`
+- `research/mechanics/COMBAT_TARGETING_DEATH_BOSSES.md`
+- `analysis/comparisons/COMBAT_TARGETING_ALTERNATIVES.md`
 
 ## Verification
-PASS: gate models, detection ownership, spawn/despawn/pooling alternatives, mutation transaction, edge cases and candidate requirements documented. EXP-GATE-001/002 explicitly PROPOSED/NOT RUN. Unsupported Top Lords internals remain UNKNOWN. No product code.
+PASS: engagement, acquisition, attack/damage/death, boss and result alternatives documented; code/primary evidence boundary explicit; proposed experiments NOT RUN; no invented Top Lords algorithms and no product code.
 
 ## Open questions
-Exact product gate formula/rounding/min/max/capacity and chosen lifecycle remain unresolved pending consolidation/specification/performance evidence.
+Exact product targeting, damage model, boss model and result condition await #10/#11/#12/#13 evidence and decisions.
 
 ## Blockers
-None. UNKNOWN_LICENSE code remains reference-only.
+None.
 
 ## Next executable
-#8, #9, #10, #11.
+#9, #10, #11.
