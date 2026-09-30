@@ -4,7 +4,7 @@ PROGRAM ISSUE: #20 (operational controller); #1 remains master requirements/hist
 CURRENT DATE: 2026-09-30
 BASE: `research/issue-2-bootstrap@d02ba00ca28a1ee23c41e62276edff313dfeb5f2`
 CURRENT HEAD: Issue #20 branch; PR #21 handoff records reviewed orchestration HEAD
-ACTIVE WORK ITEM: #3 — Research: Referencia observable — Top Lords
+ACTIVE WORK ITEM: #3 — verification/handoff
 ACTIVE PROGRAM CONTROLLER: #20
 ACTIVE PRS: #19 bootstrap; #21 orchestration
 
@@ -16,7 +16,7 @@ READY_FOR_REVIEW is not a global stop condition.
 ## Work item states
 - #2 — READY_FOR_REVIEW, PR #19, HEAD `d02ba00ca28a1ee23c41e62276edff313dfeb5f2`.
 - #20 — READY_FOR_REVIEW for implemented control plane, PR #21; worker auto-reinvocation remains partial BLOCKED/UNKNOWN.
-- #3 — IN_PROGRESS.
+- #3 — READY_FOR_REVIEW; PR pending creation.
 - #4 — READY (bootstrap execution dependency satisfied).
 - #9 — READY (bootstrap execution dependency satisfied).
 - #5 — waits for #4 catalog artifact.
@@ -41,7 +41,7 @@ DEFAULT-BRANCH ACTIONS ACTIVATION: pending ordinary review/merge; not a blocker 
 - #20 control plane — PR #21.
 
 ## Active
-- #3.
+- #3 verification/handoff.
 
 ## Ready
 - #4.
@@ -54,4 +54,4 @@ No globally blocking condition. Only worker auto-reinvocation integration is par
 GH-001..GH-007 in `sources/official-documentation.md`.
 
 ## Next exact action
-Execute #3 within `research/games/top-lords/**, sources/**, analysis/findings/**`; persist evidence, verify acceptance criteria, open its PR/handoff, then recalculate queue without waiting for ordinary PR review.
+Open #3 PR and record real HEAD. Then execute #4 (READY) by program order; #9 also remains READY.
