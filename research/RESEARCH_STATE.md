@@ -63,3 +63,9 @@ GH-001..GH-007 in `sources/official-documentation.md`.
 
 ## Next exact action
 Open #18 PR, record real HEAD and persist final program handoff. Then no further #2–#18 research Work Item remains executable; Supervisor review/decisions are the next human action before product implementation.
+
+
+## Christmas prototype research batch #39–#47
+- #39 — READY_FOR_REVIEW: loop/gates/army research persisted on `research/issue-39-christmas-loop-army`; PR pending.
+- #40–#46 — READY: independent research Issues open.
+- #47 — PAUSED: execution dependency requires #39–#46 READY_FOR_REVIEW or explicit blockers.
