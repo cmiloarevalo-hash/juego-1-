@@ -20,3 +20,6 @@ Every material research statement must be classified when needed as VERIFIED FAC
 
 ## Repositories
 - [Comparable repository catalog](repositories/CATALOG.md)
+
+- [Deep comparable code analysis](repositories/DEEP_CODE_ANALYSIS.md)
+- [Cross-repository code findings](../analysis/findings/COMPARABLE_CODE_FINDINGS.md)
