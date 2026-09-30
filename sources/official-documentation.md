@@ -53,3 +53,22 @@ NOTES: This is a generic GitHub trigger, not evidence of a concrete ChatGPT work
 
 ## Integration evidence gap
 **UNKNOWN:** no repository artifact or verified official project-specific integration currently identifies an API/GitHub App/credential capable of launching the concrete research agent. No such integration is inferred from GitHub's generic dispatch APIs.
+
+## TL-001 — Apple App Store: Top Lords
+AUTHOR/OWNER: Apple storefront / publisher metadata from GAME SPARK PTE. LTD.  
+SOURCE TYPE: primary storefront  
+URL: https://apps.apple.com/us/app/top-lords/id6767834940  
+DATE ACCESSED: 2026-09-30  
+VERSION: current storefront listing at access time  
+LICENSE: N/A — evidence reference only; no code reuse  
+RELEVANT CLAIMS: strategy-runner positioning; swipe/dodge/charge; army growth; kingdom/resources/fiefs/taxes/heroes/griffin; current platform/store metadata.  
+NOTES: Publisher claims are SOURCE CLAIM unless asserting storefront metadata itself.
+
+## TL-002 — Google Play: Top Lords
+AUTHOR/OWNER: Google Play storefront / GAME SPARK  
+SOURCE TYPE: primary storefront  
+URL: https://play.google.com/store/apps/details?id=com.gamespark.topking.gp  
+DATE ACCESSED: 2026-09-30  
+VERSION: package com.gamespark.topking.gp, current listing at access time  
+LICENSE: N/A — evidence reference only; no code reuse  
+RELEVANT CLAIMS: swipe/path choice, army growth, resources/territory, fiefs/taxes, heroes, griffin, strategy/4X/single-player descriptors.
