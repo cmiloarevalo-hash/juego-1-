@@ -1,3 +1,6 @@
+> **DOCUMENTATION CLASSIFICATION: CURRENT_SUPPORTING / EXECUTION SUSPENDED BY ISSUE #83.**
+> This is Stage 2 evidence/status, not product authority. Do not continue or retest it until Supervisor issues `DOCUMENTATION_GATE_ACCEPTED` and applicable technical authorization is active.
+
 # PR #72 integration incident
 Observed 2026-09-30.
 PR #71 head 09061b4ba372de41fb142ab4c43f1b4302f58083 is mergeable=true.
