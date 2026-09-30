@@ -4,7 +4,7 @@ PROGRAM ISSUE: #20 (operational controller); #1 remains master requirements/hist
 CURRENT DATE: 2026-09-30
 BASE: `research/issue-2-bootstrap@d02ba00ca28a1ee23c41e62276edff313dfeb5f2`
 CURRENT HEAD: Issue #20 branch; PR #21 handoff records reviewed orchestration HEAD
-ACTIVE WORK ITEM: #15 — new-code inventory
+ACTIVE WORK ITEM: #15 — verification/handoff
 ACTIVE PROGRAM CONTROLLER: #20
 ACTIVE PRS: #19 bootstrap; #21 orchestration
 
@@ -28,8 +28,9 @@ READY_FOR_REVIEW is not a global stop condition.
 - #12 — READY_FOR_REVIEW: contradictions/gaps/traceability seeds and RG-001..007 DRAFT persisted; PR pending.
 - #13 — READY_FOR_REVIEW: SRS/gameplay/architecture/technical/performance/data/verification specs with stable IDs persisted; PR pending.
 - #14 — READY_FOR_REVIEW: complete provenance/reuse matrix persisted; PR pending.
-- #15 — IN_PROGRESS: specs + reuse matrix available.
-- #16–#18 — dependency-gated.
+- #15 — READY_FOR_REVIEW: NC-001..NC-018 inventory persisted with requirements/interfaces/dependencies/tests/risks; PR pending.
+- #16 — READY: specs + reuse + new-code + Research Gates available; decisions remain PROPOSED/PENDING.
+- #17–#18 — dependency-gated.
 
 ## Dependency semantics
 EXECUTION_DEPENDENCY: satisfied by required usable GitHub artifact; upstream review alone does not block.
@@ -61,4 +62,4 @@ No globally blocking condition. Only worker auto-reinvocation integration is par
 GH-001..GH-007 in `sources/official-documentation.md`.
 
 ## Next exact action
-Inventory original systems/contracts required because no external code is selected for COPY/ADAPT; trace each to requirements/tests/research/risks.
+Open #15 PR; claim #16 and write proposed ADRs without marking Supervisor acceptance.
