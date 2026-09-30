@@ -37,3 +37,6 @@ Every material research statement must be classified when needed as VERIFIED FAC
 ## Performance
 - [Mobile performance research](performance/MOBILE_PERFORMANCE.md)
 - [Performance experiment matrix](../analysis/experiments/PERFORMANCE_EXPERIMENT_MATRIX.md)
+
+- [Levels, camera, authoring and UX](mechanics/LEVEL_CAMERA_AUTHORING_UX.md)
+- [Level/camera authoring alternatives](../analysis/comparisons/LEVEL_CAMERA_AUTHORING_ALTERNATIVES.md)

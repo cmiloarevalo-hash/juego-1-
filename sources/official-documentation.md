@@ -158,3 +158,25 @@ SOURCE TYPE: official manual
 URLS: https://docs.unity3d.com/Manual/physics-optimization-cpu-collision-layers.html ; https://docs.unity3d.com/Manual/TimeFrameManagement.html  
 DATE ACCESSED: 2026-09-30  
 RELEVANT CLAIMS: layer filtering reduces unnecessary collision work; lower fixed timestep increases physics update frequency/CPU cost while affecting precision.  
+
+## UNITY-011 — ScriptableObject manual
+AUTHOR/OWNER: Unity Technologies  
+SOURCE TYPE: official manual  
+URL: https://docs.unity3d.com/Manual/class-ScriptableObject.html  
+DATE ACCESSED: 2026-09-30  
+RELEVANT CLAIMS: ScriptableObjects centralize asset data independently of GameObject instances; deployed builds use authored asset data but ScriptableObject is not itself a deployed save mechanism.  
+
+## UNITY-012 — Cinemachine package manual
+AUTHOR/OWNER: Unity Technologies  
+SOURCE TYPE: official package manual  
+URL: https://docs.unity3d.com/Manual/com.unity.cinemachine.html  
+DATE ACCESSED: 2026-09-30  
+RELEVANT CLAIMS: Cinemachine provides follow/composition camera tooling; package/API versions differ across Unity generations.  
+
+## UNITY-013 — Addressables package documentation
+AUTHOR/OWNER: Unity Technologies  
+SOURCE TYPE: official package manual  
+URL: https://docs.unity3d.com/Manual/com.unity.addressables.html  
+DATE ACCESSED: 2026-09-30  
+RELEVANT CLAIMS: Addressables provide address-based asynchronous asset/dependency loading.  
+NOTES: availability is not evidence that target product requires it.
