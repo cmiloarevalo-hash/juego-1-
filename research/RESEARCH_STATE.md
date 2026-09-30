@@ -86,3 +86,11 @@ No product implementation authorized. Human decisions RG-XMAS-01..05 remain PEND
 - RG-XMAS-01 PARTIAL/PENDING; RG-XMAS-02/03/05 PENDING; RG-XMAS-04 PENDING, benchmarks NOT RUN.
 - #57: IN_PROGRESS on `docs/issue-57-canonical-context`; cold handoff PASS WITH RECORDED SUPERSESSION.
 - No implementation/import/merge authorization.
+
+
+## Christmas specification freeze — #64
+- Supervisor authority: Issue #57 comment 5914691381 (2026-09-30).
+- #64 FROZEN / READY_FOR_REVIEW; seven active specs updated; SPEC_FREEZE_MATRIX cold handoff PASS.
+- No material human product decision remains before Bootstrap + authorized non-production spike.
+- BOOTSTRAP_PIN and MEASUREMENT_DERIVED values remain intentionally unresolved numerically.
+- X46-01..06 AUTHORIZED_FOR_FUTURE_SPIKE / NOT_RUN.
