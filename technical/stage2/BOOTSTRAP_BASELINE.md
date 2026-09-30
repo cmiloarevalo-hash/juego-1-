@@ -34,3 +34,6 @@ Unity official release 6000.3.25f1; Unity 6 support/LTS; Unity Input System 1.17
 
 ## Supersession note
 The earlier 6000.3.24f1 checkpoint was superseded after a fresh official-source refetch found 6000.3.25f1 released 2026-09-24. Historical commits remain unchanged; current branch pin is 6000.3.25f1.
+
+## Local execution environment probe
+Observed 2026-09-30: Unity Editor absent; Unity Hub absent; adb absent; sdkmanager absent. System Java exists at /usr/bin/java but is not evidence of Unity's bundled Android OpenJDK/toolchain. Therefore Android toolchain remains unverified.
