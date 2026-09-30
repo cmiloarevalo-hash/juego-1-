@@ -17,3 +17,13 @@ Access date: 2026-09-30. All refs are immutable commit SHAs used for reproducibi
 
 ## Discovery limitation
 README feature descriptions are **SOURCE CLAIMS** only. #5 must inspect code paths/classes/methods before technical conclusions. Repositories without verified license remain **UNKNOWN_LICENSE** and their code must not be copied/adapted.
+
+
+## Christmas batch #43 — new pinned candidates
+XREP-001 sunsided/unity-endless-runner @ 0a05298545f3b46ea40dd35cd03c24193eba4f3b — MIT — REFERENCE_ONLY.
+XREP-002 lxndrblz/Unity-Endless-Runner @ bc619fd885134e892a8c1b3e5b8816e0635f01e6 — MIT — REFERENCE_ONLY.
+XREP-003 williambl/unity-destruction @ 2132640a5e0e84f5988387a808b8aeca6307eb55 — MIT — REFERENCE_ONLY.
+XREP-004 sinanata/unity-mesh-fracture @ dd04f3dc16d2dcc61d12d62258c84845e795ba4c — MIT — ADAPT CANDIDATE, not imported.
+XREP-005 richardlord/Unity-State-Machine @ 5075a29c74416fa333100be216039a07a1fd6780 — MIT text in README; GitHub metadata license null — REFERENCE_ONLY.
+XREP-006 SST-Systems/Pooling @ 8dd93d340cf6f582ef8a6e0c3924b6b06ca6656a — MIT — ADAPT CANDIDATE, compare UnityEngine.Pool first.
+Accessed 2026-09-30. Exact paths/symbols/risks in research/christmas/PUBLIC_CODE_CATALOG.md.
