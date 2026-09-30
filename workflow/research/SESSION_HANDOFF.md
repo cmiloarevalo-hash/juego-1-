@@ -9,4 +9,4 @@ VERIFIED INPUT HEADS: #58 e7a6263a67fb5658cb86548ed7808816fc9beebe; #66 ae5ae733
 FILES: seven docs/specifications/* specs, SPEC_FREEZE_MATRIX.md, PROJECT_AUTHORITY.md, freeze assessment.
 CONSISTENCY: no material product PENDING/TBD/UNKNOWN before Bootstrap/Spike. BOOTSTRAP_PIN and MEASUREMENT_DERIVED items explicit.
 COLD HANDOFF: PASS.
-NEXT EXACT ACTION: obtain exact #64 PR HEAD; rerun #65 audit with AUDITED_SPEC_HEAD equal to that immutable SHA. No implementation in Stage 1.
+REVIEWED SPEC CONTENT HEAD: 49027bc615ee0fc80fe5d9d416d0b90183fe0bc2. This final handoff commit may advance PR HEAD metadata-only; PR #71 head is authoritative. NEXT: refetch PR #71 and audit that exact final HEAD in #65. No implementation in Stage 1.
