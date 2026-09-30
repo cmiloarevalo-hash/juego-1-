@@ -41,3 +41,7 @@ Search targets reviewed conceptually against all frozen specs:
 A repository-only agent can determine product/scope/gameplay/out-of-scope/deferred/measurement-derived/technical baseline/bootstrap pins/reuse policy/tests without inventing a material product decision. Exact tuning remains data/playtest and exact runtime backend remains authorized spike evidence.
 
 **RESULT: PASS. SPECIFICATION STATUS: FROZEN / READY_FOR_REVIEW.**
+
+
+## Issue #83 documentation-readiness clarification
+The #64 statement that no material PENDING/TBD/UNKNOWN decision was required **before technical Bootstrap/Spike** remains valid for that bounded technical tranche. It was not a claim that final product-facing visual/UX/content quality was fully specified. Issue #83 now makes those later product-readiness gaps explicit in `VISUAL_UX_CONTENT_SPECIFICATION.md`, `QUALITY_ACCEPTANCE_SPECIFICATION.md`, and the Blocking Gap Register. Those gaps do not retroactively change frozen mechanics; they block affected product presentation/content implementation until resolved.
