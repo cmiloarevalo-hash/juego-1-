@@ -47,3 +47,6 @@ Every material research statement must be classified when needed as VERIFIED FAC
 ## Consolidation
 - [Consolidated findings](../analysis/findings/CONSOLIDATED_FINDINGS.md)
 - [Research Gates](../decisions/adr/RESEARCH_GATES.md)
+
+## Final audit
+- [Final traceability and completeness audit](../analysis/findings/FINAL_TRACEABILITY_AUDIT.md)
