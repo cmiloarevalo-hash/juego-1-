@@ -43,3 +43,7 @@ Every material research statement must be classified when needed as VERIFIED FAC
 
 - [Progression, economy and metagame](mechanics/PROGRESSION_ECONOMY_METAGAME.md)
 - [Progression/persistence alternatives](../analysis/comparisons/PROGRESSION_PERSISTENCE_ALTERNATIVES.md)
+
+## Consolidation
+- [Consolidated findings](../analysis/findings/CONSOLIDATED_FINDINGS.md)
+- [Research Gates](../decisions/adr/RESEARCH_GATES.md)
