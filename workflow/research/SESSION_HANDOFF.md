@@ -1,14 +1,13 @@
 # SESSION_HANDOFF
 DATE: 2026-09-30
-WORK ITEM: #57
+WORK ITEM: #59
 STATE: READY_FOR_REVIEW
-BASE: research/issue-47-christmas-consolidation
-BRANCH: docs/issue-57-canonical-context
-PR: pending
-AUTHORITY ENTRYPOINT: PROJECT_AUTHORITY.md
-ARTIFACTS: PROJECT_AUTHORITY.md; analysis/findings/COLD_HANDOFF_57.md; research/RESEARCH_STATE.md.
-VERIFICATION: cold handoff PASS WITH RECORDED SUPERSESSION. Boss historical conflict, metagame/spec mismatch, stale GAME-BOSS wording and #47 metadata lag are recorded with authority resolution; historical evidence not rewritten.
-SUPERVISOR DECISIONS: boss YES; Android/APK/runner/Christmas/Santa/elves/ES+EN/no-metagame/original identity confirmed. Santa health remains PENDING.
-RESEARCH GATES: RG-XMAS-01 PARTIAL/PENDING; RG-XMAS-02/03/05 PENDING; RG-XMAS-04 PENDING; benchmarks NOT RUN.
-BLOCKERS: none for creating/executing independent Research Gate tranche. Product implementation remains unauthorized.
-NEXT: create separate RG-XMAS-01..05 Issues; then SPEC FREEZE and PREIMPLEMENTATION AUDIT dependency chain.
+GATE: RG-XMAS-01 PARTIAL/PENDING
+BRANCH: research/issue-59-rg-xmas-01-gameplay
+BASE: docs/issue-57-canonical-context
+ARTIFACT: research/christmas/RG_XMAS_01_GAMEPLAY.md
+EVIDENCE: #39/#40/#42/#47/#57; Count Masters official App Store; Join Clash 3D official Google Play.
+CONFIRMED: boss YES.
+PENDING: Santa health/damage/zero-army; boss placement/complexity; gates; tools/weapons.
+RECOMMENDATION: army-protection health baseline; hybrid only if direct boss damage needed; single-phase telegraphed boss baseline. Requires human selection.
+NEXT: Supervisor decision; other gates independent.
