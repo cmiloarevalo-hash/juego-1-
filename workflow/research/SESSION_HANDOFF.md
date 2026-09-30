@@ -2,53 +2,29 @@
 
 DATE: 2026-09-30  
 PROGRAM ISSUE: #20  
-HISTORICAL REQUIREMENTS: #1 and #2–#18  
-WORK ITEM: #20  
-BASE SHA: `d02ba00ca28a1ee23c41e62276edff313dfeb5f2` (PR #19 head)  
-HEAD SHA: PENDING final PR head  
-BRANCH: `infra/issue-20-research-orchestration`  
-PR: PENDING
+WORK ITEM: #3  
+BASE: `infra/issue-20-research-orchestration`  
+HEAD SHA: recorded in PR conversation after final commit  
+BRANCH: `research/issue-3-top-lords`  
+PR: pending creation
 
 ## Work completed
-- Reconstructed #20, #1, #2 and PR #19 directly from GitHub.
-- Verified #2 remains READY_FOR_REVIEW and PR #19 is open/unmerged.
-- Researched GitHub Actions dispatch, concurrency, schedules, labels, GITHUB_TOKEN and repository/workflow dispatch from official GitHub documentation.
-- Specified persistent state machine and EXECUTION_DEPENDENCY vs ACCEPTANCE_DEPENDENCY.
-- Implemented dry-run-first dispatcher and observational watchdog.
-- Defined idempotency, recovery and context reconstruction contracts.
-- Did not implement or claim a nonexistent AI-worker launcher.
-- No game/product code implemented.
+Researched Top Lords observable behavior using primary Apple/Google storefronts plus identified gameplay-video leads. Persisted observable reference, evidence register and findings. No proprietary code assumptions and no product code.
 
-## Files created
-- `workflow/research/ORCHESTRATION.md`
-- `workflow/research/ORCHESTRATION_VERIFICATION.md`
-- `.github/workflows/research-dispatch.yml`
-- `.github/workflows/research-watchdog.yml`
+## Evidence produced
+- `research/games/top-lords/OBSERVABLE_REFERENCE.md`
+- `research/games/top-lords/EVIDENCE_REGISTER.md`
+- `analysis/findings/TOP_LORDS_FINDINGS.md`
+- TL-001/TL-002 source records in `sources/official-documentation.md`
 
-## Files updated
-- `INDEX.md`
-- `research/INDEX.md`
-- `research/RESEARCH_STATE.md`
-- `sources/official-documentation.md`
-- `workflow/research/SESSION_HANDOFF.md`
+## Verification against #3
+PASS: mechanics/loops/UI-UX/progression claims available from primary sources are documented; unknown implementation details are explicit; evidence classes and source URLs are persisted; indexes/state updated; no product implementation.
 
-## Sources added
-GH-001..GH-007 in `sources/official-documentation.md`.
-
-## Findings
-- VERIFIED FACT: GitHub provides workflow/repository dispatch, issue-label APIs, workflow concurrency and scheduled workflows.
-- VERIFIED FACT: schedule/repository_dispatch activation requires workflow presence on default branch.
-- VERIFIED FACT: GitHub concurrency can serialize this dispatcher.
-- UNKNOWN: concrete mechanism that launches/reinvokes this ChatGPT research worker from this repository.
-
-## Research execution state
-#3–#18 remain PAUSED because Issue #20 explicitly says the existing research execution queue is paused until this infrastructure is reviewed. This is an explicit program control, not an inferred review dependency.
+## Open questions
+Exact movement model, gate arithmetic, formation, spawning/pooling, targeting/damage/death/boss behavior, camera implementation and detailed economy remain UNKNOWN and are delegated to authorized later Issues.
 
 ## Blockers
-Concrete worker invocation integration only: requires verified agent endpoint/App/API, credentials/secret and acknowledgement/retry contract.
+None for #3. WORKER_AUTO_REINVOCATION remains partial BLOCKED/UNKNOWN at program level and does not block research.
 
-## Verification
-Static verification record: `workflow/research/ORCHESTRATION_VERIFICATION.md`. Runtime Actions verification requires workflow activation on default branch after Supervisor review.
-
-## Next exact action
-Open/update PR for #20, record its real HEAD. Supervisor reviews orchestration. Once the explicit #20 pause is lifted, recompute #3–#18 readiness from GitHub and dispatch/execute the next READY Work Item without treating ordinary READY_FOR_REVIEW as a global stop.
+## Next executable work
+#4 repository discovery is READY and next by Issue order. #9 is independently READY.
