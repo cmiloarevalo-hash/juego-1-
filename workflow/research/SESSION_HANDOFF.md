@@ -1,18 +1,18 @@
 # SESSION_HANDOFF
 DATE: 2026-09-30
 PROGRAM ISSUE: #20
-WORK ITEM: #16
+WORK ITEM: #17
 STATE: READY_FOR_REVIEW
-BASE: `research/issue-15-new-code-inventory`
-BRANCH: `research/issue-16-adrs`
+BASE: `research/issue-16-adrs`
+BRANCH: `research/issue-17-implementation-plan`
 HEAD SHA: obtain from PR
 PR: pending
 
 ## Artifacts
-ADR-001..ADR-007 under `decisions/adr/`, plus existing RESEARCH_GATES.md.
+`plan/INDEX.md`; `plan/IMPLEMENTATION_PLAN.md` with P0 and IMP-01..IMP-18.
 ## Verification
-PASS: options/evidence/rationale/consequences/risks recorded. Every ADR is PROPOSED and Supervisor PENDING. ADR-006 explicitly refuses to invent an exact Unity/package version before RG-001 refresh.
+PASS: plan derives from requirement IDs, NC inventory, reuse policy and proposed ADRs; each future WI has objective/dependencies/AC/verification/risks as applicable. Pending Supervisor/Research-Gate decisions are prerequisites, not silently resolved. No product code.
 ## Blockers
-No blocker to writing a conditional #17 plan. Implementation itself remains gated by material Supervisor decisions/RG refresh and performance/product TBDs.
+None for final documentary audit #18.
 ## Next executable
-#17.
+#18.
