@@ -6,7 +6,7 @@ BASE: `research/issue-2-bootstrap@d02ba00ca28a1ee23c41e62276edff313dfeb5f2`
 CURRENT HEAD: Issue #20 branch; PR #21 handoff records reviewed orchestration HEAD
 ACTIVE WORK ITEM: #18 — final audit/handoff
 ACTIVE PROGRAM CONTROLLER: #20
-ACTIVE PRS: #19 bootstrap; #21 orchestration
+ACTIVE PRS: #19, #21, #22–#37 (stacked research PR chain; none merged by agent)
 
 ## Supervisor decision — 2026-09-30
 PROGRAM EXECUTION AUTHORIZED. #3–#18 UNPAUSED. The #20 control plane is sufficient for current-session operation subject to later review.
@@ -31,7 +31,7 @@ READY_FOR_REVIEW is not a global stop condition.
 - #15 — READY_FOR_REVIEW: NC-001..NC-018 inventory persisted with requirements/interfaces/dependencies/tests/risks; PR pending.
 - #16 — READY_FOR_REVIEW: ADR-001..007 PROPOSED/PENDING persisted; ADR-006 explicitly blocked on RG-001 refresh before implementation.
 - #17 — READY_FOR_REVIEW: conditional IMP-01..IMP-18 plan derived from specs/reuse/inventory/ADRs; PR pending.
-- #18 — READY_FOR_REVIEW: final end-to-end traceability/completeness audit persisted; PR pending.
+- #18 — READY_FOR_REVIEW: PR #37, reviewed handoff HEAD `0acb6aae1e53d02e0294e2aadbf7e854dfbf4867` before final metadata commit.
 
 ## Dependency semantics
 EXECUTION_DEPENDENCY: satisfied by required usable GitHub artifact; upstream review alone does not block.
