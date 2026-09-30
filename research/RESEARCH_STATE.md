@@ -4,7 +4,7 @@ PROGRAM ISSUE: #20 (operational controller); #1 remains master requirements/hist
 CURRENT DATE: 2026-09-30
 BASE: `research/issue-2-bootstrap@d02ba00ca28a1ee23c41e62276edff313dfeb5f2`
 CURRENT HEAD: Issue #20 branch; PR #21 handoff records reviewed orchestration HEAD
-ACTIVE WORK ITEM: #15 — verification/handoff
+ACTIVE WORK ITEM: #16 — proposed ADRs
 ACTIVE PROGRAM CONTROLLER: #20
 ACTIVE PRS: #19 bootstrap; #21 orchestration
 
@@ -29,7 +29,7 @@ READY_FOR_REVIEW is not a global stop condition.
 - #13 — READY_FOR_REVIEW: SRS/gameplay/architecture/technical/performance/data/verification specs with stable IDs persisted; PR pending.
 - #14 — READY_FOR_REVIEW: complete provenance/reuse matrix persisted; PR pending.
 - #15 — READY_FOR_REVIEW: NC-001..NC-018 inventory persisted with requirements/interfaces/dependencies/tests/risks; PR pending.
-- #16 — READY: specs + reuse + new-code + Research Gates available; decisions remain PROPOSED/PENDING.
+- #16 — IN_PROGRESS: inputs available; Supervisor status remains PENDING.
 - #17–#18 — dependency-gated.
 
 ## Dependency semantics
@@ -62,4 +62,4 @@ No globally blocking condition. Only worker auto-reinvocation integration is par
 GH-001..GH-007 in `sources/official-documentation.md`.
 
 ## Next exact action
-Open #15 PR; claim #16 and write proposed ADRs without marking Supervisor acceptance.
+Draft material ADRs with context/requirements/evidence/options/proposed decision/consequences/risks/references and Supervisor status PENDING.
