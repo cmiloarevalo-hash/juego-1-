@@ -210,3 +210,5 @@ RELEVANT CLAIMS: converts supported objects/fields to/from JSON using Unity seri
 - UNITY-S2-004 — URP compatibility docs/index — https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@17.2/manual/index.html — VERIFIED FACT: Unity docs expose URP 17.2 family for 6000.3; exact resolved patch awaits UPM lock evidence.
 - UNITY-S2-005 — Android requirements — https://docs.unity3d.com/current/Manual/android-requirements-and-compatibility.html — VERIFIED FACT: Android 6.0/API 23+; Vulkan and OpenGL ES 3.x supported.
 - UNITY-S2-006 — Android Player Settings — https://docs.unity3d.com/current/Manual/class-PlayerSettingsAndroid.html — VERIFIED FACT: manual graphics API ordering is available when Auto Graphics API is disabled.
+
+- UNITY-S2-007 — Unity 6000.3.25f1 official release — https://unity.com/releases/editor/whats-new/6000.3.25f1 — VERIFIED FACT: released 2026-09-24; supersedes UNITY-S2-001 as current Stage 2A editor pin. Includes Android Gradle update and Android Build Support installers.
