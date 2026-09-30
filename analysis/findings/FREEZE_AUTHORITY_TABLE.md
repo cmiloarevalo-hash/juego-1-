@@ -1,3 +1,6 @@
+> **DOCUMENTATION CLASSIFICATION: CURRENT_SUPPORTING.**
+> This supports the accepted #64 freeze but does not override Issue #83 global hold or create new product requirements.
+
 # Freeze Authority Table — Issue #64
 Verified 2026-09-30. Later authority search included Issue #57 comments and PR #58/#66–#72 discussions; no later conflicting decision was found.
 

@@ -1,5 +1,7 @@
-# New Code
+# New Code / Component Responsibilities
+
+Classification: **CURRENT_SUPPORTING / NOT AUTHORIZATION**.
 
 - [IMPLEMENTATION_INVENTORY.md](IMPLEMENTATION_INVENTORY.md)
 
-No product code is implemented here. The inventory defines responsibilities/contracts only and avoids premature class architecture.
+The inventory reflects the accepted prototype scope. Issue #83 global hold prevents implementation. Historical progression/save/optional-boss component assumptions are superseded.

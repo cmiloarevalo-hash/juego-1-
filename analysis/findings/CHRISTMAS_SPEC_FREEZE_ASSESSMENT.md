@@ -1,3 +1,6 @@
+> **DOCUMENTATION CLASSIFICATION: CURRENT_SUPPORTING.**
+> This supports the accepted #64 freeze but does not override Issue #83 global hold or create new product requirements.
+
 # Christmas Prototype — Specification Freeze Assessment
 Issue #64
 Status: **FROZEN / READY_FOR_REVIEW**

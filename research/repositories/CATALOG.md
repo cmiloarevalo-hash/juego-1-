@@ -1,3 +1,6 @@
+> **DOCUMENTATION CLASSIFICATION: REFERENCE_ONLY / HISTORICAL_EVIDENCE.**
+> This material is evidence, not target-product requirements or reuse permission. Current product authority is `docs/DOCUMENTATION_AUTHORITY_MAP.md`; Issue #83 global hold applies.
+
 # Comparable Repository Catalog
 
 Work Item: #4  

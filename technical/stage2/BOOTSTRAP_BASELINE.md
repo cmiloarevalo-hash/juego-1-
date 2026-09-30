@@ -1,3 +1,6 @@
+> **DOCUMENTATION CLASSIFICATION: CURRENT_SUPPORTING / EXECUTION SUSPENDED BY ISSUE #83.**
+> This is Stage 2 evidence/status, not product authority. Do not continue or retest it until Supervisor issues `DOCUMENTATION_GATE_ACCEPTED` and applicable technical authorization is active.
+
 # Stage 2A Bootstrap Baseline — Issue #73
 Status: PARTIAL / BLOCKED_BY_UNITY_ENVIRONMENT
 Date: 2026-09-30

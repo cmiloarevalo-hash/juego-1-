@@ -1,5 +1,5 @@
 # Gameplay Specification — Christmas Prototype Freeze
-Status: FROZEN candidate / #64. Authority: Issue #57 comment 5914691381.
+Status: FROZEN / SEMANTIC_ACCEPTED at PR #71 HEAD `09061b4ba372de41fb142ab4c43f1b4302f58083`. Authority: Issue #57 comment 5914691381.
 
 ## Run and input
 GAME-RUN-001 [FROZEN] Initialize → onboarding/traversal → army/gate/obstacle/combat interactions → final boss → terminal result.
@@ -39,3 +39,11 @@ GAME-RESULT-001 [FROZEN] Victory/Defeat are mutually terminal; result snapshot/e
 
 ## Content acceptance sequence
 GAME-STAGE-001 [FROZEN] One original Christmas village/workshop stage SHALL cover, in order sufficient for comprehension: onboarding/control; army growth; +/× choice; avoidable obstacle; hammer break; combat/snowball; final boss; result. Exact duration is MEASUREMENT_DERIVED by pacing/playtest.
+
+
+## Onboarding / pacing acceptance resolved by Supervisor review 5370716635
+GAME-PACE-001 [SUPERVISOR_ACCEPTED] Teach mandatory concepts in frozen order, initially one concept at a time: movement → army growth → +/× gate decision → avoidable obstacle → hammer break → snowball/combat → boss.
+GAME-PACE-002 [SUPERVISOR_ACCEPTED] Demonstrate a mechanic in a lower-risk context before requiring it under boss pressure.
+GAME-PACE-003 [SUPERVISOR_ACCEPTED] Escalate difficulty by combining already taught mechanics/tightening decisions; do not introduce unexplained rules or a new core mechanic for the first time during boss.
+GAME-PACE-004 [SUPERVISOR_ACCEPTED] First-time-user evidence is required; a critical concept requiring developer verbal explanation, repeatedly misread, or preventing explanation of Victory/Defeat cause is a blocking UX defect.
+GAME-PACE-005 [MEASUREMENT/PLAYTEST_DERIVED] Exact duration, spacing, damage, cooldown, counts and difficulty values remain playtest-derived.

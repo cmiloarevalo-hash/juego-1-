@@ -1,16 +1,10 @@
 # Technical Unity scaffold — Issue #73
+Classification: CURRENT_SUPPORTING technical evidence.
 
-Allowed scope only: bootstrap/instrumentation/synthetic experiments.
+## GLOBAL HOLD
+Issue #83 suspends execution of this scaffold. **Do not perform the steps below until Supervisor issues DOCUMENTATION_GATE_ACCEPTED and the relevant technical work is again authorized.**
 
-## On first verified Unity open
-1. Open with Unity 6000.3.25f1.
-2. Resolve packages and commit generated Packages/packages-lock.json.
-3. Commit generated .meta files.
-4. Create and save:
-   - Assets/Technical/Scenes/BootstrapScene.unity
-   - Assets/Technical/Scenes/SyntheticTestScene.unity
-5. Add Stage2RuntimeProbe to one empty GameObject in each technical scene.
-6. Configure Android PlayerSettings from BOOTSTRAP_BASELINE.md and record serialized settings.
-7. Verify clean compile before changing #73 from BLOCKED.
+## Previously prepared next execution
+When legally resumed: open with the pinned Stage 2 editor baseline, resolve packages and persist the generated lock, verify Android modules/config, use technical BootstrapScene/SyntheticTestScene and instrumentation only, then verify clean compile.
 
-No gameplay domain, Santa, army, gate, combat, boss, production level or final art belongs in this scaffold.
+No gameplay domain, Santa, army, gate, combat, boss, production level or final art belongs in this scaffold. Nothing in this file is product implementation authority.

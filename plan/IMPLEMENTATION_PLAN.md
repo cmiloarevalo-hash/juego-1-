@@ -1,65 +1,63 @@
 # IMPLEMENTATION_PLAN
+Status: CURRENT_SUPPORTING planning aid only. **NOT AUTHORIZATION.**
+Issue #83 global hold overrides every sequence below until `DOCUMENTATION_GATE_ACCEPTED`.
 
-## Pre-implementation gates
-P0. Supervisor reviews semantic product TBDs (combat/boss/metagame scope and performance/device targets). Refresh RG-001 and pin supported Unity/package versions. Decide/accept or revise ADRs. Execute required benchmark spikes when thresholds/devices exist. No product coding before authorization.
+## Preconditions before any product implementation
+P0. Documentation gate #83 accepted by Supervisor.
+P1. Canonical product spec remains PR #71 HEAD `09061b4ba372de41fb142ab4c43f1b4302f58083` unless a later explicit decision supersedes it.
+P2. Bounded Stage 2 technical readiness is completed/accepted as applicable: bootstrap/build evidence and X46 measurements. No benchmark value may be inferred.
+P3. Supervisor review 5370716635 resolves VUX-001..008. Future product-facing implementation must satisfy the corresponding VUX-* requirements and QA-VUX-* evidence; BG-009/010/011 remain unresolved measurement/provenance gates.
+P4. Any external asset/code item has exact provenance/license approval before import.
+P5. Separate implementation Work Item authorization exists.
 
-## Proposed future Work Items
-### IMP-01 Project/toolchain baseline
-OBJECTIVE: create Unity project baseline only after RG-001/ADR-006 resolution. SCOPE: engine/package/build settings. REQ: TECH-UNITY-001. AC: exact versions reproducible; Android/iOS dev build pipeline verified. VERIFICATION: clean checkout/build. RISKS: package compatibility. DEP: P0.
+## Future product sequence after the gates
+### IMP-01 Domain foundations
+Run phases, stable IDs, deterministic terminal ordering, exactly-once result contracts. Requirements: ARCH-001/006/007, TECH-TIME/ID.
 
-### IMP-02 Domain foundations + deterministic update ordering
-OBJECTIVE: implement stable IDs, run phases, event/order contracts. COMPONENTS: NC-002 foundation. REQ: GAME-RUN,TECH-TIME/ID. AC: unit tests for phase/order. DEP: IMP-01.
+### IMP-02 Input intent
+Normalized touch/test input feeding run/movement intent. Requirements: SRS-INPUT-001, GAME-INPUT-001.
 
-### IMP-03 Input intent
-NC-001. REQ SRS-INPUT/GAME-INPUT. AC touch/editor scripted parity; no product UI beyond test harness. DEP IMP-01/02.
+### IMP-03 Single-stage definition and validation
+Exactly one village/workshop vertical-slice definition with stable IDs and ordered onboarding → army growth → +/× choice → obstacle → hammer → snowball/combat → boss → result. No additional stages or metagame.
 
-### IMP-04 Level data + validator
-NC-003/018. REQ SRS-LEVEL,VER-LEVEL. AC malformed fixture coverage; sample authored test level. DEP IMP-02, ADR-004.
+### IMP-04 Army domain
+Authoritative non-negative helper count; army protects Santa; zero immediately defeats. No independent Santa HP baseline.
 
-### IMP-05 Army domain
-NC-004. REQ SRS-ARMY/GAME-ARMY. AC deterministic count/membership mutation tests. DEP IMP-02.
+### IMP-05 Formation/movement backend
+Preserve frozen domain contract. Exact runtime backend/capacity follows accepted X46 evidence; do not choose ECS/Jobs/GameObject strategy without measurements.
 
-### IMP-06 Formation solver
-NC-005. REQ SRS-FORM/GAME-FORM. AC stable slots/growth/shrink/compression tests. DEP IMP-05, ADR-001 provisional behavior.
+### IMP-06 Gate resolver
+Only positive-integer +N and ×N; stable gate ID; exactly-once mutation; no fractional/percentage/subtractive/conditional gate families.
 
-### IMP-07 Movement backend benchmark spike
-NC-006/017. Implement only minimal alternatives needed for EXP-CROWD/PERF-001/002. AC raw profiler artifacts on approved devices; decision evidence returned to ADR-001/RG-002/004. DEP IMP-01/05/06 + performance targets.
+### IMP-07 Representation lifecycle
+Acquire/release/reset boundary. Exact pooling/preallocation strategy follows X46 evidence; SST remains REFERENCE_ONLY unless separately approved.
 
-### IMP-08 Representation lifecycle
-NC-008. REQ ARCH-004/TECH-POOL. AC reset/capacity/stale-state tests. Strategy finalized using EXP-PERF-003. DEP IMP-05 + performance targets/ADR-002.
+### IMP-08 Obstacle/tool domain
+Avoidable obstacle; toy-maker hammer uses authored state/mesh/pre-broken transition. Runtime mesh fracture is OUT_OF_SCOPE.
 
-### IMP-09 Gates
-NC-007. REQ SRS-GATE/GAME-GATE. AC arithmetic/idempotency/overlap boundary tests. DEP IMP-04/05/08; Supervisor resolves rounding/min/max/formula set.
+### IMP-09 Combat and snowball
+Original authoritative target/attack/damage/death domain; snowball is ranged/combat verb. Presentation is not damage authority.
 
-### IMP-10 Combat target/damage/death
-NC-009/010. REQ SRS-COMBAT/GAME-COMBAT/DEATH. AC targeting tie/no-target/invalidation and lethal-order tests. DEP IMP-05/06/08 + Supervisor combat semantics/ADR-003.
+### IMP-10 Mandatory final boss
+One phase, readable/telegraphed, army participates, no adds/multiphase. Boss defeat produces Victory/result exactly once.
 
-### IMP-11 Boss/encounter specialization
-NC-011. CONDITIONAL: only if GAME-BOSS-001 approved. AC phase/victory tests. DEP IMP-10 + product decision.
+### IMP-11 Presentation/localization
+Implement only under later explicit product authorization and after applicable Stage 2 prerequisites. Must satisfy VUX-CHAR/CAM/UI/ANIM/FX/TYPE/ENV/PACE, originality, mobile readability, gate multi-cue semantics, ES+EN, and produce VUX-EVID-001..009 as applicable. Exact assets remain BG-011 provenance-gated; exact numeric/device/performance values remain BG-009/010 measurement-gated.
 
-### IMP-12 Result + progression transaction
-NC-012/013. REQ SRS-RESULT/PROG,DATA-RESULT. AC exactly-once reward, balances/prerequisites tests. DEP IMP-10/11 as applicable + economy rules.
+### IMP-12 Verification and acceptance
+Execute current VER-* suite, traceability, provenance/originality and device/performance gates. Product cannot be accepted by functional correctness alone while a VUX blocking decision remains unresolved.
 
-### IMP-13 Persistence/migration
-NC-014. REQ SRS-SAVE/DATA-SAVE. AC corrupt/interruption/migration/reset tests. DEP IMP-12, ADR-005.
+## Explicitly absent from this prototype plan
+- iOS;
+- kingdom/metagame/economy/upgrades/roster/cloud progression;
+- optional boss;
+- extra stages/forest/ice fortress;
+- extra gate families or tools;
+- runtime mesh fracture;
+- Play Store/commercial release work.
 
-### IMP-14 Presentation/HUD/camera
-NC-015/016. REQ UX/CAM/ARCH-008. AC gate readability, state sync, framing tests. DEP gameplay domains + RG-007/package decision.
+## Tuning and measurement
+Army capacity, backend, CPU/GPU/memory/thermal values derive from executed evidence. Damage/range/cooldown/count/spacing and stage duration/pacing numbers are tunable/playtest-derived inside frozen semantics.
 
-### IMP-15 Rendering/animation performance spike
-NC-015/017. Execute EXP-PERF-004/005 with representative art. AC raw captures and ADR-007 update. DEP IMP-01/08/14 + target devices/art.
-
-### IMP-16 Physics/performance integration
-Execute EXP-PERF-006 plus sustained EXP-PERF-007. AC budgets from PERFORMANCE_SPECIFICATION pass or documented remediation. DEP integrated representative build + approved budgets.
-
-### IMP-17 Content authoring + progression content
-OBJECTIVE: author original levels/economy tables/content under approved scope. AC validators pass; no proprietary Top Lords assets/balance copied. DEP systems + Supervisor content/economy scope.
-
-### IMP-18 Full verification/release-readiness
-Execute VER-* suite, device matrix, save migration, traceability and license audit. AC all approved requirements pass or exceptions explicitly accepted by Supervisor. DEP all authorized implementation WIs.
-
-## Dependency chain
-P0 -> IMP-01 -> IMP-02 -> {03,04,05}; 05 -> 06 -> 07/08 -> 09/10 -> optional 11 -> 12 -> 13; presentation 14 integrates domains; 15/16 gate performance; 17 authors content; 18 final verification.
-
-## Provenance policy
-No external COPY/ADAPT currently planned. Any change must update #14 matrix before implementation. Every implementation PR must cite requirement IDs, NC IDs, ADR status, verification evidence and source/reuse provenance.
+## Provenance
+Game-specific runner/army/gate/combat/boss/level logic is NEW. External assets/code require exact snapshot/license/provenance and explicit permitted classification before import.

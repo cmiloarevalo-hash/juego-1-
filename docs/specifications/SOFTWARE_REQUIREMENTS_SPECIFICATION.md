@@ -1,5 +1,5 @@
 # Software Requirements Specification — Christmas Prototype Freeze
-Status: FROZEN candidate / Issue #64. Authority: Supervisor decision Issue #57 comment 5914691381 (2026-09-30). Supersedes incompatible pre-Christmas #13 requirements for this prototype; historical Git remains evidence.
+Status: FROZEN / SEMANTIC_ACCEPTED at PR #71 HEAD `09061b4ba372de41fb142ab4c43f1b4302f58083`. Authority: Supervisor decision Issue #57 comment 5914691381 (2026-09-30). Supersedes incompatible pre-Christmas #13 requirements for this prototype; historical Git remains evidence.
 
 ## Product boundary
 SRS-PROD-001 [FROZEN] Playable Android-only 3D runner prototype delivered as installable APK.
@@ -30,3 +30,9 @@ SRS-PERF-001 [FROZEN] Acceptance baseline: stable 30 FPS on selected lower repre
 SRS-PERF-002 [MEASUREMENT_DERIVED] Max army, CPU/GPU budgets, memory ceiling and exact thermal/device thresholds derive from X46 evidence.
 SRS-REUSE-001 [FROZEN] Runner/army/gates/combat/boss/level logic NEW code baseline. Unknown-license repositories DO_NOT_COPY/ADAPT.
 SRS-ORIG-001 [FROZEN] No Grinch/distinctive third-party character, Top Lords identity/proprietary asset/UI, recognizable third-party composition or trade dress.
+
+
+## Product-quality requirements resolved by Supervisor review 5370716635
+SRS-VUX-001 [SUPERVISOR_ACCEPTED] Product-facing character, camera, HUD/result, animation, VFX/audio, typography/palette, environment-composition and onboarding/pacing requirements SHALL conform to `VISUAL_UX_CONTENT_SPECIFICATION.md` VUX-CHAR/CAM/UI/ANIM/FX/TYPE/ENV/PACE.
+SRS-VUX-002 [SUPERVISOR_ACCEPTED] Product-quality acceptance SHALL use `QUALITY_ACCEPTANCE_SPECIFICATION.md` QA-VUX-* and the required VUX-EVID-* evidence bundle.
+SRS-VUX-003 [FROZEN] Exact numeric tuning, performance/device results and exact external asset/code items are not created by these VUX requirements; BG-009/010 remain measurement-required and BG-011 remains provenance-required.
