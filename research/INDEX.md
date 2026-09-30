@@ -33,3 +33,7 @@ Every material research statement must be classified when needed as VERIFIED FAC
 
 - [Combat, targeting, death and bosses](mechanics/COMBAT_TARGETING_DEATH_BOSSES.md)
 - [Combat/targeting alternatives](../analysis/comparisons/COMBAT_TARGETING_ALTERNATIVES.md)
+
+## Performance
+- [Mobile performance research](performance/MOBILE_PERFORMANCE.md)
+- [Performance experiment matrix](../analysis/experiments/PERFORMANCE_EXPERIMENT_MATRIX.md)
