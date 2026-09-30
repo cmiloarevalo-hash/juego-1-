@@ -30,4 +30,8 @@ Read docs/specifications/SOFTWARE_REQUIREMENTS_SPECIFICATION.md, GAMEPLAY_SPECIF
 Historical #39–#47 and RG-XMAS-01..05 remain evidence. The Supervisor decision comment is later authority. Historical files are not erased.
 
 ## Current authorization boundary
-Stage 1 permits documentation/spec freeze/audit only. If #65 returns GO, GO means sufficient definition to begin a separately authorized Unity/Android Bootstrap + non-production performance/architecture spike. It does NOT itself authorize product gameplay, production level, asset/code import, APK release, merge, or self-approval.
+Issue #83 is the overriding GLOBAL HOLD. Until Supervisor explicitly issues `DOCUMENTATION_GATE_ACCEPTED`, #83 is the only active Work Item. Stage 2 continuation/retest, Stage 3, gameplay/product implementation, production content/level work, external asset/code import, APK/release work, architecture expansion, merge and self-approval are prohibited.
+
+PR #72 previously authorized a bounded Stage 2 technical tranche; that authorization is suspended by #83 hold, not converted into product authorization.
+
+Detailed visual/UX/content choices not fixed by the freeze are listed in `docs/specifications/VISUAL_UX_CONTENT_SPECIFICATION.md` and `analysis/findings/BLOCKING_GAP_REGISTER.md`. Their absence is not permission to improvise production choices.
