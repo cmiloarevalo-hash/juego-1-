@@ -4,7 +4,7 @@ PROGRAM ISSUE: #20 (operational controller); #1 remains master requirements/hist
 CURRENT DATE: 2026-09-30
 BASE: `research/issue-2-bootstrap@d02ba00ca28a1ee23c41e62276edff313dfeb5f2`
 CURRENT HEAD: Issue #20 branch; PR #21 handoff records reviewed orchestration HEAD
-ACTIVE WORK ITEM: #9 — verification/handoff
+ACTIVE WORK ITEM: #10 — levels, camera, authoring and UX
 ACTIVE PROGRAM CONTROLLER: #20
 ACTIVE PRS: #19 bootstrap; #21 orchestration
 
@@ -23,7 +23,8 @@ READY_FOR_REVIEW is not a global stop condition.
 - #6 — READY_FOR_REVIEW: alternatives, evidence limits and proposed experiments persisted; PR pending.
 - #7 — READY_FOR_REVIEW: gate arithmetic/lifecycle alternatives, edge cases and proposed experiments persisted; PR pending.
 - #8 — READY_FOR_REVIEW: combat/target/death/boss alternatives and edge cases persisted; PR pending.
-- #10–#11 — READY: #3 observable reference plus #4/#5 comparable evidence exist.
+- #10 — IN_PROGRESS: dependencies satisfied by #3/#4/#5 artifacts.
+- #11 — READY: dependencies satisfied by #3/#4/#5 artifacts.
 - #12–#18 — dependency-gated as stated in their Issues.
 
 ## Dependency semantics
@@ -56,4 +57,4 @@ No globally blocking condition. Only worker auto-reinvocation integration is par
 GH-001..GH-007 in `sources/official-documentation.md`.
 
 ## Next exact action
-Open #9 PR and record HEAD; then claim #10.
+Research level segmentation, obstacles/gates/combat zones, camera behavior, authoring data and observable UX; separate evidence from candidate design.
