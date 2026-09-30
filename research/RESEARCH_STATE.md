@@ -1,68 +1,64 @@
 # RESEARCH_STATE
 
-PROGRAM ISSUE: #1  
+PROGRAM ISSUE: #20 (operational controller); #1 remains master requirements/history source  
 CURRENT DATE: 2026-09-30  
-BASE: `main@9ba2f11372a434254aad9d81ed5fa5182c259f4d`  
-CURRENT HEAD: reviewed content HEAD `dd441936304e19a1c73f7165ff1aa02de34584f4`; subsequent metadata-only handoff commits may advance PR head  
-ACTIVE WORK ITEM: #2 — Research: Bootstrap de investigación persistente  
-ACTIVE BRANCH: `research/issue-2-bootstrap`  
-ACTIVE PR: #19
+BASE: `research/issue-2-bootstrap@d02ba00ca28a1ee23c41e62276edff313dfeb5f2`  
+CURRENT HEAD: Issue #20 branch; exact PR HEAD recorded at handoff  
+ACTIVE WORK ITEM: #20 — P0 persistent GitHub research orchestration  
+ACTIVE BRANCH: `infra/issue-20-research-orchestration`  
+ACTIVE PR: PENDING
+
+## Work item states
+- #2 — READY_FOR_REVIEW, PR #19, HEAD `d02ba00ca28a1ee23c41e62276edff313dfeb5f2`.
+- #20 — IN_PROGRESS.
+- #3–#18 — PAUSED by explicit Issue #20 program control until orchestration is reviewed.
+
+## Dependency semantics
+EXECUTION_DEPENDENCY: satisfied by required usable GitHub artifact; upstream review alone does not block.  
+ACCEPTANCE_DEPENDENCY: explicit Supervisor acceptance required. Never infer it.
+
+## Orchestration status
+STATE MACHINE: specified.  
+QUEUE/DISPATCHER: implemented as GitHub Actions workflow, dry-run by default.  
+DOUBLE-CLAIM PREVENTION: serialized dispatcher + state recheck; manual/external writers must obey protocol.  
+WATCHDOG: implemented as observational workflow.  
+WORKER INVOCATION: BLOCKED — no verified concrete agent API/App/credential/endpoint.  
+DEFAULT-BRANCH ACTIVATION: pending Supervisor review/merge; GitHub requires default-branch presence for schedule/repository_dispatch triggers.
 
 ## Completed work items
-None.
+None declared DONE by Supervisor.
 
-## Active work items
-- #2 Bootstrap — READY_FOR_REVIEW in PR #19; Supervisor acceptance pending.
+## Ready for review
+- #2 via PR #19.
 
-## Blocked work items
-- #5 requires #4.
-- #6–#8 require #3 plus sufficient repository analysis.
-- #10 requires #3 and comparable repositories.
-- #11 requires #3 and comparable references.
-- #12–#18 remain dependency-gated as defined in their Issues.
+## Active
+- #20.
 
-## Pending work items
-- #3 Top Lords observable — pending #2.
-- #4 Repository discovery/catalog — pending #2.
-- #9 Mobile performance/rendering/animation/physics — pending #2.
-- #5–#8, #10–#18 — pending dependencies.
+## Paused
+- #3–#18 by explicit #20 instruction.
 
-## Specification status
-Not started. Issue #13 owns specification authoring; outside Issue #2 Path Scope.
-
-## Repositories
-REPOSITORIES DISCOVERED: 0  
-REPOSITORIES ANALYZED: 0  
-REPOSITORIES PENDING: 0
+## Blocked
+Only the concrete worker-launch integration portion of #20 is BLOCKED. The generic control plane is not blocked.
 
 ## Sources reviewed
-- Internal program source: Issue #1.
-- Work-item definitions: Issues #2–#18.
-- External sources: 0.
+Seven GitHub official documentation records: GH-001..GH-007 in `sources/official-documentation.md`.
 
-## Mechanics
-MECHANICS COMPLETE: none.  
-MECHANICS PENDING: Top Lords observable; input/movement/crowd/formation; gates/spawning/mutation; combat/targeting/death/bosses; levels/camera/authoring/UX; progression/economy/metagame.
+## Research artifacts
+- `workflow/research/ORCHESTRATION.md`
+- `workflow/research/ORCHESTRATION_VERIFICATION.md`
+- `.github/workflows/research-dispatch.yml`
+- `.github/workflows/research-watchdog.yml`
 
-## Research gates
-None opened.
-
-## ADR status
-Not started.
-
-## Downstream artifacts
-REUSE MATRIX STATUS: not started; Issue #14.  
-NEW CODE INVENTORY STATUS: not started; Issue #15.  
-IMPLEMENTATION PLAN STATUS: not started; Issue #17.
+## Specification/reuse/new-code/plan status
+Product specifications: not started.  
+REUSE MATRIX: not started.  
+NEW CODE INVENTORY: not started.  
+ADR: not started.  
+IMPLEMENTATION PLAN: not started.
 
 ## Open questions
-None material for bootstrap.
-
-## Blockers
-None for Issue #2.
-
-## Next unlocked work
-After #2 is accepted/available as base, Issues #3, #4, and #9 have no further dependency beyond bootstrap. Per Supervisor instruction to continue by defined order, NEXT UNBLOCKED WORK ITEM: #3.
+- Which concrete supported worker integration can launch/reinvoke the research agent from GitHub?
+- What authentication/secret and acknowledgement contract does that integration require?
 
 ## Next exact action
-Supervisor reviews PR #19. For continued authorized execution, #3 is the next defined work item; do not merge or self-approve #19.
+Complete static verification, open Issue #20 PR, record real PR HEAD. Research #3–#18 remains PAUSED until #20's persisted review condition is satisfied.
