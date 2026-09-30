@@ -1,22 +1,20 @@
 # SESSION_HANDOFF
 DATE: 2026-09-30
 PROGRAM ISSUE: #20
-WORK ITEM: #11
+WORK ITEM: #12
 STATE: READY_FOR_REVIEW
-BASE: `research/issue-10-level-camera-authoring-ux`
-BRANCH: `research/issue-11-progression-economy-meta`
+BASE: `research/issue-11-progression-economy-meta`
+BRANCH: `research/issue-12-consolidation-gates`
 HEAD SHA: obtain from PR
 PR: pending
 
-## Sources
-TL-001/TL-002; REP-001 persistence observation; UNITY-014/015/016.
 ## Artifacts
-`research/mechanics/PROGRESSION_ECONOMY_METAGAME.md`; `analysis/comparisons/PROGRESSION_PERSISTENCE_ALTERNATIVES.md`.
+`analysis/findings/CONSOLIDATED_FINDINGS.md`; `decisions/adr/RESEARCH_GATES.md` (RG-001..007 DRAFT/PENDING).
 ## Verification
-PASS: rewards/upgrades/persistence/metagame systems and data ownership documented without invented economy values; observable claims separated from product candidates. No product code.
+PASS: cross-line convergence, contradictions, gaps and traceability seeds persisted; material mutable decisions have DRAFT Research Gates. No gate is marked approved/accepted.
 ## Open questions
-Exact economy values/content depth/backend/cloud scope remain UNKNOWN/product decisions.
+GAP-001..008 remain explicit. They can be represented as TBD/PENDING constraints in specs but cannot be silently resolved.
 ## Blockers
-None.
+No blocker to drafting #13 specifications. Material package/performance/product choices remain Supervisor PENDING before implementation commitment.
 ## Next executable
-#12 is now READY because research activities #2–#11 have sufficiently mature persisted artifacts. Begin consolidation/Research Gates.
+#13.
