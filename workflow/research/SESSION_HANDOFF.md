@@ -2,23 +2,24 @@
 
 DATE: 2026-09-30  
 PROGRAM ISSUE: #20  
-WORK ITEM: #4  
-BASE: `research/issue-3-top-lords`  
-HEAD SHA: recorded in PR conversation after final commit  
-BRANCH: `research/issue-4-repository-catalog`  
-PR: pending creation
+WORK ITEM: #5  
+STATE: IN_PROGRESS  
+BRANCH: `research/issue-5-code-analysis`  
+BASE: `research/issue-4-repository-catalog`
 
-## Work completed
-Discovered and fixed seven technically relevant Unity repositories by immutable commit SHA; recorded branch, relevance and license status. No repository is falsely marked deeply analyzed.
+## Persisted progress
+`research/repositories/DEEP_CODE_ANALYSIS.md` contains method-level observations for REP-001 and REP-005 at their immutable SHAs.
 
-## Key evidence
-REP-001 RunControl is closest gameplay-flow analogue but UNKNOWN_LICENSE. REP-003 and REP-004 have MIT verified. REP-005 has GPL-3.0 verified. REP-002/006/007 remain UNKNOWN_LICENSE.
+## Verified code findings
+- REP-001 `Batu.Hesaplama.AdamYönetimi/Degistir`: x/+/%/- army mutation over a pre-existing GameObject list using activation/deactivation; minimum one active unit.
+- REP-001 `BellekYonetim`: PlayerPrefs persistence utility.
+- REP-005: FormationAI/IFormationUnit/IFormationLeader/FormationGridPoint plus NavMesh/A* integration evidence establishes virtual formation targets and movement-backend adapters.
 
-## Verification against #4
-PASS: catalog includes license, engine/technical relevance, immutable ref/SHA and analysis priority; UNKNOWN_LICENSE is explicit; README-only claims remain SOURCE CLAIM; no product code.
+## License constraints
+REP-001 UNKNOWN_LICENSE: reference analysis only. REP-005 GPL-3.0: reference analysis; reuse decision deferred #14.
 
-## Blockers
-None for #4. License unknowns constrain reuse but do not prevent code reading/reference analysis in #5.
+## Remaining #5 work
+Inspect REP-002/003/004/006/007 at fixed SHAs; record paths/classes/methods/dependencies/flow/performance limitations; then verify Issue #5 and open PR.
 
-## Next executable work
-#5 is READY because the repository catalog artifact exists. #9 remains independently READY.
+## Next exact action
+Resume REP-002 code tree/search at `4f81451d7b77f058d75a5cb0233d69162e8c6ddc`, then REP-003/004/006/007. Do not restart discovery or rely on chat history.
