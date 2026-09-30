@@ -40,3 +40,6 @@ Every material research statement must be classified when needed as VERIFIED FAC
 
 - [Levels, camera, authoring and UX](mechanics/LEVEL_CAMERA_AUTHORING_UX.md)
 - [Level/camera authoring alternatives](../analysis/comparisons/LEVEL_CAMERA_AUTHORING_ALTERNATIVES.md)
+
+- [Progression, economy and metagame](mechanics/PROGRESSION_ECONOMY_METAGAME.md)
+- [Progression/persistence alternatives](../analysis/comparisons/PROGRESSION_PERSISTENCE_ALTERNATIVES.md)
