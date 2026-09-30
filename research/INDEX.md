@@ -23,3 +23,7 @@ Every material research statement must be classified when needed as VERIFIED FAC
 
 - [Deep comparable code analysis](repositories/DEEP_CODE_ANALYSIS.md)
 - [Cross-repository code findings](../analysis/findings/COMPARABLE_CODE_FINDINGS.md)
+
+## Mechanics
+- [Input, movement, crowd and formation](mechanics/INPUT_MOVEMENT_CROWD_FORMATION.md)
+- [Crowd/formation alternatives](../analysis/comparisons/CROWD_FORMATION_ALTERNATIVES.md)

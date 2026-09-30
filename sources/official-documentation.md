@@ -72,3 +72,43 @@ DATE ACCESSED: 2026-09-30
 VERSION: package com.gamespark.topking.gp, current listing at access time  
 LICENSE: N/A — evidence reference only; no code reuse  
 RELEVANT CLAIMS: swipe/path choice, army growth, resources/territory, fiefs/taxes, heroes, griffin, strategy/4X/single-player descriptors.
+
+## UNITY-001 — NavMesh Agent manual
+AUTHOR/OWNER: Unity Technologies  
+SOURCE TYPE: official documentation  
+URL: https://docs.unity3d.com/Manual/class-NavMeshAgent.html  
+DATE ACCESSED: 2026-09-30  
+VERSION: current documentation route; exact target Unity version not yet selected  
+LICENSE: documentation reference only  
+RELEVANT CLAIMS: NavMeshAgent provides pathfinding/spatial reasoning and local avoidance parameters for moving characters.  
+NOTES: API/package-version choice remains subject to a later Research Gate.
+
+## UNITY-002 — Input System manual/package documentation
+AUTHOR/OWNER: Unity Technologies  
+SOURCE TYPE: official documentation  
+URL: https://docs.unity3d.com/Manual/com.unity.inputsystem.html  
+DATE ACCESSED: 2026-09-30  
+VERSION: current documentation route; target package version UNKNOWN  
+LICENSE: documentation reference only  
+RELEVANT CLAIMS: Unity provides a package-based Input System intended as an extensible/customizable input alternative and supports touch/input devices.  
+NOTES: This supports abstraction feasibility, not a package-version decision.
+
+## UNITY-003 — Mobile optimization / profiling guidance
+AUTHOR/OWNER: Unity Technologies  
+SOURCE TYPE: official documentation  
+URL: https://docs.unity3d.com/Manual/MobileOptimizationPracticalGuide.html  
+DATE ACCESSED: 2026-09-30  
+VERSION: documentation route contains historically versioned guidance  
+LICENSE: documentation reference only  
+RELEVANT CLAIMS: profile on target devices; CPU and GPU bottlenecks differ; optimization choices are workload/device dependent.  
+NOTES: Used to prohibit unsupported performance winners and to require profiling experiments.
+
+## UNITY-004 — Mobile scripting optimization / object pooling guidance
+AUTHOR/OWNER: Unity Technologies  
+SOURCE TYPE: official documentation  
+URL: https://docs.unity3d.com/Manual/MobileOptimizationPracticalScriptingOptimizations.html  
+DATE ACCESSED: 2026-09-30  
+VERSION: documentation route contains historically versioned guidance  
+LICENSE: documentation reference only  
+RELEVANT CLAIMS: frequent Instantiate/Destroy can increase allocation/GC work; pooling can shift creation cost but oversized pools also consume heap and can worsen collection costs.  
+NOTES: Pooling is therefore a measured tradeoff, not a universal rule.
