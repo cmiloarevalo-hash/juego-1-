@@ -112,3 +112,21 @@ VERSION: documentation route contains historically versioned guidance
 LICENSE: documentation reference only  
 RELEVANT CLAIMS: frequent Instantiate/Destroy can increase allocation/GC work; pooling can shift creation cost but oversized pools also consume heap and can worsen collection costs.  
 NOTES: Pooling is therefore a measured tradeoff, not a universal rule.
+
+## UNITY-005 — Collider.OnTriggerEnter
+AUTHOR/OWNER: Unity Technologies  
+SOURCE TYPE: official Scripting API  
+URL: https://docs.unity3d.com/ScriptReference/Collider.OnTriggerEnter.html  
+DATE ACCESSED: 2026-09-30  
+VERSION: current route; target Unity version not fixed  
+RELEVANT CLAIMS: trigger-overlap callback exists; physics configuration/timing constraints documented.  
+NOTES: candidate gate detection mechanism only.
+
+## UNITY-006 — UnityEngine.Pool.ObjectPool<T>
+AUTHOR/OWNER: Unity Technologies  
+SOURCE TYPE: official Scripting API  
+URL: https://docs.unity3d.com/ScriptReference/Pool.ObjectPool_1.html  
+DATE ACCESSED: 2026-09-30  
+VERSION: current route; target Unity version not fixed  
+RELEVANT CLAIMS: stack-based object pool exposes Get/Release and active/inactive counts; pool may create when empty and destroy on release when full.  
+NOTES: exact API availability/version requires later Research Gate.
