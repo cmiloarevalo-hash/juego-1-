@@ -45,4 +45,4 @@ Later explicit Supervisor/Product Owner decisions supersede earlier proposals wh
 `plan/IMPLEMENTATION_PLAN.md` and `new-code/IMPLEMENTATION_INVENTORY.md` are current-facing planning aids only after their #83 remediation; neither authorizes work.
 
 ## Prohibited inference
-Absence of a resolved visual/UX/content decision is not permission for an Implementer to choose silently. Items marked `REQUIRES_SUPERVISOR_DECISION` in the visual/UX spec and Blocking Gap Register stop the affected product implementation.
+Supervisor review 5370716635 resolved the former VUX-GAP-001..008 product-quality decisions. Current accepted VUX baselines are in `VISUAL_UX_CONTENT_SPECIFICATION.md` and observable acceptance IDs in `QUALITY_ACCEPTANCE_SPECIFICATION.md`. BG-009/010 remain measurement-required and BG-011 remains provenance-required; none may be silently inferred.
