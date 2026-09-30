@@ -4,7 +4,7 @@ PROGRAM ISSUE: #20 (operational controller); #1 remains master requirements/hist
 CURRENT DATE: 2026-09-30
 BASE: `research/issue-2-bootstrap@d02ba00ca28a1ee23c41e62276edff313dfeb5f2`
 CURRENT HEAD: Issue #20 branch; PR #21 handoff records reviewed orchestration HEAD
-ACTIVE WORK ITEM: #17 — verification/handoff
+ACTIVE WORK ITEM: #18 — final audit/handoff
 ACTIVE PROGRAM CONTROLLER: #20
 ACTIVE PRS: #19 bootstrap; #21 orchestration
 
@@ -31,7 +31,7 @@ READY_FOR_REVIEW is not a global stop condition.
 - #15 — READY_FOR_REVIEW: NC-001..NC-018 inventory persisted with requirements/interfaces/dependencies/tests/risks; PR pending.
 - #16 — READY_FOR_REVIEW: ADR-001..007 PROPOSED/PENDING persisted; ADR-006 explicitly blocked on RG-001 refresh before implementation.
 - #17 — READY_FOR_REVIEW: conditional IMP-01..IMP-18 plan derived from specs/reuse/inventory/ADRs; PR pending.
-- #18 — READY: all prior deliverables #2–#17 are persisted at READY_FOR_REVIEW quality; final audit may inspect/correct them without ordinary PR acceptance.
+- #18 — READY_FOR_REVIEW: final end-to-end traceability/completeness audit persisted; PR pending.
 
 ## Dependency semantics
 EXECUTION_DEPENDENCY: satisfied by required usable GitHub artifact; upstream review alone does not block.
@@ -50,11 +50,10 @@ DEFAULT-BRANCH ACTIONS ACTIVATION: pending ordinary review/merge; not a blocker 
 - #20 control plane — PR #21.
 
 ## Active
-- #3 verification/handoff.
+- #18 final verification/handoff.
 
 ## Ready
-- #4.
-- #9.
+None within #2–#18 after #18 PR creation.
 
 ## Blocked
 No globally blocking condition. Only worker auto-reinvocation integration is partial BLOCKED/UNKNOWN.
@@ -63,4 +62,4 @@ No globally blocking condition. Only worker auto-reinvocation integration is par
 GH-001..GH-007 in `sources/official-documentation.md`.
 
 ## Next exact action
-Open #17 PR; claim #18 and audit end-to-end traceability/completeness, correcting documentary defects within authorized scope.
+Open #18 PR, record real HEAD and persist final program handoff. Then no further #2–#18 research Work Item remains executable; Supervisor review/decisions are the next human action before product implementation.
