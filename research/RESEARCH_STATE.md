@@ -4,7 +4,7 @@ PROGRAM ISSUE: #20 (operational controller); #1 remains master requirements/hist
 CURRENT DATE: 2026-09-30
 BASE: `research/issue-2-bootstrap@d02ba00ca28a1ee23c41e62276edff313dfeb5f2`
 CURRENT HEAD: Issue #20 branch; PR #21 handoff records reviewed orchestration HEAD
-ACTIVE WORK ITEM: #17 — implementation plan
+ACTIVE WORK ITEM: #17 — verification/handoff
 ACTIVE PROGRAM CONTROLLER: #20
 ACTIVE PRS: #19 bootstrap; #21 orchestration
 
@@ -30,8 +30,8 @@ READY_FOR_REVIEW is not a global stop condition.
 - #14 — READY_FOR_REVIEW: complete provenance/reuse matrix persisted; PR pending.
 - #15 — READY_FOR_REVIEW: NC-001..NC-018 inventory persisted with requirements/interfaces/dependencies/tests/risks; PR pending.
 - #16 — READY_FOR_REVIEW: ADR-001..007 PROPOSED/PENDING persisted; ADR-006 explicitly blocked on RG-001 refresh before implementation.
-- #17 — IN_PROGRESS: all planning inputs exist; pending decisions will be explicit prerequisites.
-- #18 — dependency-gated.
+- #17 — READY_FOR_REVIEW: conditional IMP-01..IMP-18 plan derived from specs/reuse/inventory/ADRs; PR pending.
+- #18 — READY: all prior deliverables #2–#17 are persisted at READY_FOR_REVIEW quality; final audit may inspect/correct them without ordinary PR acceptance.
 
 ## Dependency semantics
 EXECUTION_DEPENDENCY: satisfied by required usable GitHub artifact; upstream review alone does not block.
@@ -63,4 +63,4 @@ No globally blocking condition. Only worker auto-reinvocation integration is par
 GH-001..GH-007 in `sources/official-documentation.md`.
 
 ## Next exact action
-Derive implementation Work Items from requirement IDs/NC inventory/ADRs, with scope, AC, verification, risks, dependencies and explicit pre-implementation gates.
+Open #17 PR; claim #18 and audit end-to-end traceability/completeness, correcting documentary defects within authorized scope.
