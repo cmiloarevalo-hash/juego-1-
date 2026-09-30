@@ -17,3 +17,6 @@ Every material research statement must be classified when needed as VERIFIED FAC
 - [Top Lords observable reference](games/top-lords/OBSERVABLE_REFERENCE.md)
 - [Top Lords evidence register](games/top-lords/EVIDENCE_REGISTER.md)
 - [Top Lords findings](../analysis/findings/TOP_LORDS_FINDINGS.md)
+
+## Repositories
+- [Comparable repository catalog](repositories/CATALOG.md)

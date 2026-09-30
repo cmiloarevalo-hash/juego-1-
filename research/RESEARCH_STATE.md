@@ -4,7 +4,7 @@ PROGRAM ISSUE: #20 (operational controller); #1 remains master requirements/hist
 CURRENT DATE: 2026-09-30
 BASE: `research/issue-2-bootstrap@d02ba00ca28a1ee23c41e62276edff313dfeb5f2`
 CURRENT HEAD: Issue #20 branch; PR #21 handoff records reviewed orchestration HEAD
-ACTIVE WORK ITEM: #3 — verification/handoff
+ACTIVE WORK ITEM: #4 — verification/handoff
 ACTIVE PROGRAM CONTROLLER: #20
 ACTIVE PRS: #19 bootstrap; #21 orchestration
 
@@ -17,9 +17,9 @@ READY_FOR_REVIEW is not a global stop condition.
 - #2 — READY_FOR_REVIEW, PR #19, HEAD `d02ba00ca28a1ee23c41e62276edff313dfeb5f2`.
 - #20 — READY_FOR_REVIEW for implemented control plane, PR #21; worker auto-reinvocation remains partial BLOCKED/UNKNOWN.
 - #3 — READY_FOR_REVIEW; PR pending creation.
-- #4 — READY (bootstrap execution dependency satisfied).
+- #4 — READY_FOR_REVIEW; PR pending creation.
 - #9 — READY (bootstrap execution dependency satisfied).
-- #5 — waits for #4 catalog artifact.
+- #5 — READY: #4 catalog artifact exists with fixed SHAs/licenses.
 - #6–#8 — wait for #3 plus sufficient repository analysis.
 - #10–#11 — wait for #3 plus comparable repository/reference evidence.
 - #12–#18 — dependency-gated as stated in their Issues.
@@ -54,4 +54,4 @@ No globally blocking condition. Only worker auto-reinvocation integration is par
 GH-001..GH-007 in `sources/official-documentation.md`.
 
 ## Next exact action
-Open #3 PR and record real HEAD. Then execute #4 (READY) by program order; #9 also remains READY.
+Open #4 PR and record real HEAD. Then execute #5 by program order; #9 remains independently READY.

@@ -2,29 +2,23 @@
 
 DATE: 2026-09-30  
 PROGRAM ISSUE: #20  
-WORK ITEM: #3  
-BASE: `infra/issue-20-research-orchestration`  
+WORK ITEM: #4  
+BASE: `research/issue-3-top-lords`  
 HEAD SHA: recorded in PR conversation after final commit  
-BRANCH: `research/issue-3-top-lords`  
+BRANCH: `research/issue-4-repository-catalog`  
 PR: pending creation
 
 ## Work completed
-Researched Top Lords observable behavior using primary Apple/Google storefronts plus identified gameplay-video leads. Persisted observable reference, evidence register and findings. No proprietary code assumptions and no product code.
+Discovered and fixed seven technically relevant Unity repositories by immutable commit SHA; recorded branch, relevance and license status. No repository is falsely marked deeply analyzed.
 
-## Evidence produced
-- `research/games/top-lords/OBSERVABLE_REFERENCE.md`
-- `research/games/top-lords/EVIDENCE_REGISTER.md`
-- `analysis/findings/TOP_LORDS_FINDINGS.md`
-- TL-001/TL-002 source records in `sources/official-documentation.md`
+## Key evidence
+REP-001 RunControl is closest gameplay-flow analogue but UNKNOWN_LICENSE. REP-003 and REP-004 have MIT verified. REP-005 has GPL-3.0 verified. REP-002/006/007 remain UNKNOWN_LICENSE.
 
-## Verification against #3
-PASS: mechanics/loops/UI-UX/progression claims available from primary sources are documented; unknown implementation details are explicit; evidence classes and source URLs are persisted; indexes/state updated; no product implementation.
-
-## Open questions
-Exact movement model, gate arithmetic, formation, spawning/pooling, targeting/damage/death/boss behavior, camera implementation and detailed economy remain UNKNOWN and are delegated to authorized later Issues.
+## Verification against #4
+PASS: catalog includes license, engine/technical relevance, immutable ref/SHA and analysis priority; UNKNOWN_LICENSE is explicit; README-only claims remain SOURCE CLAIM; no product code.
 
 ## Blockers
-None for #3. WORKER_AUTO_REINVOCATION remains partial BLOCKED/UNKNOWN at program level and does not block research.
+None for #4. License unknowns constrain reuse but do not prevent code reading/reference analysis in #5.
 
 ## Next executable work
-#4 repository discovery is READY and next by Issue order. #9 is independently READY.
+#5 is READY because the repository catalog artifact exists. #9 remains independently READY.
