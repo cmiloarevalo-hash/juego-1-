@@ -1,29 +1,30 @@
 # SESSION_HANDOFF
 
-DATE: 2026-09-30  
-PROGRAM ISSUE: #20  
-WORK ITEM: #8  
-STATE: READY_FOR_REVIEW  
-BASE: `research/issue-7-gates-spawning-army`  
-BRANCH: `research/issue-8-combat-targeting-bosses`  
-HEAD SHA: obtain from PR  
+DATE: 2026-09-30
+PROGRAM ISSUE: #20
+WORK ITEM: #9
+STATE: READY_FOR_REVIEW
+BASE: `research/issue-8-combat-targeting-bosses`
+BRANCH: `research/issue-9-mobile-performance`
+HEAD SHA: obtain from PR
 PR: pending
 
 ## Sources
-TL-001/TL-002 primary storefront claims plus repository architecture evidence from #5. Detailed unverified secondary Top Lords combat-guide claims were intentionally not promoted to facts.
+UNITY-003/004/006/007/008/009/010 and REP-002..REP-007 code observations.
 
 ## Artifacts
-- `research/mechanics/COMBAT_TARGETING_DEATH_BOSSES.md`
-- `analysis/comparisons/COMBAT_TARGETING_ALTERNATIVES.md`
+- `research/performance/MOBILE_PERFORMANCE.md`
+- `analysis/experiments/PERFORMANCE_EXPERIMENT_MATRIX.md`
+- RG-PERF-001 DRAFT embedded in performance research.
 
 ## Verification
-PASS: engagement, acquisition, attack/damage/death, boss and result alternatives documented; code/primary evidence boundary explicit; proposed experiments NOT RUN; no invented Top Lords algorithms and no product code.
+PASS: profiling, pooling/GC, rendering, animation, physics and mobile-device methodology documented. Seven experiments specified and explicitly NOT RUN. No arbitrary budget or benchmark invented.
 
 ## Open questions
-Exact product targeting, damage model, boss model and result condition await #10/#11/#12/#13 evidence and decisions.
+Exact supported Unity/package versions, min devices, FPS/memory/unit-count budgets and measured architecture winner remain UNKNOWN; RG-PERF-001 must be refreshed before material ADR.
 
 ## Blockers
-None.
+None for #9.
 
 ## Next executable
-#9, #10, #11.
+#10, #11; #12 waits for research lines sufficiently mature.

@@ -4,7 +4,7 @@ PROGRAM ISSUE: #20 (operational controller); #1 remains master requirements/hist
 CURRENT DATE: 2026-09-30
 BASE: `research/issue-2-bootstrap@d02ba00ca28a1ee23c41e62276edff313dfeb5f2`
 CURRENT HEAD: Issue #20 branch; PR #21 handoff records reviewed orchestration HEAD
-ACTIVE WORK ITEM: #8 — verification/handoff
+ACTIVE WORK ITEM: #9 — verification/handoff
 ACTIVE PROGRAM CONTROLLER: #20
 ACTIVE PRS: #19 bootstrap; #21 orchestration
 
@@ -18,7 +18,7 @@ READY_FOR_REVIEW is not a global stop condition.
 - #20 — READY_FOR_REVIEW for implemented control plane, PR #21; worker auto-reinvocation remains partial BLOCKED/UNKNOWN.
 - #3 — READY_FOR_REVIEW; PR pending creation.
 - #4 — READY_FOR_REVIEW; PR pending creation.
-- #9 — READY (bootstrap execution dependency satisfied).
+- #9 — READY_FOR_REVIEW: profiling/rendering/animation/physics/GC strategy, experiment matrix and RG-PERF-001 DRAFT persisted; PR pending.
 - #5 — READY_FOR_REVIEW; seven fixed repositories analyzed at method/architecture level; PR pending creation.
 - #6 — READY_FOR_REVIEW: alternatives, evidence limits and proposed experiments persisted; PR pending.
 - #7 — READY_FOR_REVIEW: gate arithmetic/lifecycle alternatives, edge cases and proposed experiments persisted; PR pending.
@@ -56,4 +56,4 @@ No globally blocking condition. Only worker auto-reinvocation integration is par
 GH-001..GH-007 in `sources/official-documentation.md`.
 
 ## Next exact action
-Open #8 PR and record HEAD; then claim #9, the next READY line.
+Open #9 PR and record HEAD; then claim #10.
