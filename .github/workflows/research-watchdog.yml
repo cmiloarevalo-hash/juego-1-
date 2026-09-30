@@ -1,0 +1,36 @@
+name: Research watchdog
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Off the top of the hour to reduce documented schedule-delay risk.
+    - cron: "17 */6 * * *"
+
+permissions:
+  contents: read
+  issues: read
+
+concurrency:
+  group: research-watchdog
+  cancel-in-progress: false
+
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Report claimed or in-progress research work
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          issues="$(gh api --paginate "repos/$REPO/issues?state=open&per_page=100")"
+          jq -r '
+            map(select(.pull_request == null))
+            | map(select(.number >= 3 and .number <= 18))
+            | map(select(any(.labels[]?; (.name == "research:state:CLAIMED" or .name == "research:state:IN_PROGRESS"))))
+            | .[]
+            | "watchdog candidate #\(.number): \([.labels[].name] | join(",")) updated=\(.updated_at)"
+          ' <<<"$issues"
+          echo "Observation only: automatic reassignment is disabled until worker retry/ack semantics are verified."
