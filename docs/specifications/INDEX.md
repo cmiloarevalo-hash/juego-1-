@@ -14,7 +14,7 @@ Current execution is separately blocked by Issue #83 documentation hold.
 - [Spec Freeze Matrix](SPEC_FREEZE_MATRIX.md)
 
 ## #83 completeness extension
-- [Visual / UX / Content Specification](VISUAL_UX_CONTENT_SPECIFICATION.md) — restates accepted baseline and explicitly blocks unresolved quality decisions; it does not alter the #64 freeze.
-- [Quality Acceptance Specification](QUALITY_ACCEPTANCE_SPECIFICATION.md) — defines how functional + quality readiness is judged without inventing missing art/UX targets.
+- [Visual / UX / Content Specification](VISUAL_UX_CONTENT_SPECIFICATION.md) — contains the Supervisor-approved VUX-001..008 bounded prototype baselines from review 5370716635; it does not alter frozen gameplay semantics.
+- [Quality Acceptance Specification](QUALITY_ACCEPTANCE_SPECIFICATION.md) — defines observable QA-VUX-* acceptance criteria and required future evidence for the approved VUX baselines.
 
 Read [Documentation Authority Map](../DOCUMENTATION_AUTHORITY_MAP.md) before historical research/ADRs. Historical pre-freeze requirements do not override this set.
