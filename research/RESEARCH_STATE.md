@@ -4,7 +4,7 @@ PROGRAM ISSUE: #20 (operational controller); #1 remains master requirements/hist
 CURRENT DATE: 2026-09-30
 BASE: `research/issue-2-bootstrap@d02ba00ca28a1ee23c41e62276edff313dfeb5f2`
 CURRENT HEAD: Issue #20 branch; PR #21 handoff records reviewed orchestration HEAD
-ACTIVE WORK ITEM: #5 — deep code analysis
+ACTIVE WORK ITEM: #5 — verification/handoff
 ACTIVE PROGRAM CONTROLLER: #20
 ACTIVE PRS: #19 bootstrap; #21 orchestration
 
@@ -19,9 +19,9 @@ READY_FOR_REVIEW is not a global stop condition.
 - #3 — READY_FOR_REVIEW; PR pending creation.
 - #4 — READY_FOR_REVIEW; PR pending creation.
 - #9 — READY (bootstrap execution dependency satisfied).
-- #5 — IN_PROGRESS: REP-001 and REP-005 method-level evidence persisted; REP-002/003/004/006/007 pending.
-- #6–#8 — wait for #3 plus sufficient repository analysis.
-- #10–#11 — wait for #3 plus comparable repository/reference evidence.
+- #5 — READY_FOR_REVIEW; seven fixed repositories analyzed at method/architecture level; PR pending creation.
+- #6–#8 — READY: #3 observable reference and #5 sufficient repository-analysis artifacts exist.
+- #10–#11 — READY: #3 observable reference plus #4/#5 comparable evidence exist.
 - #12–#18 — dependency-gated as stated in their Issues.
 
 ## Dependency semantics
@@ -54,4 +54,4 @@ No globally blocking condition. Only worker auto-reinvocation integration is par
 GH-001..GH-007 in `sources/official-documentation.md`.
 
 ## Next exact action
-Continue #5 at fixed SHAs: inspect REP-002, REP-003, REP-004, REP-006 and REP-007 method-level code; then reconstruct supported gameplay/architecture flows and verify #5. #9 remains independently READY.
+Open #5 PR and record real HEAD. Recalculate issue dependencies from GitHub; proceed to the lowest-numbered authorized READY Work Item unless an explicit acceptance dependency says otherwise.
