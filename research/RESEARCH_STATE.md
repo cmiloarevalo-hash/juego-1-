@@ -76,3 +76,13 @@ Open #18 PR, record real HEAD and persist final program handoff. Then no further
 - #46 READY_FOR_REVIEW — PR #55 @ a61c23e93edff60604e15c4872be14bb33fe6354
 - #47 READY_FOR_REVIEW: consolidation persisted on `research/issue-47-christmas-consolidation`; PR pending.
 No product implementation authorized. Human decisions RG-XMAS-01..05 remain PENDING.
+
+
+## Current canonical product context — Issue #57
+- Authority entrypoint: `PROJECT_AUTHORITY.md`.
+- #39–#47 research: SEMANTIC_ACCEPTED at PR #48–#56 recorded HEADs; acceptance is research-only.
+- Human update: boss = CONFIRMED YES. Santa health = PENDING comparative decision.
+- Kingdom/metagame = OUT_OF_SCOPE; Play Store/commercialization = DEFERRED.
+- RG-XMAS-01 PARTIAL/PENDING; RG-XMAS-02/03/05 PENDING; RG-XMAS-04 PENDING, benchmarks NOT RUN.
+- #57: IN_PROGRESS on `docs/issue-57-canonical-context`; cold handoff PASS WITH RECORDED SUPERSESSION.
+- No implementation/import/merge authorization.
