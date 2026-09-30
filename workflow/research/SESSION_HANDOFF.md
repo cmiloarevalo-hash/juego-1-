@@ -5,8 +5,8 @@ WORK ITEM: #18
 STATE: READY_FOR_REVIEW
 BASE: `research/issue-17-implementation-plan`
 BRANCH: `research/issue-18-final-audit`
-HEAD SHA: obtain from PR
-PR: pending
+HEAD SHA: `0acb6aae1e53d02e0294e2aadbf7e854dfbf4867` (reviewed #18 content before final metadata-only commits)
+PR: #37
 
 ## Program state
 Issues #2–#18 have persisted deliverables at READY_FOR_REVIEW quality. No merge or self-approval occurred. This does not mean SEMANTIC_ACCEPTED or implementation-authorized.
