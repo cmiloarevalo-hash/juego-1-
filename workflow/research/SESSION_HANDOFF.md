@@ -3,23 +3,34 @@
 DATE: 2026-09-30  
 PROGRAM ISSUE: #20  
 WORK ITEM: #5  
-STATE: IN_PROGRESS  
+STATE: READY_FOR_REVIEW  
+BASE: `research/issue-4-repository-catalog`  
 BRANCH: `research/issue-5-code-analysis`  
-BASE: `research/issue-4-repository-catalog`
+HEAD SHA: record from PR after final commit  
+PR: pending creation
 
-## Persisted progress
-`research/repositories/DEEP_CODE_ANALYSIS.md` contains method-level observations for REP-001 and REP-005 at their immutable SHAs.
+## Work completed
+Completed code-level analysis of REP-001..REP-007 at fixed SHAs. Persisted paths/classes/methods, dependencies, execution flows, lifecycle patterns, performance-relevant limitations, license constraints and explicit UNKNOWN links.
 
-## Verified code findings
-- REP-001 `Batu.Hesaplama.AdamYönetimi/Degistir`: x/+/%/- army mutation over a pre-existing GameObject list using activation/deactivation; minimum one active unit.
-- REP-001 `BellekYonetim`: PlayerPrefs persistence utility.
-- REP-005: FormationAI/IFormationUnit/IFormationLeader/FormationGridPoint plus NavMesh/A* integration evidence establishes virtual formation targets and movement-backend adapters.
+## Evidence produced
+- `research/repositories/DEEP_CODE_ANALYSIS.md`
+- `analysis/findings/COMPARABLE_CODE_FINDINGS.md`
+- existing `sources/repositories.md` remains the immutable SHA/license register.
 
-## License constraints
-REP-001 UNKNOWN_LICENSE: reference analysis only. REP-005 GPL-3.0: reference analysis; reuse decision deferred #14.
+## Verification against #5
+PASS. Concrete code paths/classes/methods and dependencies documented. Flow reconstructed where applicable. No complete Input→Crowd→Gate→Combat→Result chain is falsely claimed; unsupported links remain UNKNOWN. Evidence classes are explicit. No product code.
 
-## Remaining #5 work
-Inspect REP-002/003/004/006/007 at fixed SHAs; record paths/classes/methods/dependencies/flow/performance limitations; then verify Issue #5 and open PR.
+## Key downstream evidence
+- preallocated SetActive roster for gate mutation: REP-001;
+- manager-centralized steering + NavMesh + Burst job avoidance: REP-002;
+- shared Dijkstra field + cell pedestrian density: REP-003;
+- boid/social-force alternatives: REP-004;
+- movement-backend-independent formation targets: REP-005;
+- centralized steering + grid A*/bidirectional A*: REP-006;
+- Rigidbody + educational A*: REP-007.
 
-## Next exact action
-Resume REP-002 code tree/search at `4f81451d7b77f058d75a5cb0233d69162e8c6ddc`, then REP-003/004/006/007. Do not restart discovery or rely on chat history.
+## Blockers
+None for #5. UNKNOWN_LICENSE repositories remain reference-only. WORKER_AUTO_REINVOCATION remains partial BLOCKED/UNKNOWN and is not a program blocker.
+
+## Next action
+Create #5 PR, record HEAD, then recompute #6–#18 dependency graph and continue an authorized READY item without waiting for ordinary review.
