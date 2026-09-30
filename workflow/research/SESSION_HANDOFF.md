@@ -2,35 +2,29 @@
 
 DATE: 2026-09-30  
 PROGRAM ISSUE: #20  
-WORK ITEM: #5  
+WORK ITEM: #6  
 STATE: READY_FOR_REVIEW  
-BASE: `research/issue-4-repository-catalog`  
-BRANCH: `research/issue-5-code-analysis`  
-HEAD SHA: record from PR after final commit  
-PR: pending creation
+BASE: `research/issue-5-code-analysis`  
+BRANCH: `research/issue-6-input-crowd-formation`  
+HEAD SHA: obtain from PR after final commit  
+PR: pending
 
-## Work completed
-Completed code-level analysis of REP-001..REP-007 at fixed SHAs. Persisted paths/classes/methods, dependencies, execution flows, lifecycle patterns, performance-relevant limitations, license constraints and explicit UNKNOWN links.
+## Sources
+TL-001/TL-002; REP-002..REP-007 code evidence; UNITY-001..UNITY-004 official documentation.
 
-## Evidence produced
-- `research/repositories/DEEP_CODE_ANALYSIS.md`
-- `analysis/findings/COMPARABLE_CODE_FINDINGS.md`
-- existing `sources/repositories.md` remains the immutable SHA/license register.
+## Artifacts
+- `research/mechanics/INPUT_MOVEMENT_CROWD_FORMATION.md`
+- `analysis/comparisons/CROWD_FORMATION_ALTERNATIVES.md`
+- updated source/index/state documents.
 
-## Verification against #5
-PASS. Concrete code paths/classes/methods and dependencies documented. Flow reconstructed where applicable. No complete Input→Crowd→Gate→Combat→Result chain is falsely claimed; unsupported links remain UNKNOWN. Evidence classes are explicit. No product code.
+## Verification
+PASS against Issue #6: input and crowd/formation alternatives compared across behavior, complexity, performance evidence, determinism, mobile suitability and dependencies. Facts/code observations/inferences/unknowns separated. EXP-CROWD-001/002 are explicitly PROPOSED/NOT RUN; no benchmark invented. No product code.
 
-## Key downstream evidence
-- preallocated SetActive roster for gate mutation: REP-001;
-- manager-centralized steering + NavMesh + Burst job avoidance: REP-002;
-- shared Dijkstra field + cell pedestrian density: REP-003;
-- boid/social-force alternatives: REP-004;
-- movement-backend-independent formation targets: REP-005;
-- centralized steering + grid A*/bidirectional A*: REP-006;
-- Rigidbody + educational A*: REP-007.
+## Open questions
+Target Unity/package versions, target device tiers, approved crowd-size/performance requirements, and measured winner remain UNKNOWN pending #9/#12/#13 Research Gates/specification.
 
 ## Blockers
-None for #5. UNKNOWN_LICENSE repositories remain reference-only. WORKER_AUTO_REINVOCATION remains partial BLOCKED/UNKNOWN and is not a program blocker.
+None for #6. WORKER_AUTO_REINVOCATION remains partial BLOCKED/UNKNOWN only.
 
-## Next action
-Create #5 PR, record HEAD, then recompute #6–#18 dependency graph and continue an authorized READY item without waiting for ordinary review.
+## Next executable work
+#7, #8, #9, #10 and #11 are executable from existing artifacts. Claim #7 after opening #6 PR.
