@@ -201,3 +201,14 @@ SOURCE TYPE: official Scripting API
 URL: https://docs.unity3d.com/ScriptReference/JsonUtility.html  
 DATE ACCESSED: 2026-09-30  
 RELEVANT CLAIMS: converts supported objects/fields to/from JSON using Unity serializer rules.  
+
+
+## Stage 2A mutable technical sources — accessed 2026-09-30
+- UNITY-S2-001 — Unity 6000.3.24f1 official release notes — https://unity.com/releases/editor/whats-new/6000.3.24f1 — VERIFIED FACT: released 2026-09-10; Android Build Support installer offered.
+- UNITY-S2-002 — Unity 6 release support — https://unity.com/releases/unity-6/support — VERIFIED FACT: Unity 6.3 is LTS, supported through Dec 2027.
+- UNITY-S2-003 — Input System 1.17.0 docs — https://docs.unity3d.com/Packages/com.unity.inputsystem@1.17/manual/index.html — VERIFIED FACT: package metadata identifies version 1.17.0.
+- UNITY-S2-004 — URP compatibility docs/index — https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@17.2/manual/index.html — VERIFIED FACT: Unity docs expose URP 17.2 family for 6000.3; exact resolved patch awaits UPM lock evidence.
+- UNITY-S2-005 — Android requirements — https://docs.unity3d.com/current/Manual/android-requirements-and-compatibility.html — VERIFIED FACT: Android 6.0/API 23+; Vulkan and OpenGL ES 3.x supported.
+- UNITY-S2-006 — Android Player Settings — https://docs.unity3d.com/current/Manual/class-PlayerSettingsAndroid.html — VERIFIED FACT: manual graphics API ordering is available when Auto Graphics API is disabled.
+
+- UNITY-S2-007 — Unity 6000.3.25f1 official release — https://unity.com/releases/editor/whats-new/6000.3.25f1 — VERIFIED FACT: released 2026-09-24; supersedes UNITY-S2-001 as current Stage 2A editor pin. Includes Android Gradle update and Android Build Support installers.
