@@ -2,16 +2,13 @@
 
 ## Persistent control documents
 - [RESEARCH_STATE.md](RESEARCH_STATE.md) — current program/work-item state and next action.
+- [Research protocol](../workflow/research/RESEARCH_PROTOCOL.md)
+- [Orchestration specification](../workflow/research/ORCHESTRATION.md)
+- [Orchestration verification](../workflow/research/ORCHESTRATION_VERIFICATION.md)
+- [Session handoff](../workflow/research/SESSION_HANDOFF.md)
 
 ## Research areas
-The master program reserves the following research areas. Content is added only by work items whose Path Scope authorizes it:
-- `games/`
-- `repositories/`
-- `mechanics/`
-- `architecture/`
-- `performance/`
-
-Empty directories are not persisted by Git; their creation is deferred until an authorized work item creates content.
+The program reserves `games/`, `repositories/`, `mechanics/`, `architecture/`, and `performance/`. Content is added only by Work Items whose Authorized Scope permits it.
 
 ## Evidence discipline
-Every material research statement must be classified when needed as VERIFIED FACT, SOURCE CLAIM, CODE OBSERVATION, INFERENCE, HYPOTHESIS, or UNKNOWN, and must point to persisted evidence/source metadata.
+Every material research statement must be classified when needed as VERIFIED FACT, SOURCE CLAIM, CODE OBSERVATION, INFERENCE, HYPOTHESIS, or UNKNOWN, with persisted provenance.

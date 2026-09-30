@@ -1,11 +1,13 @@
 # Knowledge Index
 
-Persistent navigation for the research program defined by Issue #1.
+Operational entry point: Issue #20. Issue #1 and Issues #2–#18 remain requirement/history sources.
 
 ## Program state
 - [Research index](research/INDEX.md)
 - [Research state](research/RESEARCH_STATE.md)
 - [Research protocol](workflow/research/RESEARCH_PROTOCOL.md)
+- [Orchestration specification](workflow/research/ORCHESTRATION.md)
+- [Orchestration verification](workflow/research/ORCHESTRATION_VERIFICATION.md)
 - [Session handoff](workflow/research/SESSION_HANDOFF.md)
 
 ## Sources
@@ -17,6 +19,3 @@ Persistent navigation for the research program defined by Issue #1.
 
 ## Classification vocabulary
 Material claims use: **VERIFIED FACT**, **SOURCE CLAIM**, **CODE OBSERVATION**, **INFERENCE**, **HYPOTHESIS**, or **UNKNOWN**.
-
-## Scope
-This index currently covers the bootstrap artifacts authorized by Issue #2. Later work items add their own authorized areas and must link them here when their scope permits.

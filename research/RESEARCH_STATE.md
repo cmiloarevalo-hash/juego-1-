@@ -1,68 +1,57 @@
 # RESEARCH_STATE
 
-PROGRAM ISSUE: #1  
-CURRENT DATE: 2026-09-30  
-BASE: `main@9ba2f11372a434254aad9d81ed5fa5182c259f4d`  
-CURRENT HEAD: reviewed content HEAD `dd441936304e19a1c73f7165ff1aa02de34584f4`; subsequent metadata-only handoff commits may advance PR head  
-ACTIVE WORK ITEM: #2 — Research: Bootstrap de investigación persistente  
-ACTIVE BRANCH: `research/issue-2-bootstrap`  
-ACTIVE PR: #19
+PROGRAM ISSUE: #20 (operational controller); #1 remains master requirements/history source
+CURRENT DATE: 2026-09-30
+BASE: `research/issue-2-bootstrap@d02ba00ca28a1ee23c41e62276edff313dfeb5f2`
+CURRENT HEAD: Issue #20 branch; PR #21 handoff records reviewed orchestration HEAD
+ACTIVE WORK ITEM: #3 — Research: Referencia observable — Top Lords
+ACTIVE PROGRAM CONTROLLER: #20
+ACTIVE PRS: #19 bootstrap; #21 orchestration
 
-## Completed work items
-None.
+## Supervisor decision — 2026-09-30
+PROGRAM EXECUTION AUTHORIZED. #3–#18 UNPAUSED. The #20 control plane is sufficient for current-session operation subject to later review.
+WORKER_AUTO_REINVOCATION: BLOCKED / UNKNOWN — partial limitation only; MUST NOT block current research execution.
+READY_FOR_REVIEW is not a global stop condition.
 
-## Active work items
-- #2 Bootstrap — READY_FOR_REVIEW in PR #19; Supervisor acceptance pending.
+## Work item states
+- #2 — READY_FOR_REVIEW, PR #19, HEAD `d02ba00ca28a1ee23c41e62276edff313dfeb5f2`.
+- #20 — READY_FOR_REVIEW for implemented control plane, PR #21; worker auto-reinvocation remains partial BLOCKED/UNKNOWN.
+- #3 — IN_PROGRESS.
+- #4 — READY (bootstrap execution dependency satisfied).
+- #9 — READY (bootstrap execution dependency satisfied).
+- #5 — waits for #4 catalog artifact.
+- #6–#8 — wait for #3 plus sufficient repository analysis.
+- #10–#11 — wait for #3 plus comparable repository/reference evidence.
+- #12–#18 — dependency-gated as stated in their Issues.
 
-## Blocked work items
-- #5 requires #4.
-- #6–#8 require #3 plus sufficient repository analysis.
-- #10 requires #3 and comparable repositories.
-- #11 requires #3 and comparable references.
-- #12–#18 remain dependency-gated as defined in their Issues.
+## Dependency semantics
+EXECUTION_DEPENDENCY: satisfied by required usable GitHub artifact; upstream review alone does not block.
+ACCEPTANCE_DEPENDENCY: explicit Supervisor acceptance required. Never infer it.
 
-## Pending work items
-- #3 Top Lords observable — pending #2.
-- #4 Repository discovery/catalog — pending #2.
-- #9 Mobile performance/rendering/animation/physics — pending #2.
-- #5–#8, #10–#18 — pending dependencies.
+## Orchestration status
+STATE MACHINE: specified.
+QUEUE/DISPATCHER: implemented in PR #21, dry-run by default.
+DOUBLE-CLAIM PREVENTION: serialized dispatcher + state recheck; manual/external writers must obey protocol.
+WATCHDOG: implemented as observational workflow.
+WORKER_AUTO_REINVOCATION: BLOCKED / UNKNOWN; accepted partial limitation.
+DEFAULT-BRANCH ACTIONS ACTIVATION: pending ordinary review/merge; not a blocker to current-session research.
 
-## Specification status
-Not started. Issue #13 owns specification authoring; outside Issue #2 Path Scope.
+## Ready for review
+- #2 — PR #19.
+- #20 control plane — PR #21.
 
-## Repositories
-REPOSITORIES DISCOVERED: 0  
-REPOSITORIES ANALYZED: 0  
-REPOSITORIES PENDING: 0
+## Active
+- #3.
+
+## Ready
+- #4.
+- #9.
+
+## Blocked
+No globally blocking condition. Only worker auto-reinvocation integration is partial BLOCKED/UNKNOWN.
 
 ## Sources reviewed
-- Internal program source: Issue #1.
-- Work-item definitions: Issues #2–#18.
-- External sources: 0.
-
-## Mechanics
-MECHANICS COMPLETE: none.  
-MECHANICS PENDING: Top Lords observable; input/movement/crowd/formation; gates/spawning/mutation; combat/targeting/death/bosses; levels/camera/authoring/UX; progression/economy/metagame.
-
-## Research gates
-None opened.
-
-## ADR status
-Not started.
-
-## Downstream artifacts
-REUSE MATRIX STATUS: not started; Issue #14.  
-NEW CODE INVENTORY STATUS: not started; Issue #15.  
-IMPLEMENTATION PLAN STATUS: not started; Issue #17.
-
-## Open questions
-None material for bootstrap.
-
-## Blockers
-None for Issue #2.
-
-## Next unlocked work
-After #2 is accepted/available as base, Issues #3, #4, and #9 have no further dependency beyond bootstrap. Per Supervisor instruction to continue by defined order, NEXT UNBLOCKED WORK ITEM: #3.
+GH-001..GH-007 in `sources/official-documentation.md`.
 
 ## Next exact action
-Supervisor reviews PR #19. For continued authorized execution, #3 is the next defined work item; do not merge or self-approve #19.
+Execute #3 within `research/games/top-lords/**, sources/**, analysis/findings/**`; persist evidence, verify acceptance criteria, open its PR/handoff, then recalculate queue without waiting for ordinary PR review.
