@@ -39,10 +39,10 @@ Mandatory final one-phase boss; readable telegraphs; army participates; no adds/
 Immutable exactly-once terminal snapshot sufficient for UI/verification. No strategic reward transaction. REQ: SRS-RESULT, DATA-RESULT. TEST: VER-VICTORY/DEFEAT.
 
 ## NC-013 Presentation / HUD / Camera
-Observe domain state only. Gate semantics must be color-independent and mobile-readable; detailed camera/HUD/art requirements remain blocked by VUX-GAP-* until Supervisor resolution. REQ: ARCH-008, SRS-UX/ART/ORIG.
+Observe domain state only. Implement accepted VUX-CHAR/CAM/UI/ANIM/FX/TYPE/ENV requirements without becoming gameplay authority. Gate semantics remain color-independent and mobile-readable. REQ: ARCH-008, SRS-UX/ART/ORIG, SRS-VUX-001/002. TEST/EVIDENCE: QA-VUX-* and VUX-EVID-001..008 as applicable.
 
 ## NC-014 Localization
-Provide ES/EN critical strings with Spanish glyph/overflow validation; avoid baked language-critical art. REQ: SRS-LOC, DATA-LOC, ARCH-009. TEST: VER-LOC-ES/EN.
+Provide ES/EN critical strings with Spanish glyph/overflow validation; avoid baked language-critical art. UI/type must satisfy VUX-UI-008 and VUX-TYPE-004..006. REQ: SRS-LOC, DATA-LOC, ARCH-009. TEST: VER-LOC-ES/EN, QA-VUX-UI-007, QA-VUX-TYPE-*.
 
 ## NC-015 Instrumentation
 Expose counters/profiler markers for Stage 2 evidence without becoming gameplay authority. REQ: TECH-LOG, ARCH-010.
@@ -52,3 +52,7 @@ Only if exposed: language/audio/control preferences. No progression/economy/prof
 
 ## Completeness/scope rule
 A future component must map to current SRS/GAME/ARCH/TECH/DATA requirements and verification or trigger an explicit scope/traceability decision. Historical NC IDs/requirements for progression/economy/save are superseded for this prototype.
+
+
+## NC-017 First-time UX Evidence
+Future product verification responsibility only. Capture first-time-user evidence required by VUX-PACE-005/006 and QA-VUX-PACE-*. This is not an analytics/metagame subsystem and does not authorize implementation during #83.
