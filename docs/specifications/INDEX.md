@@ -15,5 +15,6 @@ Current execution is separately blocked by Issue #83 documentation hold.
 
 ## #83 completeness extension
 - [Visual / UX / Content Specification](VISUAL_UX_CONTENT_SPECIFICATION.md) — restates accepted baseline and explicitly blocks unresolved quality decisions; it does not alter the #64 freeze.
+- [Quality Acceptance Specification](QUALITY_ACCEPTANCE_SPECIFICATION.md) — defines how functional + quality readiness is judged without inventing missing art/UX targets.
 
 Read [Documentation Authority Map](../DOCUMENTATION_AUTHORITY_MAP.md) before historical research/ADRs. Historical pre-freeze requirements do not override this set.
