@@ -2,7 +2,7 @@
 
 CURRENT DATE: 2026-09-30
 ACTIVE WORK ITEM: **#83 — Documentation readiness gate**
-GLOBAL STATE: **HOLD — all other project work suspended**
+GLOBAL STATE: **#83 READY_FOR_REVIEW — all other project work remains suspended**
 BRANCH: `docs/documentation-readiness-gate`
 BASE CHECKPOINT: `c8af0b68bf87c6560a5f8b9d42699ccd65210940`
 
@@ -20,4 +20,4 @@ Issues #2–#18 and Christmas research #39–#47 are preserved as HISTORICAL_EVI
 Functional product semantics are largely frozen, but current navigation/plan/inventory/state contained stale executable guidance and detailed visual/UX/content quality remains incompletely specified. #83 remediates deterministic documentary defects and records unresolved quality decisions explicitly.
 
 ## Next exact action
-Complete #83 audit/remediation/tests; open its documentation-only PR; set READY_FOR_REVIEW and stop. Only Supervisor may issue `DOCUMENTATION_GATE_ACCEPTED`.
+Supervisor reviews the #83 documentation-only PR. Do not resume Stage 2, Stage 3 or product work. Only Supervisor may issue `DOCUMENTATION_GATE_ACCEPTED`.
