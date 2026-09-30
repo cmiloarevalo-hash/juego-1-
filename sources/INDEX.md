@@ -1,10 +1,12 @@
 # Sources Index
 
-Source records are grouped by source type. Every external record should include, where applicable: source ID, title, author/owner, source type, URL, access date, version/ref, repository, commit SHA, path, class/method, license, relevant claims, and notes.
+Classification: **CURRENT_SUPPORTING provenance evidence**, not product authority or import permission.
 
 - [Repositories](repositories.md)
 - [Official documentation](official-documentation.md)
 - [Papers](papers.md)
 - [Community sources](community-sources.md)
 
-Issue #2 adds no external technical claims; therefore no external sources are recorded yet.
+External records use source IDs, URL/access date/version/ref/license and relevant claims where applicable. Current reuse permission is governed by `reuse/REUSE_MATRIX.md` plus exact later provenance; public availability never authorizes import.
+
+Historical source notes may describe pre-freeze iOS/metagame alternatives. They do not override current Android-only/out-of-scope decisions.
