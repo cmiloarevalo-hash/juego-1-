@@ -27,3 +27,16 @@ VER-60-001 Record 60 FPS observation as non-blocking stretch.
 VER-CAP-001 X46-01 determines evidence-backed technical army capacity/configuration; no number is accepted before measurement.
 VER-X46-001 X46-01..04 preserve raw captures/procedure/environment and support backend/render/physics/lifecycle choices; X46-05/06 execute only after device/asset prerequisites.
 VER-TRACE-001 Every critical SRS/GAME requirement maps to at least one verification ID in SPEC_FREEZE_MATRIX.md.
+
+
+## Visual / UX / content verification — Supervisor review 5370716635
+VER-VUX-CHAR-001 Apply QA-VUX-CHAR-*; require VUX-EVID-001 model/silhouette sheets and VUX-EVID-002 side-by-side originality review.
+VER-VUX-CAM-001 Apply QA-VUX-CAM-*; require VUX-EVID-003 camera/readability captures.
+VER-VUX-UI-001 Apply QA-VUX-UI-*; require VUX-EVID-004 HUD ES/EN layouts and safe-area/downscale review.
+VER-VUX-ANIM-001 Apply QA-VUX-ANIM-*; require VUX-EVID-005 animation-state coverage matrix.
+VER-VUX-FX-001 Apply QA-VUX-FX-*; require VUX-EVID-006 VFX/audio cue matrix.
+VER-VUX-TYPE-001 Apply QA-VUX-TYPE-*; require VUX-EVID-007 typography/palette/readability review.
+VER-VUX-ENV-001 Apply QA-VUX-ENV-*; require VUX-EVID-008 stage-composition screenshots.
+VER-VUX-PACE-001 Apply QA-VUX-PACE-*; require VUX-EVID-009 first-time-user playtest evidence.
+VER-VUX-NUMERIC-001 Do not infer exact tuning/device/performance values from visual/UX acceptance; BG-009/010 remain measurement-required.
+VER-VUX-PROV-001 Do not treat visual direction as asset import approval; BG-011 and VER-PROV-001 remain mandatory.
