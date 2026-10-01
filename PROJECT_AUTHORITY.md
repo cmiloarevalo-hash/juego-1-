@@ -6,13 +6,15 @@ Current specification authority: Issue #64 freeze branch. Human freeze decision:
 
 Read workflow/PROJECT_WORKFLOW_AUTHORITY.md before executing work.
 
-During Issue #87 / State A:
-- current old workflow remains CURRENT_CANONICAL_REFERENCE;
-- workflow/adopted/ANDROID_WORKFLOW.md is PROPOSED_ADOPTION_SOURCE;
-- workflow/adopted/ANDROID_UNITY_GAME_PROFILE.md is PROPOSED_EXTENSION;
-- workflow/PROJECT_WORKFLOW_OVERLAY.md preserves required project-specific checkout and merge semantics.
+PR #88 is durably integrated at 3a4cca27dc049889b19878b6a20bb58c5f15b448. Supervisor checkpoint 5924268175 records the project as State B / INTEGRATED_BUT_CANONICAL_POINTER_NOT_FINALIZED.
 
-SEMANTIC_ACCEPTED of the adoption HEAD would create State B only; it would not change the canonical workflow pointer. State C requires separate MERGE_ELIGIBLE, authorized durable adoption/integration, durable navigation/authority update, and post-integration verification.
+This focused finalization encodes the State C pointer. State C is not established merely by this branch or by SEMANTIC_ACCEPTED.
+
+After this exact finalization HEAD is SEMANTIC_ACCEPTED, separately MERGE_ELIGIBLE, durably integrated through authorized project authority, and post-integration verification confirms the pointer:
+- workflow/adopted/ANDROID_WORKFLOW.md = CURRENT_CANONICAL_WORKFLOW;
+- workflow/adopted/ANDROID_UNITY_GAME_PROFILE.md = CURRENT_SUBORDINATE_PROFILE when materially applicable;
+- workflow/PROJECT_WORKFLOW_OVERLAY.md remains the project-specific operational overlay;
+- the former G_INF_01 workflow = SUPERSEDED / HISTORICAL_PROVENANCE.
 
 ## Frozen product
 
@@ -53,8 +55,8 @@ Detailed visual/UX/content decisions are in docs/specifications/VISUAL_UX_CONTEN
 Issue #83 documentation gate is satisfied at PR #84 HEAD f63b70ab3b2c75dc1c522e4f67fcdc7e96803b3a.
 Issue #85 adoption-readiness preparation is SEMANTIC_ACCEPTED at PR #86 HEAD 688158eb8b3cad99d43a9de35308f40e4568d9a1.
 
-Issue #87 is the active Work Item and only implements workflow adoption repository state.
+Issue #87 remains the active Work Item for State C finalization.
 
-Stage 2 remains PAUSED until State C is durably verified and Supervisor separately authorizes resumption.
+Stage 2 remains PAUSED during and after this workflow finalization until Supervisor separately authorizes resumption.
 
-Issue #87 does not authorize Unity/Astra execution, gameplay/product implementation, production content, external asset/code import, APK/AAB, performance/device tests, Stage 3, merge, self-approval, or publication.
+This finalization does not authorize Unity/Astra execution, gameplay/product implementation, production content, external asset/code import, APK/AAB, performance/device tests, Stage 3, self-approval, or publication.

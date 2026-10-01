@@ -1,51 +1,76 @@
 # PROJECT WORKFLOW AUTHORITY
 
-Status: ADOPTION IMPLEMENTATION / STATE A / NOT_YET_CANONICAL  
+Status: STATE C FINALIZATION CANDIDATE  
 Active Work Item: Issue #87  
-Base: workflow/issue-85-adoption-readiness@688158eb8b3cad99d43a9de35308f40e4568d9a1
+Finalization base: workflow/issue-85-adoption-readiness@3a4cca27dc049889b19878b6a20bb58c5f15b448
 
-## 1. Current authority during Issue #87
+## 1. Current transition status
 
-This document implements the repository state required for controlled adoption. Its existence, branch, PR, or future semantic acceptance does not by itself change the canonical workflow pointer.
+PR #88 has been durably integrated at merge commit 3a4cca27dc049889b19878b6a20bb58c5f15b448. Supervisor post-merge checkpoint 5924268175 classifies the project as:
 
-Current State A:
-- old workflow: CURRENT_CANONICAL_REFERENCE;
-- adopted ANDROID_WORKFLOW snapshot: PROPOSED_ADOPTION_SOURCE;
-- adopted ANDROID_UNITY_GAME_PROFILE snapshot: PROPOSED_EXTENSION.
+STATE B / INTEGRATED_BUT_CANONICAL_POINTER_NOT_FINALIZED
 
-Current canonical workflow source:
+This finalization change prepares the durable State C pointer.
+
+While this finalization exists only on its review branch/PR, the project remains State B and the old workflow remains CURRENT_CANONICAL_REFERENCE.
+
+State C becomes established only after this exact finalization HEAD:
+1. receives Supervisor SEMANTIC_ACCEPTED;
+2. passes separate MERGE_ELIGIBLE checks;
+3. is durably integrated through authorized project authority;
+4. is verified post-integration as the project authority/navigation pointer;
+5. has no material blocker.
+
+SEMANTIC_ACCEPTED != CANONICAL_ADOPTION.
+
+## 2. State C canonical pointer
+
+When the conditions above are satisfied and this finalization is durably present on the target branch:
+
+ANDROID_WORKFLOW:
+CURRENT_CANONICAL_WORKFLOW
+
+Canonical project snapshot:
+- path: workflow/adopted/ANDROID_WORKFLOW.md
+- source: cmiloarevalo-hash/W-F-Android@2c8fa140b307db8607ffb919970bf9a266dd1df9
+- source path: workpacks/workflow-operationalization-01/ANDROID_WORKFLOW.md
+- blob: 44eef0edb75781885879e8c2ae8d09114d27bb99
+
+ANDROID_UNITY_GAME_PROFILE:
+CURRENT_SUBORDINATE_PROFILE
+
+Subordinate project snapshot:
+- path: workflow/adopted/ANDROID_UNITY_GAME_PROFILE.md
+- source: cmiloarevalo-hash/W-F-Android@2c8fa140b307db8607ffb919970bf9a266dd1df9
+- source path: workpacks/workflow-operationalization-01/ANDROID_UNITY_GAME_PROFILE.md
+- blob: 3c3d846e1a3c1d90598e9e64cedff06e27a83269
+
+The Unity/Game profile is active only when materially applicable to an authorized Unity/Game Work Item.
+
+Old workflow:
+SUPERSEDED / HISTORICAL_PROVENANCE
+
+Historical source:
 - repository: cmiloarevalo-hash/G_INF_01
 - ref: 3138299c54e590a38b1a3fd51263abcff32afe53
 - path: WORKFLOW_CANONICO_SUPERVISOR_GITHUB_IMPLEMENTADOR_AI_STUDIO.md
 - blob: 83406e15c3462f4acb8e94eb28de85f6b3850692
 
-## 2. Exact adopted source snapshots
+The old source remains provenance/history; it is not deleted.
 
-Android workflow:
-- project path: workflow/adopted/ANDROID_WORKFLOW.md
-- source: cmiloarevalo-hash/W-F-Android@2c8fa140b307db8607ffb919970bf9a266dd1df9
-- source path: workpacks/workflow-operationalization-01/ANDROID_WORKFLOW.md
-- blob: 44eef0edb75781885879e8c2ae8d09114d27bb99
-
-Unity/Game profile:
-- project path: workflow/adopted/ANDROID_UNITY_GAME_PROFILE.md
-- source: cmiloarevalo-hash/W-F-Android@2c8fa140b307db8607ffb919970bf9a266dd1df9
-- source path: workpacks/workflow-operationalization-01/ANDROID_UNITY_GAME_PROFILE.md
-- blob: 3c3d846e1a3c1d90598e9e64cedff06e27a83269
-
-The imported snapshots are byte-identical source artifacts. Their upstream PROPOSAL / NON-CANONICAL wording remains unchanged and records upstream source status. Project canonical authority arises only from this project's completed State C adoption.
+The upstream PROPOSAL / NON-CANONICAL wording inside imported snapshots remains unchanged source provenance. Project canonical authority arises from the project's completed State C adoption, not by editing upstream text.
 
 ## 3. Project layering
 
-When State C is durably completed, operational interpretation is layered as:
+State C operational layering:
 
 1. Human / Supervisor authority + active Work Item.
-2. adopted ANDROID_WORKFLOW.
+2. workflow/adopted/ANDROID_WORKFLOW.md.
 3. CURRENT PROJECT/GAME SPECIFICATIONS.
-4. ANDROID_UNITY_GAME_PROFILE where materially applicable.
+4. workflow/adopted/ANDROID_UNITY_GAME_PROFILE.md where materially applicable.
 5. accepted/fresh evidence when triggered.
 
-Concrete game behavior remains governed by current project/game specifications. Workflow/profile documents do not absorb mechanics, product UX, content, tuning, device targets, or project performance thresholds.
+Concrete game behavior remains governed by current project/game specifications.
 
 ## 4. Required invariants
 
@@ -61,64 +86,25 @@ Concrete game behavior remains governed by current project/game specifications. 
 - PUBLISH = HUMAN ACTION.
 - GITHUB STATE > SESSION MEMORY.
 
-Project-specific rules that must survive adoption are in workflow/PROJECT_WORKFLOW_OVERLAY.md.
+Project-specific preserved rules remain in workflow/PROJECT_WORKFLOW_OVERLAY.md, which this finalization does not modify.
 
-## 5. Three-state canonical transition
+## 5. Transition history
 
-### STATE A — before adoption-head semantic acceptance
+STATE A:
+- old workflow CURRENT_CANONICAL_REFERENCE;
+- Android workflow PROPOSED_ADOPTION_SOURCE;
+- Unity profile PROPOSED_EXTENSION.
 
-Old workflow:
-CURRENT_CANONICAL_REFERENCE
+STATE B:
+- old workflow CURRENT_CANONICAL_REFERENCE;
+- adoption HEAD SEMANTIC_ACCEPTED_FOR_INTEGRATION / NOT_YET_CANONICAL.
 
-New Android workflow:
-PROPOSED_ADOPTION_SOURCE
+STATE C:
+- ANDROID_WORKFLOW CURRENT_CANONICAL_WORKFLOW;
+- ANDROID_UNITY_GAME_PROFILE CURRENT_SUBORDINATE_PROFILE where applicable;
+- old workflow SUPERSEDED / HISTORICAL_PROVENANCE.
 
-Unity/Game profile:
-PROPOSED_EXTENSION
-
-No canonical authority/navigation pointer changes.
-
-### STATE B — after SEMANTIC_ACCEPTED, before durable integration/adoption
-
-Old workflow:
-CURRENT_CANONICAL_REFERENCE
-
-New adoption HEAD:
-SEMANTIC_ACCEPTED_FOR_INTEGRATION
-NOT_YET_CANONICAL
-
-No canonical authority/navigation pointer changes.
-
-SEMANTIC_ACCEPTED != MERGE_ELIGIBLE.
-SEMANTIC_ACCEPTED != CANONICAL_ADOPTION.
-
-### STATE C — after authorized durable adoption
-
-State C exists only after all applicable conditions are satisfied:
-- exact adoption HEAD received SEMANTIC_ACCEPTED;
-- separate MERGE_ELIGIBLE checks pass;
-- authorized durable integration/merge or another explicit durable canonical-adoption action defined by the Work Item occurs;
-- project authority/navigation is durably updated;
-- post-integration verification confirms the canonical pointer;
-- no material contradiction or blocker remains.
-
-Only then:
-
-ANDROID_WORKFLOW:
-CURRENT_CANONICAL_WORKFLOW
-
-ANDROID_UNITY_GAME_PROFILE:
-CURRENT_SUBORDINATE_PROFILE
-
-Old workflow:
-SUPERSEDED / HISTORICAL_PROVENANCE
-
-The Unity/Game profile remains conditionally activated only for applicable Unity/Game Work Items.
-
-Never permit:
-- two CURRENT_CANONICAL workflows;
-- zero CURRENT_CANONICAL workflows;
-- a canonical pointer change solely because a PR receives SEMANTIC_ACCEPTED.
+Never permit two CURRENT_CANONICAL workflows or zero CURRENT_CANONICAL workflows.
 
 ## 6. Local execution agent
 
@@ -134,19 +120,7 @@ Future local/runtime activities use, when material:
 - LOCAL_TEST_PACKET;
 - LOCAL_RESULT.
 
-Evidence/execution states may include:
-- PASS;
-- FAIL;
-- BLOCKED;
-- NOT_RUN;
-- STALE_RESULT;
-- DUPLICATE_RESULT.
-
-These are not Supervisor semantic decisions:
-- SEMANTIC_ACCEPTED;
-- REWORK;
-- HOLD;
-- ESCALATE.
+PASS / FAIL / BLOCKED / NOT_RUN / STALE_RESULT / DUPLICATE_RESULT are evidence/execution states, not Supervisor semantic decisions.
 
 If repository correction is required:
 
@@ -155,36 +129,18 @@ REPOSITORY_CHANGE_REQUIRED: YES
 
 ## 7. Evidence continuity
 
-Existing exact-SHA evidence and Supervisor decisions for #73, #74, #75, #76, #77, #83, #84, #85 and PRs #78, #79, #80, #81, #82, #84, #86 remain valid according to their original exact source/evidence identity.
+Existing exact-SHA evidence and Supervisor decisions for #73–#87 and PRs #78–#88 remain preserved according to their original identities.
 
 Do not rerun valid evidence solely because workflow vocabulary changes.
 
-Use STALE_RESULT only when material source/configuration/test identity changes.
-Use DUPLICATE_RESULT when equivalent durable evidence already exists and a rerun adds no required proof.
-
 ## 8. Prototype anti-bottleneck
 
-Do not make these automatic for every change:
-- full device matrix;
-- profiler;
-- performance suite;
-- formal playtest;
-- Vertical Slice;
-- AAB;
-- release signing;
-- release validation;
-- full regression;
-- exhaustive traceability;
-- full repository documentation audit;
-- research "just in case".
+Do not make full device matrices, profiler suites, performance suites, formal playtests, Vertical Slice, AAB/release signing, full regression, exhaustive traceability, full repository audits, or research "just in case" automatic for every change.
 
 They activate only through Acceptance Criteria, risk, evidence need, project specification, maturity, or material unknown.
 
-## 9. Current execution boundary
+## 9. Execution boundary
 
-Issue #87 implements adoption repository state only.
+Stage 2 remains PAUSED after workflow adoption finalization until Supervisor separately authorizes resumption.
 
-Stage 2 remains PAUSED.
-Do not execute Unity, Astra/local execution, Android builds, APK/AAB, device/performance tests, X46, asset imports, gameplay, production content, or Stage 3 during Issue #87.
-
-After this adoption HEAD is created, it remains State A until exact-SHA Supervisor review. If SEMANTIC_ACCEPTED is issued, it becomes State B only. State C requires separate durable integration/adoption and post-integration verification.
+Issue #87 finalization does not authorize Unity, Astra/local execution, Android build, APK/AAB, device/performance work, X46, asset import, gameplay/product implementation, or Stage 3.
