@@ -1,21 +1,28 @@
 # Current Knowledge Index
 
-**Status: Issue #87 State C finalization candidate.**
+## Workflow-state resolution
 
-The project remains State B until this exact finalization is reviewed, merge-eligible, durably integrated, and post-merge verified.
+Do not treat this file as a frozen review-state snapshot.
 
-## Workflow path encoded for State C
+Determine current workflow authority from:
+- PR #89 durable integration state;
+- the latest applicable Supervisor checkpoint in Issue #87;
+- [Project Workflow Authority](workflow/PROJECT_WORKFLOW_AUTHORITY.md).
 
-- [Project Workflow Authority](workflow/PROJECT_WORKFLOW_AUTHORITY.md)
-- [ANDROID_WORKFLOW](workflow/adopted/ANDROID_WORKFLOW.md) — State C CURRENT_CANONICAL_WORKFLOW after finalization integration/verification.
-- [Project Workflow Overlay](workflow/PROJECT_WORKFLOW_OVERLAY.md) — preserved project-specific operational rules.
-- [ANDROID_UNITY_GAME_PROFILE](workflow/adopted/ANDROID_UNITY_GAME_PROFILE.md) — State C CURRENT_SUBORDINATE_PROFILE when materially applicable.
+Before durable integration plus successful post-integration verification:
+- former G_INF_01 workflow = CURRENT_CANONICAL_REFERENCE;
+- adopted Android workflow/profile = NOT_YET_CANONICAL.
 
-The former G_INF_01 workflow becomes SUPERSEDED / HISTORICAL_PROVENANCE only after State C is established.
+After both conditions are satisfied and confirmed in Issue #87:
+- [ANDROID_WORKFLOW](workflow/adopted/ANDROID_WORKFLOW.md) = CURRENT_CANONICAL_WORKFLOW;
+- [ANDROID_UNITY_GAME_PROFILE](workflow/adopted/ANDROID_UNITY_GAME_PROFILE.md) = CURRENT_SUBORDINATE_PROFILE when materially applicable;
+- former G_INF_01 workflow = SUPERSEDED / HISTORICAL_PROVENANCE.
 
 ## Required project path
 
 - [Documentation Authority Map](docs/DOCUMENTATION_AUTHORITY_MAP.md)
+- [Project Workflow Authority](workflow/PROJECT_WORKFLOW_AUTHORITY.md)
+- [Project Workflow Overlay](workflow/PROJECT_WORKFLOW_OVERLAY.md)
 - [Project Authority](PROJECT_AUTHORITY.md)
 - [Product Specifications](docs/specifications/INDEX.md)
 - [Current Traceability Matrix](docs/CURRENT_TRACEABILITY_MATRIX.md)

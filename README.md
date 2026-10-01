@@ -2,22 +2,22 @@
 
 Christmas Android prototype repository.
 
-## CURRENT GLOBAL STATUS
+## Workflow authority
 
-**ISSUE #87 — STATE C FINALIZATION UNDER REVIEW.**
+Current workflow state is reconstructed from GitHub, not from a static transition label in this file.
 
-PR #88 was durably integrated at 3a4cca27dc049889b19878b6a20bb58c5f15b448. Supervisor checkpoint 5924268175 classifies the project as State B / INTEGRATED_BUT_CANONICAL_POINTER_NOT_FINALIZED.
+Read:
+1. [Project Workflow Authority](workflow/PROJECT_WORKFLOW_AUTHORITY.md)
+2. Issue #87 and its latest applicable Supervisor checkpoint
+3. PR #89 integration state
 
-This follow-up change contains the State C authority/navigation pointer. It does not establish State C while it remains unreviewed/unmerged.
+Resolution:
+- before PR #89 durable integration plus successful Supervisor post-integration canonical-pointer verification, the former G_INF_01 workflow remains CURRENT_CANONICAL_REFERENCE;
+- after both conditions are satisfied and persisted in Issue #87, [ANDROID_WORKFLOW](workflow/adopted/ANDROID_WORKFLOW.md) is CURRENT_CANONICAL_WORKFLOW, [ANDROID_UNITY_GAME_PROFILE](workflow/adopted/ANDROID_UNITY_GAME_PROFILE.md) is CURRENT_SUBORDINATE_PROFILE when materially applicable, and the former workflow is SUPERSEDED / HISTORICAL_PROVENANCE.
 
-After this exact finalization HEAD is SEMANTIC_ACCEPTED, separately MERGE_ELIGIBLE, durably integrated, and post-merge verified:
+[Project Workflow Overlay](workflow/PROJECT_WORKFLOW_OVERLAY.md) remains the durable project-specific operational overlay in either transition state.
 
-- [ANDROID_WORKFLOW](workflow/adopted/ANDROID_WORKFLOW.md) = CURRENT_CANONICAL_WORKFLOW.
-- [ANDROID_UNITY_GAME_PROFILE](workflow/adopted/ANDROID_UNITY_GAME_PROFILE.md) = CURRENT_SUBORDINATE_PROFILE when materially applicable.
-- the former G_INF_01 workflow = SUPERSEDED / HISTORICAL_PROVENANCE.
-- [Project Workflow Overlay](workflow/PROJECT_WORKFLOW_OVERLAY.md) remains the durable project-specific operational overlay.
-
-Stage 2 remains paused. No Unity/Astra execution, gameplay/product implementation, asset import, build/device/performance work, Stage 3, self-approval, or publication is authorized by this finalization.
+Stage 2 remains paused until Supervisor separately authorizes resumption. Workflow adoption does not itself authorize Unity/Astra execution, gameplay/product implementation, asset import, build/device/performance work, Stage 3, self-approval, or publication.
 
 ## Start here
 

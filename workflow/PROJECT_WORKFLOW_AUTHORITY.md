@@ -1,68 +1,74 @@
 # PROJECT WORKFLOW AUTHORITY
 
-Status: STATE C FINALIZATION CANDIDATE  
-Active Work Item: Issue #87  
+Transition authority: Issue #87  
+Finalization PR: #89  
 Finalization base: workflow/issue-85-adoption-readiness@3a4cca27dc049889b19878b6a20bb58c5f15b448
 
-## 1. Current transition status
+## 1. Operational-state resolution
 
-PR #88 has been durably integrated at merge commit 3a4cca27dc049889b19878b6a20bb58c5f15b448. Supervisor post-merge checkpoint 5924268175 classifies the project as:
+Do not infer the current canonical workflow from this file's branch location, PR review status, or a static transition label.
 
-STATE B / INTEGRATED_BUT_CANONICAL_POINTER_NOT_FINALIZED
+Reconstruct the operational state from GitHub using:
+1. PR #89 durable integration state;
+2. the latest applicable Supervisor checkpoint in Issue #87;
+3. the exact repository content and imported blob identities below.
 
-This finalization change prepares the durable State C pointer.
+Resolution rule:
 
-While this finalization exists only on its review branch/PR, the project remains State B and the old workflow remains CURRENT_CANONICAL_REFERENCE.
+### Before durable integration + successful post-integration verification
 
-State C becomes established only after this exact finalization HEAD:
-1. receives Supervisor SEMANTIC_ACCEPTED;
-2. passes separate MERGE_ELIGIBLE checks;
-3. is durably integrated through authorized project authority;
-4. is verified post-integration as the project authority/navigation pointer;
-5. has no material blocker.
+If PR #89 is not durably integrated, OR Issue #87 does not yet contain a later applicable Supervisor checkpoint confirming successful post-integration canonical-pointer verification:
 
+- former G_INF_01 workflow = CURRENT_CANONICAL_REFERENCE;
+- workflow/adopted/ANDROID_WORKFLOW.md = NOT_YET_CANONICAL;
+- workflow/adopted/ANDROID_UNITY_GAME_PROFILE.md = NOT_YET_CANONICAL;
+- workflow/PROJECT_WORKFLOW_OVERLAY.md remains the preserved project-specific operational overlay.
+
+SEMANTIC_ACCEPTED != MERGE_ELIGIBLE.
 SEMANTIC_ACCEPTED != CANONICAL_ADOPTION.
 
-## 2. State C canonical pointer
+### After durable integration + successful post-integration verification
 
-When the conditions above are satisfied and this finalization is durably present on the target branch:
+If PR #89 is durably integrated AND the latest applicable Supervisor checkpoint in Issue #87 confirms successful post-integration canonical-pointer verification with no material blocker:
 
 ANDROID_WORKFLOW:
 CURRENT_CANONICAL_WORKFLOW
 
-Canonical project snapshot:
-- path: workflow/adopted/ANDROID_WORKFLOW.md
+ANDROID_UNITY_GAME_PROFILE:
+CURRENT_SUBORDINATE_PROFILE
+
+Former G_INF_01 workflow:
+SUPERSEDED / HISTORICAL_PROVENANCE
+
+The Unity/Game profile remains conditional and applies only when materially relevant to an authorized Unity/Game Work Item.
+
+This condition-based rule prevents both two CURRENT_CANONICAL workflows and zero CURRENT_CANONICAL workflows.
+
+## 2. Exact workflow identities
+
+Canonical Android workflow snapshot when the State C condition above is satisfied:
+- project path: workflow/adopted/ANDROID_WORKFLOW.md
 - source: cmiloarevalo-hash/W-F-Android@2c8fa140b307db8607ffb919970bf9a266dd1df9
 - source path: workpacks/workflow-operationalization-01/ANDROID_WORKFLOW.md
 - blob: 44eef0edb75781885879e8c2ae8d09114d27bb99
 
-ANDROID_UNITY_GAME_PROFILE:
-CURRENT_SUBORDINATE_PROFILE
-
-Subordinate project snapshot:
-- path: workflow/adopted/ANDROID_UNITY_GAME_PROFILE.md
+Unity/Game subordinate profile when the State C condition above is satisfied:
+- project path: workflow/adopted/ANDROID_UNITY_GAME_PROFILE.md
 - source: cmiloarevalo-hash/W-F-Android@2c8fa140b307db8607ffb919970bf9a266dd1df9
 - source path: workpacks/workflow-operationalization-01/ANDROID_UNITY_GAME_PROFILE.md
 - blob: 3c3d846e1a3c1d90598e9e64cedff06e27a83269
 
-The Unity/Game profile is active only when materially applicable to an authorized Unity/Game Work Item.
-
-Old workflow:
-SUPERSEDED / HISTORICAL_PROVENANCE
-
-Historical source:
+Former workflow provenance:
 - repository: cmiloarevalo-hash/G_INF_01
 - ref: 3138299c54e590a38b1a3fd51263abcff32afe53
 - path: WORKFLOW_CANONICO_SUPERVISOR_GITHUB_IMPLEMENTADOR_AI_STUDIO.md
 - blob: 83406e15c3462f4acb8e94eb28de85f6b3850692
 
-The old source remains provenance/history; it is not deleted.
-
-The upstream PROPOSAL / NON-CANONICAL wording inside imported snapshots remains unchanged source provenance. Project canonical authority arises from the project's completed State C adoption, not by editing upstream text.
+The imported source files remain byte-identical. Their upstream PROPOSAL / NON-CANONICAL wording is source provenance and does not determine this project's canonical state.
 
 ## 3. Project layering
 
-State C operational layering:
+When the State C condition is satisfied, operational interpretation is layered as:
 
 1. Human / Supervisor authority + active Work Item.
 2. workflow/adopted/ANDROID_WORKFLOW.md.
@@ -70,7 +76,7 @@ State C operational layering:
 4. workflow/adopted/ANDROID_UNITY_GAME_PROFILE.md where materially applicable.
 5. accepted/fresh evidence when triggered.
 
-Concrete game behavior remains governed by current project/game specifications.
+Concrete game behavior continues to come from current project/game specifications.
 
 ## 4. Required invariants
 
@@ -86,25 +92,25 @@ Concrete game behavior remains governed by current project/game specifications.
 - PUBLISH = HUMAN ACTION.
 - GITHUB STATE > SESSION MEMORY.
 
-Project-specific preserved rules remain in workflow/PROJECT_WORKFLOW_OVERLAY.md, which this finalization does not modify.
+Project-specific preserved rules remain in workflow/PROJECT_WORKFLOW_OVERLAY.md.
 
 ## 5. Transition history
 
 STATE A:
-- old workflow CURRENT_CANONICAL_REFERENCE;
+- former workflow CURRENT_CANONICAL_REFERENCE;
 - Android workflow PROPOSED_ADOPTION_SOURCE;
 - Unity profile PROPOSED_EXTENSION.
 
 STATE B:
-- old workflow CURRENT_CANONICAL_REFERENCE;
+- former workflow CURRENT_CANONICAL_REFERENCE;
 - adoption HEAD SEMANTIC_ACCEPTED_FOR_INTEGRATION / NOT_YET_CANONICAL.
 
 STATE C:
 - ANDROID_WORKFLOW CURRENT_CANONICAL_WORKFLOW;
 - ANDROID_UNITY_GAME_PROFILE CURRENT_SUBORDINATE_PROFILE where applicable;
-- old workflow SUPERSEDED / HISTORICAL_PROVENANCE.
+- former workflow SUPERSEDED / HISTORICAL_PROVENANCE.
 
-Never permit two CURRENT_CANONICAL workflows or zero CURRENT_CANONICAL workflows.
+The current state is resolved only by the rule in section 1 and the latest applicable Issue #87 Supervisor checkpoint.
 
 ## 6. Local execution agent
 
@@ -129,7 +135,7 @@ REPOSITORY_CHANGE_REQUIRED: YES
 
 ## 7. Evidence continuity
 
-Existing exact-SHA evidence and Supervisor decisions for #73–#87 and PRs #78–#88 remain preserved according to their original identities.
+Existing exact-SHA evidence and Supervisor decisions for #73–#87 and PRs #78–#89 remain preserved according to their original identities.
 
 Do not rerun valid evidence solely because workflow vocabulary changes.
 
@@ -141,6 +147,6 @@ They activate only through Acceptance Criteria, risk, evidence need, project spe
 
 ## 9. Execution boundary
 
-Stage 2 remains PAUSED after workflow adoption finalization until Supervisor separately authorizes resumption.
+Stage 2 remains PAUSED until Supervisor separately authorizes resumption, regardless of whether the workflow transition resolves to State B or State C.
 
-Issue #87 finalization does not authorize Unity, Astra/local execution, Android build, APK/AAB, device/performance work, X46, asset import, gameplay/product implementation, or Stage 3.
+Issue #87 does not authorize Unity, Astra/local execution, Android build, APK/AAB, device/performance work, X46, asset import, gameplay/product implementation, or Stage 3.
