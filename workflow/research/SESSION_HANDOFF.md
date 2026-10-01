@@ -1,36 +1,30 @@
 # SESSION_HANDOFF
-DATE: 2026-09-30
-WORK ITEM: #83 — Documentation readiness gate
-BRANCH: docs/documentation-readiness-gate
-BASE SHA: c8af0b68bf87c6560a5f8b9d42699ccd65210940
-PREVIOUS SUPERVISOR-REVIEWED HEAD: b7609a05ee34ce60c6f5b56180573e024d1d3b39
-SUPERVISOR REVIEW: 5370716635
-SUPERVISOR DECISION: REWORK_REQUIRED / DOCUMENTATION_GATE_NOT_ACCEPTED
-STATE: REWORK COMPLETE / READY_FOR_REVIEW
-GLOBAL HOLD: ACTIVE until explicit DOCUMENTATION_GATE_ACCEPTED.
+DATE: 2026-10-01
+WORK ITEM: #85 — Workflow adoption readiness preparation
+BRANCH: workflow/issue-85-adoption-readiness
+BASE SHA: f63b70ab3b2c75dc1c522e4f67fcdc7e96803b3a
+STATE: READY_FOR_REVIEW
+SCOPE: preparation/analysis only; new workflow NOT activated.
+SOURCE IDENTITIES VERIFIED:
+- G_INF_01@3138299c54e590a38b1a3fd51263abcff32afe53 workflow blob 83406e15c3462f4acb8e94eb28de85f6b3850692.
+- W-F-Android@2c8fa140b307db8607ffb919970bf9a266dd1df9 ANDROID_WORKFLOW blob 44eef0edb75781885879e8c2ae8d09114d27bb99.
+- W-F-Android@2c8fa140b307db8607ffb919970bf9a266dd1df9 ANDROID_UNITY_GAME_PROFILE blob 3c3d846e1a3c1d90598e9e64cedff06e27a83269.
+- Project docs checkpoint PR #84 HEAD f63b70ab3b2c75dc1c522e4f67fcdc7e96803b3a, Supervisor review 5374045969.
 
-REWORK COMPLETED:
-- VUX-001..008 incorporated exactly from Supervisor review into VISUAL_UX_CONTENT_SPECIFICATION.
-- Observable QA-VUX-* acceptance IDs added.
-- VUX-EVID-001..009 future evidence requirements added.
-- BG-001..008 = RESOLVED_BY_SUPERVISOR_DECISION.
-- BG-009 = MEASUREMENT_REQUIRED.
-- BG-010 = MEASUREMENT_REQUIRED.
-- BG-011 = EXTERNAL_PROVENANCE_REQUIRED.
-- Current traceability, SRS, Gameplay, Verification, plan, inventory and authority references updated only for consistency.
+OUTPUTS:
+- analysis/findings/WORKFLOW_ADOPTION_READINESS.md
+- analysis/findings/WORKFLOW_MIGRATION_MATRIX.md
+- analysis/findings/WORKFLOW_ACTIVATION_PLAN.md
 
-TESTS RERUN:
-COLD_HANDOFF: PASS
-WRONG_PATH_TEST: PASS
-ORDINARY_APPLICATION_PREVENTION_TEST: PASS
-SCOPE_CONTAMINATION_TEST: PASS
-TRACEABILITY_TEST: PASS
+RESULT:
+ADOPTION_READY_WITH_EXPLICIT_MIGRATION_ITEMS.
+No unresolved authority/lifecycle/exact-SHA/merge/publication/state-vocabulary conflict found.
+ARCHITECTURE_DECISION_REQUIRED: NO.
+Astra maps to EXTERNAL_ACTOR / LOCAL_EXECUTION_AGENT; no new authority class.
+Existing valid #73–#84 SHA-bound evidence is preserved; no rerun by default.
 
-LIMITATIONS:
-No measurements/device results/assets/licenses are invented. VUX-EVID-001..009 are future evidence requirements, not completed evidence.
-
-RESTRICTIONS PRESERVED:
-documentation only; no gameplay/product code, Unity product scenes/content, Astra execution, performance experiments, Stage 2 continuation, Stage 3, asset import, APK, merge, self-approval or workflow modification.
+RESTRICTIONS:
+No workflow activation, Stage 2 execution, Astra invocation, Unity execution, product/game spec change, gameplay, asset import, tests, merge, self-approval or Stage 3.
 
 NEXT EXACT ACTION:
-Return exact new PR #84 HEAD to Supervisor and stop. Await explicit DOCUMENTATION_GATE_ACCEPTED.
+Open #85 PR to docs/documentation-readiness-gate and stop for Supervisor exact-SHA review. Actual adoption requires a separate Work Item.
