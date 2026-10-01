@@ -1,10 +1,24 @@
 # Current Knowledge Index
 
-**Status: CURRENT navigation for Issue #87 workflow-adoption implementation.**
+## Workflow-state resolution
 
-Current canonical workflow authority has not changed merely because the adoption branch/PR exists.
+Do not treat this file as a frozen review-state snapshot.
 
-## Required current path
+Determine current workflow authority from:
+- PR #89 durable integration state;
+- the latest applicable Supervisor checkpoint in Issue #87;
+- [Project Workflow Authority](workflow/PROJECT_WORKFLOW_AUTHORITY.md).
+
+Before durable integration plus successful post-integration verification:
+- former G_INF_01 workflow = CURRENT_CANONICAL_REFERENCE;
+- adopted Android workflow/profile = NOT_YET_CANONICAL.
+
+After both conditions are satisfied and confirmed in Issue #87:
+- [ANDROID_WORKFLOW](workflow/adopted/ANDROID_WORKFLOW.md) = CURRENT_CANONICAL_WORKFLOW;
+- [ANDROID_UNITY_GAME_PROFILE](workflow/adopted/ANDROID_UNITY_GAME_PROFILE.md) = CURRENT_SUBORDINATE_PROFILE when materially applicable;
+- former G_INF_01 workflow = SUPERSEDED / HISTORICAL_PROVENANCE.
+
+## Required project path
 
 - [Documentation Authority Map](docs/DOCUMENTATION_AUTHORITY_MAP.md)
 - [Project Workflow Authority](workflow/PROJECT_WORKFLOW_AUTHORITY.md)
@@ -15,20 +29,13 @@ Current canonical workflow authority has not changed merely because the adoption
 - [Blocking Gap Register](analysis/findings/BLOCKING_GAP_REGISTER.md)
 - [Session Handoff](workflow/research/SESSION_HANDOFF.md)
 
-## Adoption source snapshots
-
-- [ANDROID_WORKFLOW](workflow/adopted/ANDROID_WORKFLOW.md) — exact imported source; State A PROPOSED_ADOPTION_SOURCE on this branch.
-- [ANDROID_UNITY_GAME_PROFILE](workflow/adopted/ANDROID_UNITY_GAME_PROFILE.md) — exact imported source; State A PROPOSED_EXTENSION on this branch.
-
-Their source wording is preserved unchanged. Project adoption authority is defined by Project Workflow Authority and the State A/B/C transition.
-
 ## Current supporting evidence
 
 - [Reuse matrix](reuse/REUSE_MATRIX.md)
 - [Sources](sources/INDEX.md)
-- [Stage 2 technical evidence](technical/stage2/BOOTSTRAP_BASELINE.md) — preserved but paused during #87.
+- [Stage 2 technical evidence](technical/stage2/BOOTSTRAP_BASELINE.md) — preserved; Stage 2 remains paused.
 
-## Historical evidence — not current implementation authority
+## Historical evidence
 
 - [Research index](research/INDEX.md)
 - [Historical ADRs / research gates](decisions/adr/RESEARCH_GATES.md)
@@ -38,5 +45,3 @@ Their source wording is preserved unchanged. Project adoption authority is defin
 
 - [Future implementation plan](plan/IMPLEMENTATION_PLAN.md) — planning only; not authorization.
 - [Current component inventory](new-code/IMPLEMENTATION_INVENTORY.md) — responsibility map only; not authorization.
-
-Material claims preserve the research evidence vocabulary: VERIFIED FACT, SOURCE CLAIM, CODE OBSERVATION, INFERENCE, HYPOTHESIS, UNKNOWN.

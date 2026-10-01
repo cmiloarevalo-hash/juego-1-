@@ -1,48 +1,45 @@
 # SESSION_HANDOFF
 
 DATE: 2026-10-01
-WORK ITEM: #87 — Adopt Android workflow + Unity/Game profile
-BRANCH: workflow/issue-87-android-unity-adoption
-BASE SHA: 688158eb8b3cad99d43a9de35308f40e4568d9a1
-STATE: STATE A / IMPLEMENTATION COMPLETE / READY_FOR_REVIEW
-CANONICAL STATUS: new workflow NOT_YET_CANONICAL; old workflow remains CURRENT_CANONICAL_REFERENCE.
+WORK ITEM: #87 — workflow State C finalization
+FINALIZATION PR: #89
+FINALIZATION BRANCH: workflow/issue-87-state-c-finalization
+FINALIZATION BASE: 3a4cca27dc049889b19878b6a20bb58c5f15b448
 
-SOURCE IDENTITIES:
-- current workflow: G_INF_01@3138299c54e590a38b1a3fd51263abcff32afe53 / blob 83406e15c3462f4acb8e94eb28de85f6b3850692.
-- Android workflow: W-F-Android@2c8fa140b307db8607ffb919970bf9a266dd1df9 / blob 44eef0edb75781885879e8c2ae8d09114d27bb99.
-- Unity/Game profile: W-F-Android@2c8fa140b307db8607ffb919970bf9a266dd1df9 / blob 3c3d846e1a3c1d90598e9e64cedff06e27a83269.
-- accepted preparation: PR #86 HEAD 688158eb8b3cad99d43a9de35308f40e4568d9a1, Supervisor review 5374533044.
+## Recovery rule
 
-IMPLEMENTED:
-- byte-identical workflow/adopted/ANDROID_WORKFLOW.md.
-- byte-identical workflow/adopted/ANDROID_UNITY_GAME_PROFILE.md.
-- workflow/PROJECT_WORKFLOW_AUTHORITY.md.
-- workflow/PROJECT_WORKFLOW_OVERLAY.md.
-- navigation/authority updated only in authorized paths.
-- Astra mapped to EXTERNAL_ACTOR / LOCAL_EXECUTION_AGENT.
-- existing #73–#85 exact-SHA evidence preserved.
-- anti-bottleneck semantics preserved.
-- Stage 2 remains paused.
+Do not use a static state label in this file as current authority.
 
-VERIFICATION:
-SOURCE_IDENTITY: PASS
-IMPORTED_ANDROID_BLOB_IDENTITY: PASS
-IMPORTED_UNITY_PROFILE_BLOB_IDENTITY: PASS
-AUTHORITY_NON_REGRESSION: PASS
-CHECKOUT_RULE_PRESERVED: PASS
-MERGE_AUTHORITY_PRESERVED: PASS
-PROFILE_LAYERING: PASS
-GAME_SPEC_BOUNDARY: PASS
-LOCAL_AGENT_MAPPING: PASS
-OPEN_WORK_EVIDENCE_PRESERVED: PASS
-ANTI_BOTTLENECK_PRESERVED: PASS
-THREE_STATE_TRANSITION: PASS
-NO_DUAL_CANONICAL_WORKFLOW: PASS
-RECOVERY_FROM_GITHUB: PASS
-PATH_SCOPE: PASS
+Reconstruct current workflow state from:
+1. PR #89 durable integration state;
+2. the latest applicable Supervisor checkpoint in Issue #87;
+3. workflow/PROJECT_WORKFLOW_AUTHORITY.md.
 
-RESTRICTIONS:
-No canonical pointer switch, Stage 2 execution, Unity/Astra execution, build/APK/AAB, device/performance testing, X46, asset import, gameplay/product work, Stage 3, merge, self-approval or publication.
+Before PR #89 durable integration plus successful post-integration canonical-pointer verification:
+- former G_INF_01 workflow remains CURRENT_CANONICAL_REFERENCE;
+- adopted Android workflow/profile remain NOT_YET_CANONICAL.
 
-NEXT EXACT ACTION:
-Supervisor reviews the exact new Issue #87 PR HEAD. SEMANTIC_ACCEPTED, if issued, moves adoption to State B only. Do not claim State C or CURRENT_CANONICAL until separate MERGE_ELIGIBLE, authorized durable integration/adoption, durable pointer update, and post-integration verification.
+After both conditions are satisfied and persisted in GitHub:
+- ANDROID_WORKFLOW = CURRENT_CANONICAL_WORKFLOW;
+- ANDROID_UNITY_GAME_PROFILE = CURRENT_SUBORDINATE_PROFILE where materially applicable;
+- former G_INF_01 workflow = SUPERSEDED / HISTORICAL_PROVENANCE.
+
+## Durable evidence
+
+- PR #88 reviewed HEAD: 7f5f8caf7b03fefb4ef3286dd4831b3387306bfe.
+- PR #88 merge commit / target HEAD: 3a4cca27dc049889b19878b6a20bb58c5f15b448.
+- imported ANDROID_WORKFLOW blob: 44eef0edb75781885879e8c2ae8d09114d27bb99.
+- imported Unity/Game profile blob: 3c3d846e1a3c1d90598e9e64cedff06e27a83269.
+- workflow/PROJECT_WORKFLOW_OVERLAY.md remains the preserved project-specific operational overlay.
+
+## Restrictions
+
+Stage 2 remains PAUSED until separately resumed by Supervisor.
+
+No Unity/Astra/local execution, build/APK/AAB, device/performance testing, X46, asset import, gameplay/product work, Stage 3, self-approval, or publication is authorized by this workflow finalization.
+
+## Next action resolution
+
+- if PR #89 is not yet durably integrated: follow the latest applicable Supervisor decision for exact-SHA review/integration;
+- if PR #89 is integrated but post-integration canonical-pointer verification is not yet confirmed: Supervisor performs/persists that verification;
+- if Issue #87 contains a later applicable Supervisor checkpoint confirming successful post-integration verification: workflow State C is established; await separate authorization for any next project work, including Stage 2.

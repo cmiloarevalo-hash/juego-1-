@@ -6,13 +6,14 @@ Current specification authority: Issue #64 freeze branch. Human freeze decision:
 
 Read workflow/PROJECT_WORKFLOW_AUTHORITY.md before executing work.
 
-During Issue #87 / State A:
-- current old workflow remains CURRENT_CANONICAL_REFERENCE;
-- workflow/adopted/ANDROID_WORKFLOW.md is PROPOSED_ADOPTION_SOURCE;
-- workflow/adopted/ANDROID_UNITY_GAME_PROFILE.md is PROPOSED_EXTENSION;
-- workflow/PROJECT_WORKFLOW_OVERLAY.md preserves required project-specific checkout and merge semantics.
+Current workflow authority is resolved from GitHub conditions:
+- if PR #89 has not been durably integrated, or the latest applicable Supervisor checkpoint in Issue #87 has not confirmed successful post-integration canonical-pointer verification, the former G_INF_01 workflow remains CURRENT_CANONICAL_REFERENCE;
+- after PR #89 durable integration and successful Supervisor post-integration canonical-pointer verification are both persisted in GitHub, workflow/adopted/ANDROID_WORKFLOW.md is CURRENT_CANONICAL_WORKFLOW, workflow/adopted/ANDROID_UNITY_GAME_PROFILE.md is CURRENT_SUBORDINATE_PROFILE when materially applicable, and the former G_INF_01 workflow is SUPERSEDED / HISTORICAL_PROVENANCE.
 
-SEMANTIC_ACCEPTED of the adoption HEAD would create State B only; it would not change the canonical workflow pointer. State C requires separate MERGE_ELIGIBLE, authorized durable adoption/integration, durable navigation/authority update, and post-integration verification.
+workflow/PROJECT_WORKFLOW_OVERLAY.md remains the project-specific operational overlay throughout the transition.
+
+SEMANTIC_ACCEPTED != MERGE_ELIGIBLE.
+SEMANTIC_ACCEPTED != CANONICAL_ADOPTION.
 
 ## Frozen product
 
@@ -52,9 +53,9 @@ Detailed visual/UX/content decisions are in docs/specifications/VISUAL_UX_CONTEN
 
 Issue #83 documentation gate is satisfied at PR #84 HEAD f63b70ab3b2c75dc1c522e4f67fcdc7e96803b3a.
 Issue #85 adoption-readiness preparation is SEMANTIC_ACCEPTED at PR #86 HEAD 688158eb8b3cad99d43a9de35308f40e4568d9a1.
+PR #88 adoption implementation was durably integrated at 3a4cca27dc049889b19878b6a20bb58c5f15b448.
+Issue #87 / PR #89 governs workflow-pointer finalization and its latest applicable Supervisor checkpoint determines transition status.
 
-Issue #87 is the active Work Item and only implements workflow adoption repository state.
+Stage 2 remains PAUSED until Supervisor separately authorizes resumption, including after workflow State C is established.
 
-Stage 2 remains PAUSED until State C is durably verified and Supervisor separately authorizes resumption.
-
-Issue #87 does not authorize Unity/Astra execution, gameplay/product implementation, production content, external asset/code import, APK/AAB, performance/device tests, Stage 3, merge, self-approval, or publication.
+Workflow adoption/finalization does not authorize Unity/Astra execution, gameplay/product implementation, production content, external asset/code import, APK/AAB, performance/device tests, Stage 3, self-approval, or publication.
