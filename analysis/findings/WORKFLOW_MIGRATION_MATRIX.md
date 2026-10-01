@@ -8,6 +8,7 @@ Allowed migration classes: PRESERVE / ADAPT / EXTEND / NOT_APPLICABLE_WITH_JUSTI
 | Human authority | Product intent, priorities, exceptional decisions, publication | Human retains product/material/cost/credential/publication authority | PRESERVE | No authority transfer. |
 | Supervisor authority | Defines/scopes/reviews; exact-SHA semantic decision; project-specific merge authority after checks | Same semantic authority; generic workflow requires separate merge authority | PRESERVE | Carry existing project merge authority explicitly; do not infer it from generic workflow. |
 | Implementer | Reads bounded context, implements/tests/commits/pushes/PR; no self-approval | Same; stronger Android/readiness evidence rules | EXTEND | Add proportional Android/profile evidence duties when triggered. |
+| Implementer checkout/bootstrap/recovery | Current canonical rule requires reuse of the existing checkout/workspace supplied by the authorized implementation channel; verify cwd, expected origin, git status, HEAD, branch and required Base; git fetch origin may refresh refs; git clone is not normal bootstrap/recovery; no second clone, workspace reconstruction/move, or alternate/unverified origin by initiative; unavailable/unverifiable checkout => STOP → Supervisor / BLOCKED / IMPLEMENTER_ENVIRONMENT / CANONICAL_CHECKOUT_UNAVAILABLE; exceptional clone recovery requires explicit Supervisor authorization | No equivalent rule in the exact proposed ANDROID_WORKFLOW source | PRESERVE | Persist this exact semantic rule during actual adoption as a project-specific operational overlay or equivalent durable project rule referenced by the canonical workflow/navigation. It must survive independently of the old workflow becoming historical. |
 | Six-field Work Item | Objective, Acceptance Criteria, Authorized Scope, Relevant Sources, Verification, Base | Same six fields | PRESERVE | Keep as governing task contract. |
 | Semantic Scope | Behavior authority | Explicit semantic boundary | PRESERVE | PATH PERMISSION != SEMANTIC PERMISSION. |
 | Path Scope | File/module boundary | Explicit path boundary | PRESERVE | No path-only authority inference. |
@@ -16,6 +17,7 @@ Allowed migration classes: PRESERVE / ADAPT / EXTEND / NOT_APPLICABLE_WITH_JUSTI
 | Semantic decisions | SEMANTIC_ACCEPTED / REWORK / HOLD / ESCALATE | Same four states only | PRESERVE | No Android/profile semantic states. |
 | CI/evidence | CI PASS is evidence, not approval | Same; build/device/actor output also evidence only | EXTEND | Add runtime evidence without semantic authority. |
 | Merge eligibility | Separate from semantic acceptance | Same | PRESERVE | SEMANTIC_ACCEPTED != MERGE_ELIGIBLE. |
+| Canonical workflow switch timing | Current workflow remains canonical until a later authority actually replaces it; semantic review alone is not a durable canonical-pointer mutation | Proposed Android source states semantic acceptance of the proposal does not itself authorize canonical adoption | PRESERVE | Enforce three states: A old=CURRENT_CANONICAL and new=PROPOSED; B after SEMANTIC_ACCEPTED old remains CURRENT_CANONICAL and new=SEMANTIC_ACCEPTED_FOR_INTEGRATION/NOT_YET_CANONICAL; C only after MERGE_ELIGIBLE + authorized durable adoption action + navigation/authority update + post-integration pointer verification does new become CURRENT_CANONICAL and old SUPERSEDED/HISTORICAL. Never two or zero CURRENT_CANONICAL workflows. |
 | Project-specific merge executor | Supervisor executes after eligibility under current authority | Generic workflow allows merge only under governing authority | ADAPT | Preserve this project-specific authority in project overlay/authority record at activation. |
 | Product publication | Human action | Human action | PRESERVE | PUBLISH = HUMAN ACTION. |
 | Research gate | RESEARCH_GATE + STRATEGIC_RATIONALE for mutable material facts | Research/Freshness Gate, proportional and material-only | ADAPT | Keep material-current-fact trigger; avoid broad research by default. |
@@ -88,3 +90,12 @@ None required for authority/lifecycle adoption. Future per-activity authorizatio
 No unresolved conflict was found in authority, lifecycle, exact-SHA semantics, merge eligibility, publication or formal semantic-state vocabulary.
 
 ARCHITECTURE_DECISION_REQUIRED: NO.
+
+
+## Mandatory rework verification
+
+- CHECKOUT_RULE_PRESERVED: PASS
+- CANONICAL_TRANSITION_THREE_STATE_MODEL: PASS
+- CURRENT_WORKFLOW_COVERAGE: PASS
+- AUTHORITY_NON_REGRESSION: PASS
+- NO_DUAL_CANONICAL_WORKFLOW: PASS

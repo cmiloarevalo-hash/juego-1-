@@ -16,9 +16,13 @@ SOURCE_IDENTITY: PASS.
 
 ## Current authority
 
-Until a later explicit adoption Work Item is accepted and activated, the current project workflow remains the existing canonical workflow reference. The two W-F-Android documents are exact proposal/adoption sources for #85 only; their presence and this preparation do not create project workflow authority.
+The current project workflow remains the CURRENT_CANONICAL_REFERENCE throughout Issue #85 and throughout any later adoption Work Item until an authorized durable canonical-adoption action has completed and its project authority/navigation pointer is verified. Supervisor SEMANTIC_ACCEPTED on an adoption HEAD is necessary review evidence but does not itself switch canonical authority.
+
+The two W-F-Android documents are exact proposal/adoption sources for #85 only; their presence and this preparation do not create project workflow authority.
 
 Current project/game specifications remain separately authoritative for product requirements. Issue #85 is the current transition hold and prohibits Stage 2 execution while this preparation is active.
+
+The current canonical workflow also contains a later valid Implementer checkout/bootstrap/recovery rule that is absent from the proposed ANDROID_WORKFLOW exact source. This rule is explicitly preserved as a project-specific operational overlay migration item; it must remain durable after adoption and cannot depend on the old workflow remaining canonical.
 
 AUTHORITY_NON_REGRESSION: PASS.
 
@@ -66,6 +70,11 @@ The current workflow and ANDROID_WORKFLOW agree materially on:
 
 The Android workflow extends these rules with Android environment/readiness/device/signing/external-actor detail. No rule in the inspected exact source requires changing project product semantics.
 
+A material current-canonical delta is explicitly preserved even though it is absent from ANDROID_WORKFLOW: normal Implementer bootstrap/recovery reuses the existing checkout/workspace supplied by the authorized implementation channel; before editing it verifies repository cwd, expected origin, git status, current HEAD, current branch and required Base; git fetch origin may refresh refs; git clone is not normal bootstrap/recovery; the Implementer does not create a second clone, reconstruct/move the repository to another workspace, or use an alternate/unverified origin by initiative. If no usable/verifiable checkout exists: STOP → Supervisor; RESULT: BLOCKED; CLASSIFICATION: IMPLEMENTER_ENVIRONMENT; REASON: CANONICAL_CHECKOUT_UNAVAILABLE. Exceptional clone recovery requires explicit Supervisor authorization.
+
+Migration classification for this delta: PRESERVE. Actual adoption must persist it as a project-specific operational overlay or equivalent durable project rule, so it survives when the old workflow later becomes historical.
+
+CHECKOUT_RULE_PRESERVED: PASS.
 CURRENT_WORKFLOW_COVERAGE: PASS.
 
 ## Merge/integration boundary
@@ -150,6 +159,34 @@ This is compatible with the project's existing Stage 2 design: preserve valid ev
 
 ANTI_BOTTLENECK_PRESERVED: PASS.
 
+## Canonical transition model
+
+The adoption plan uses exactly three authority states:
+
+STATE A — BEFORE SEMANTIC ACCEPTANCE
+- old workflow: CURRENT_CANONICAL_REFERENCE;
+- ANDROID_WORKFLOW: PROPOSED_ADOPTION_SOURCE;
+- ANDROID_UNITY_GAME_PROFILE: PROPOSED_EXTENSION;
+- no canonical authority pointer changes.
+
+STATE B — AFTER SEMANTIC_ACCEPTED, BEFORE INTEGRATION / DURABLE ADOPTION
+- old workflow: STILL CURRENT_CANONICAL_REFERENCE;
+- new adoption HEAD: SEMANTIC_ACCEPTED_FOR_INTEGRATION / NOT_YET_CANONICAL;
+- no authority/navigation pointer changes;
+- SEMANTIC_ACCEPTED != MERGE_ELIGIBLE;
+- SEMANTIC_ACCEPTED != CANONICAL_ADOPTION.
+
+STATE C — AFTER AUTHORIZED DURABLE ADOPTION
+Only after exact adoption HEAD SEMANTIC_ACCEPTED, separate MERGE_ELIGIBLE checks, authorized integration/merge or another explicit durable canonical-adoption action defined by the adoption Work Item, durable project authority/navigation update, post-integration canonical-pointer verification, and absence of material contradiction/blocker:
+- ANDROID_WORKFLOW: CURRENT_CANONICAL_WORKFLOW;
+- ANDROID_UNITY_GAME_PROFILE: CURRENT_SUBORDINATE_PROFILE, activated only for applicable Unity/Game Work Items;
+- old workflow: SUPERSEDED / HISTORICAL_PROVENANCE.
+
+There is no permitted interval with two CURRENT_CANONICAL workflows or zero CURRENT_CANONICAL workflows.
+
+CANONICAL_TRANSITION_THREE_STATE_MODEL: PASS.
+NO_DUAL_CANONICAL_WORKFLOW: PASS.
+
 ## Conflicts / decisions
 
 AUTHORITY_CONFLICTS: NONE FOUND.
@@ -157,12 +194,14 @@ AUTHORITY_CONFLICTS: NONE FOUND.
 No unresolved conflict was found affecting authority, lifecycle, exact-SHA semantics, merge, publication, or formal semantic state vocabulary. Therefore no ARCHITECTURE_DECISION_REQUIRED is raised by this preparation.
 
 Explicit migration items remain necessary:
-1. establish a single canonical workflow pointer during actual adoption;
+1. preserve the current Implementer checkout/bootstrap/recovery rule as a durable project-specific operational overlay or equivalent project rule;
 2. preserve project-specific Supervisor merge authority as explicit existing authority, not as a generic Android inference;
-3. activate Unity profile only for applicable Unity/Game Work Items;
-4. map Astra/local execution records to the new external-actor/profile vocabulary;
-5. classify the old canonical workflow as superseded/historical only after the new exact adoption SHA is Supervisor-accepted;
-6. preserve exact-SHA evidence and avoid unnecessary reruns.
+3. enforce the three-state canonical transition: semantic acceptance alone never flips the canonical pointer;
+4. establish the single new canonical workflow pointer only through the authorized durable adoption action plus post-integration verification;
+5. activate Unity profile only for applicable Unity/Game Work Items;
+6. map Astra/local execution records to the new external-actor/profile vocabulary;
+7. classify the old canonical workflow as superseded/historical only in State C after durable adoption is completed and verified;
+8. preserve exact-SHA evidence and avoid unnecessary reruns.
 
 ## Documentary verification
 
@@ -175,8 +214,10 @@ Explicit migration items remain necessary:
 - LOCAL_AGENT_MAPPING: PASS
 - OPEN_WORK_TRANSITION: PASS
 - ANTI_BOTTLENECK_PRESERVED: PASS
-- NO_DUAL_CANONICAL_WORKFLOW: PASS by activation design
+- NO_DUAL_CANONICAL_WORKFLOW: PASS
 - ACTIVATION_PLAN_COMPLETE: PASS
+- CHECKOUT_RULE_PRESERVED: PASS
+- CANONICAL_TRANSITION_THREE_STATE_MODEL: PASS
 
 ## Conclusion
 

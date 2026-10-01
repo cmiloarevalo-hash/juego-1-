@@ -30,15 +30,61 @@ without two simultaneously canonical workflows and without invalidating existing
 
 The activation Work Item must refetch these identities. Any source SHA/blob change requires renewed migration review.
 
+## Canonical transition — mandatory three-state model
+
+### STATE A — BEFORE SEMANTIC ACCEPTANCE
+
+- Existing project workflow: CURRENT_CANONICAL_REFERENCE.
+- ANDROID_WORKFLOW: PROPOSED_ADOPTION_SOURCE.
+- ANDROID_UNITY_GAME_PROFILE: PROPOSED_EXTENSION.
+- No canonical authority/navigation pointer changes.
+
+### STATE B — AFTER SEMANTIC_ACCEPTED, BEFORE INTEGRATION / DURABLE ADOPTION
+
+- Existing project workflow: STILL CURRENT_CANONICAL_REFERENCE.
+- New adoption HEAD: SEMANTIC_ACCEPTED_FOR_INTEGRATION / NOT_YET_CANONICAL.
+- No canonical authority/navigation pointer changes.
+- SEMANTIC_ACCEPTED != MERGE_ELIGIBLE.
+- SEMANTIC_ACCEPTED != CANONICAL_ADOPTION.
+
+The project must continue operating under the old canonical workflow in this state.
+
+### STATE C — AFTER AUTHORIZED DURABLE ADOPTION
+
+Transition to State C only after all applicable conditions hold:
+1. exact adoption HEAD has Supervisor SEMANTIC_ACCEPTED;
+2. separate MERGE_ELIGIBLE checks pass;
+3. authorized integration/merge or another explicit durable canonical-adoption action defined by the adoption Work Item occurs;
+4. project authority/navigation is durably updated to the new canonical path;
+5. post-integration verification confirms the canonical pointer;
+6. no material contradiction or blocker remains.
+
+Only then:
+- ANDROID_WORKFLOW = CURRENT_CANONICAL_WORKFLOW;
+- ANDROID_UNITY_GAME_PROFILE = CURRENT_SUBORDINATE_PROFILE, activated only for applicable Unity/Game Work Items;
+- existing project workflow = SUPERSEDED / HISTORICAL_PROVENANCE.
+
+Hard invariant:
+- never two CURRENT_CANONICAL workflows;
+- never zero CURRENT_CANONICAL workflows;
+- never change the canonical pointer solely because a PR receives SEMANTIC_ACCEPTED.
+
+CANONICAL_TRANSITION_THREE_STATE_MODEL = PASS.
+NO_DUAL_CANONICAL_WORKFLOW = PASS.
+
 ## Activation sequence
 
 ### A. Establish one canonical workflow path
 
+The following operations belong only to the authorized durable adoption action that transitions State B → State C; they do not occur merely on semantic acceptance.
+
 1. Incorporate or reference the exact ANDROID_WORKFLOW source through the activation Work Item.
 2. Incorporate or reference the exact Unity profile as an extension, never as standalone governance.
-3. Update project navigation/authority to point to the new workflow path.
-4. In the same activation change, mark the old project workflow reference as SUPERSEDED/HISTORICAL for this project.
-5. Do not leave both old and new workflows described as CURRENT_CANONICAL.
+3. Persist the project-specific operational overlays required by migration, including the Implementer checkout/bootstrap/recovery rule.
+4. Perform the authorized integration/merge or other durable canonical-adoption action defined by the Work Item only after MERGE_ELIGIBLE.
+5. Update project navigation/authority durably to point to the new workflow path as part of that authorized action.
+6. Mark the old project workflow reference SUPERSEDED/HISTORICAL only when the new canonical pointer is durable.
+7. Verify post-integration that exactly one CURRENT_CANONICAL workflow pointer exists.
 
 Acceptance:
 NO_DUAL_CANONICAL_WORKFLOW = PASS.
@@ -54,7 +100,7 @@ PROFILE ACTIVATION != NEW WORKFLOW AUTHORITY.
 
 Current game specifications remain separate and authoritative for mechanics, VUX, thresholds, device/performance acceptance and content.
 
-### C. Preserve project authority
+### C. Preserve project authority and current-canonical operational deltas
 
 Explicitly retain:
 - Human product/material/publication authority;
@@ -66,7 +112,16 @@ Explicitly retain:
 - SEMANTIC_ACCEPTED != MERGE_ELIGIBLE;
 - PUBLISH = HUMAN ACTION.
 
-Do not use profile activation to alter these.
+Persist the current Implementer checkout/bootstrap/recovery rule as a durable project-specific operational overlay or equivalent project rule:
+- reuse the existing checkout/workspace supplied by the authorized implementation channel;
+- verify repository cwd, expected origin, git status, current HEAD, current branch and required Base before editing;
+- git fetch origin may refresh remote refs;
+- git clone is not normal bootstrap/recovery;
+- do not create a second clone, move/reconstruct the repository into another workspace, or use an alternate/unverified origin by initiative;
+- if no usable/verifiable checkout exists: STOP → Supervisor; RESULT: BLOCKED; CLASSIFICATION: IMPLEMENTER_ENVIRONMENT; REASON: CANONICAL_CHECKOUT_UNAVAILABLE;
+- exceptional clone recovery requires explicit Supervisor authorization.
+
+This overlay must have a durable project location/reference before the old workflow may become historical. Do not use profile activation to alter these rules.
 
 ### D. Transition external/local actors
 
@@ -94,18 +149,20 @@ For #83/PR #84:
 
 ### F. Navigation/handoff update
 
-At activation:
+During the authorized durable adoption action that performs State B → State C:
 - update current authority/navigation to the one canonical workflow;
+- durably reference the preserved project-specific checkout/bootstrap/recovery overlay;
 - update SESSION_HANDOFF to record activation Work Item, exact source provenance, activated profile applicability, current hold/work state and next legal action;
 - keep game-spec navigation separate;
-- keep historical workflow provenance accessible but visibly non-current.
+- keep historical workflow provenance accessible but visibly non-current;
+- post-integration verify that the canonical pointer resolves to the new workflow and that the old workflow is no longer marked current.
 
 ### G. Acceptance tests for activation
 
 Required:
 1. SOURCE_IDENTITY: exact SHAs/blobs unchanged or explicitly re-reviewed.
-2. AUTHORITY_NON_REGRESSION: Human/Supervisor/Implementer authority unchanged.
-3. NO_DUAL_CANONICAL_WORKFLOW: exactly one current workflow path.
+2. AUTHORITY_NON_REGRESSION: Human/Supervisor/Implementer authority and preserved project checkout/bootstrap/recovery rule unchanged.
+3. NO_DUAL_CANONICAL_WORKFLOW: exactly one current workflow path throughout States A/B/C.
 4. PROFILE_LAYERING: profile points to parent Android workflow and cannot override it.
 5. GAME_SPEC_BOUNDARY: no Santa/gates/boss/30-FPS/device/VUX requirements migrated into workflow/profile.
 6. EXACT_SHA: prior reviews remain bound to their historical exact SHAs; new adoption HEAD has separate review.
@@ -115,35 +172,39 @@ Required:
 10. PUBLICATION: remains Human action.
 11. ANTI_BOTTLENECK: no release-grade controls become default for prototype work.
 12. RECOVERY: new session can reconstruct workflow + profile + project specs + active Work Item from GitHub.
+13. CHECKOUT_RULE_PRESERVED: project overlay durably preserves the current checkout/bootstrap/recovery semantics.
+14. CANONICAL_TRANSITION_THREE_STATE_MODEL: State A/B/C classification and switch conditions are explicitly verified.
 
 ### H. Supervisor review and integration
 
 1. Implementer hands off exact adoption HEAD.
 2. Supervisor performs independent exact-SHA review.
-3. SEMANTIC_ACCEPTED, if issued, applies only to that SHA.
+3. SEMANTIC_ACCEPTED, if issued, applies only to that SHA and places the adoption in State B; it does not make the workflow canonical.
 4. Merge eligibility is checked separately.
-5. No merge occurs without existing project merge authority and required integration checks.
+5. No integration/merge or durable canonical-adoption action occurs without existing project authority and required integration checks.
+6. After the authorized durable adoption action, verify the project authority/navigation pointer; only successful verification establishes State C.
 
 ### I. Rollback/recovery
 
 If adoption introduces a material contradiction:
 - do not partially operate under both workflows;
 - issue REWORK/HOLD/ESCALATE as appropriate;
-- keep the pre-adoption workflow current until the adoption SHA is accepted;
-- if contradiction is discovered after activation but before merge/integration completion, restore the last unambiguous canonical pointer and preserve the failed adoption commit as evidence;
+- keep the pre-adoption workflow CURRENT_CANONICAL through State A and State B, including after semantic acceptance, until the authorized durable State C transition completes and is verified;
+- if contradiction is discovered during integration/adoption before State C verification, retain/restore the last unambiguous old canonical pointer and preserve the failed adoption commit as evidence;
 - if authority/lifecycle/state vocabulary cannot be mapped without changing governance, report ARCHITECTURE_DECISION_REQUIRED and stop.
 
 Rollback must not delete historical evidence or silently transfer semantic acceptance across SHAs.
 
-## Current/superseded/historical classification at actual activation
+## Current/superseded/historical classification across the transition
 
-| Artifact | Before activation | After accepted activation |
-|---|---|---|
-| Existing project workflow reference | CURRENT CANONICAL | SUPERSEDED / HISTORICAL PROVENANCE |
-| ANDROID_WORKFLOW exact adopted source | PROPOSAL SOURCE | CURRENT CANONICAL WORKFLOW |
-| ANDROID_UNITY_GAME_PROFILE exact adopted source | PROPOSAL EXTENSION | CURRENT PROFILE EXTENDING ANDROID_WORKFLOW |
-| Current project/game specifications | CURRENT AUTHORITATIVE | CURRENT AUTHORITATIVE, unchanged layer |
-| Existing #73–#84 evidence/reviews | CURRENT/HISTORICAL SHA-bound evidence as applicable | PRESERVED SHA-bound evidence |
+| Artifact | State A — before semantic acceptance | State B — accepted for integration, not canonical | State C — durable adoption verified |
+|---|---|---|---|
+| Existing project workflow reference | CURRENT_CANONICAL_REFERENCE | CURRENT_CANONICAL_REFERENCE | SUPERSEDED / HISTORICAL_PROVENANCE |
+| ANDROID_WORKFLOW exact adopted source | PROPOSED_ADOPTION_SOURCE | SEMANTIC_ACCEPTED_FOR_INTEGRATION / NOT_YET_CANONICAL | CURRENT_CANONICAL_WORKFLOW |
+| ANDROID_UNITY_GAME_PROFILE exact adopted source | PROPOSED_EXTENSION | SEMANTIC_ACCEPTED_FOR_INTEGRATION / NOT_YET_CANONICAL | CURRENT_SUBORDINATE_PROFILE; conditional per Unity/Game Work Item |
+| Preserved project checkout/bootstrap/recovery rule | CURRENT rule inside old canonical workflow | CURRENT rule still governed through old canonical workflow; adoption overlay prepared | CURRENT project-specific operational overlay/equivalent durable project rule |
+| Current project/game specifications | CURRENT_AUTHORITATIVE | CURRENT_AUTHORITATIVE | CURRENT_AUTHORITATIVE, unchanged layer |
+| Existing #73–#84 evidence/reviews | SHA-bound evidence preserved | SHA-bound evidence preserved | SHA-bound evidence preserved |
 
 ## Follow-up decisions
 
@@ -152,6 +213,8 @@ No architecture decision is required before a normal activation Work Item.
 The activation Work Item must still obtain:
 - explicit Supervisor semantic acceptance for the adoption HEAD;
 - separate integration/merge eligibility;
+- authorized integration/merge or other durable canonical-adoption action;
+- post-integration verification of the durable canonical pointer and preserved operational overlays;
 - normal per-activity authority before any future local execution.
 
 ACTIVATION_PLAN_COMPLETE: PASS.
