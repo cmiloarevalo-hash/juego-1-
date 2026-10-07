@@ -1,6 +1,5 @@
 using ChristmasRunner.Gameplay.Run;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace ChristmasRunner.UnityIntegration
 {
@@ -8,8 +7,8 @@ namespace ChristmasRunner.UnityIntegration
     {
         [SerializeField] private GameSessionBehaviour session;
         [SerializeField] private GameObject resultPanel;
-        [SerializeField] private Text resultText;
-        [SerializeField] private Text helperCountText;
+        [SerializeField] private TextMesh resultText;
+        [SerializeField] private TextMesh helperCountText;
         private bool presented;
 
         private void OnEnable()
