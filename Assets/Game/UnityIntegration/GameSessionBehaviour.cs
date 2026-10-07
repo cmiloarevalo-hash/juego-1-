@@ -32,11 +32,13 @@ namespace ChristmasRunner.UnityIntegration
         }
 
         public bool CompleteOnboarding() => Session != null && Session.CompleteOnboarding();
+        public bool RecruitHelpers(int helperCount) => Session != null && Session.RecruitHelpers(helperCount);
         public bool ApplyAddGate(string stableId, int operand) => Session != null && Session.ChooseGate(stableId, GateOperation.Add, operand);
         public bool ApplyMultiplyGate(string stableId, int operand) => Session != null && Session.ChooseGate(stableId, GateOperation.Multiply, operand);
         public void HitObstacle(int helperDamage) { if (Session != null) Session.HitAvoidableObstacle(helperDamage); }
         public bool UseHammer(BreakableObstacle obstacle) => Session != null && Session.UseHammer(obstacle);
         public bool SnowballEnemy(EnemyState enemy, int damage) => Session != null && Session.SnowballEnemy(enemy, damage);
+        public bool ArmyAttackEnemy(EnemyState enemy, int damagePerHelper) => Session != null && Session.ArmyAttackEnemy(enemy, damagePerHelper);
         public bool StartBoss() => Session != null && Session.StartBoss();
         public bool ArmyAttackBoss(int damagePerHelper) => Session != null && Session.ArmyAttackBoss(damagePerHelper);
         public bool SnowballBoss(int damage) => Session != null && Session.SnowballBoss(damage);

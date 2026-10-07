@@ -3,6 +3,7 @@ using UnityEngine;
 
 namespace ChristmasRunner.UnityIntegration
 {
+    [RequireComponent(typeof(Collider))]
     public sealed class HammerBreakableBehaviour : MonoBehaviour
     {
         [SerializeField] private GameSessionBehaviour session;
@@ -17,6 +18,12 @@ namespace ChristmasRunner.UnityIntegration
         }
 
         private void OnDestroy() => obstacle.Broken -= PresentBroken;
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (session == null || !other.CompareTag("Player")) return;
+            TryUseHammer();
+        }
 
         public bool TryUseHammer()
         {

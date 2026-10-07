@@ -20,6 +20,7 @@ namespace ChristmasRunner.Tests
             VerifyTerminalImmutabilityAndExactlyOnceResult();
             VerifyRunResultIdentity();
             VerifyHammerSessionAuthority();
+            VerifyAcceptedD3IntegrationAuthority();
 
             Console.WriteLine("DETERMINISTIC_DOMAIN_CHECKS=PASS");
             Console.WriteLine("ASSERTIONS=" + _assertions);
@@ -131,6 +132,41 @@ namespace ChristmasRunner.Tests
             Expect(session.UseHammer(obstacle), "GameSession authorizes first hammer break.");
             Expect(obstacle.IsBroken, "Authorized hammer break mutates authored obstacle state.");
             Expect(!session.UseHammer(obstacle), "Hammer break remains idempotent.");
+        }
+
+        private static void VerifyAcceptedD3IntegrationAuthority()
+        {
+            var session = new GameSession(2, 20, "level-1", "run-d3", 5);
+
+            Expect(!session.RecruitHelpers(2), "Auto-rescue authority is unavailable before traversal.");
+            Expect(session.CompleteOnboarding(), "D3 integration run enters traversal.");
+            Expect(!session.RecruitHelpers(0), "Rescue rejects non-positive helper counts.");
+            Expect(session.RecruitHelpers(2), "Valid rescue contact grows the authoritative army.");
+            Expect(session.Run.Army.Count == 4, "Rescue growth is reflected by the authoritative count.");
+
+            Expect(session.RecruitHelpers(10), "Rescue growth may reach the configured technical capacity.");
+            Expect(session.Run.Army.Count == 5, "Configured technical capacity bounds rescue growth.");
+            Expect(!session.RecruitHelpers(1), "Rescue reports no success when capacity prevents growth.");
+
+            var enemy = new EnemyState(20);
+            Expect(session.ArmyAttackEnemy(enemy, 2), "Automatic army pulse authority can attack an ordinary traversal enemy.");
+            Expect(enemy.Health == 10, "Army pulse damage derives from the authoritative helper count.");
+            Expect(session.SnowballEnemy(enemy, 3), "Snowball authority remains valid for traversal combat.");
+            Expect(enemy.Health == 7, "Snowball applies its authored damage through combat authority.");
+
+            Expect(session.StartBoss(), "D3 integration run enters the mandatory boss.");
+            Expect(!session.RecruitHelpers(1), "Rescue is unavailable during the boss encounter.");
+            Expect(!session.ArmyAttackEnemy(new EnemyState(5), 1), "Ordinary-enemy army pulses are unavailable during boss phase.");
+            Expect(session.ArmyAttackBoss(1), "Aggregate army pulse remains authoritative against the boss.");
+            Expect(session.Boss.Boss.Health == 15, "Boss pulse damage derives from current helper count.");
+
+            session.ApplyBossAttack(5);
+            Expect(session.Run.Phase == RunPhase.Defeat, "Zero-helper boss damage still causes immediate Defeat.");
+            Expect(session.FinalResult.HasValue, "D3 integration defeat still produces exactly one result.");
+            Expect(!session.RecruitHelpers(1), "Rescue cannot mutate a terminal run.");
+            Expect(!session.ArmyAttackEnemy(enemy, 1), "Army pulse cannot mutate combat after terminal.");
+            Expect(!session.SnowballEnemy(enemy, 1), "Snowball cannot mutate combat after terminal.");
+            Expect(session.Run.Army.Count == 0, "Terminal immutability preserves the depleted army.");
         }
 
         private static void Expect(bool condition, string message)

@@ -44,6 +44,15 @@ namespace ChristmasRunner.Gameplay.Integration
 
         public bool CompleteOnboarding() => Run.BeginTraversal();
 
+        public bool RecruitHelpers(int helperCount)
+        {
+            if (Run.IsTerminal || Run.Phase != RunPhase.Traversal || helperCount <= 0) return false;
+
+            int before = Run.Army.Count;
+            if (!Run.Army.Add(helperCount)) return false;
+            return Run.Army.Count > before;
+        }
+
         public bool ChooseGate(string gateId, GateOperation operation, int positiveOperand)
         {
             if (Run.IsTerminal) return false;
@@ -66,6 +75,12 @@ namespace ChristmasRunner.Gameplay.Integration
         {
             if (Run.IsTerminal) return false;
             return Combat.TrySnowballAttack(enemy, damage);
+        }
+
+        public bool ArmyAttackEnemy(EnemyState enemy, int damagePerHelper)
+        {
+            if (Run.IsTerminal || Run.Phase != RunPhase.Traversal) return false;
+            return Combat.TryArmyAttack(Run.Army, enemy, damagePerHelper);
         }
 
         public bool StartBoss()
