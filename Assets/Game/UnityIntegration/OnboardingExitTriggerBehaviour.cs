@@ -3,15 +3,15 @@ using UnityEngine;
 namespace ChristmasRunner.UnityIntegration
 {
     [RequireComponent(typeof(Collider))]
-    public sealed class BossArenaEntryTriggerBehaviour : MonoBehaviour
+    public sealed class OnboardingExitTriggerBehaviour : MonoBehaviour
     {
         [SerializeField] private GameSessionBehaviour session;
-        private bool started;
+        private bool completed;
 
         private void OnTriggerEnter(Collider other)
         {
-            if (started || session == null || !other.CompareTag("Player")) return;
-            started = session.StartBoss();
+            if (completed || session == null || !other.CompareTag("Player")) return;
+            completed = session.CompleteOnboarding();
         }
     }
 }
