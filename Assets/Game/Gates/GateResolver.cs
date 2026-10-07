@@ -15,14 +15,23 @@ namespace ChristmasRunner.Gameplay.Gates
             if (string.IsNullOrWhiteSpace(stableGateId)) throw new ArgumentException("Stable gate ID is required.", nameof(stableGateId));
             if (operand <= 0) throw new ArgumentOutOfRangeException(nameof(operand));
             if (army == null) throw new ArgumentNullException(nameof(army));
-            if (!_consumedGateIds.Add(stableGateId)) return false;
+            if (_consumedGateIds.Contains(stableGateId)) return false;
 
+            bool applied;
             switch (operation)
             {
-                case GateOperation.Add: army.Add(operand); break;
-                case GateOperation.Multiply: army.Multiply(operand); break;
-                default: throw new ArgumentOutOfRangeException(nameof(operation));
+                case GateOperation.Add:
+                    applied = army.Add(operand);
+                    break;
+                case GateOperation.Multiply:
+                    applied = army.Multiply(operand);
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(operation));
             }
+
+            if (!applied) return false;
+            _consumedGateIds.Add(stableGateId);
             return true;
         }
 

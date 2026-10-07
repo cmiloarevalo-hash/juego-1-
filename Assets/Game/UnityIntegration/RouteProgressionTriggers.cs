@@ -11,8 +11,7 @@ namespace ChristmasRunner.UnityIntegration
         private void OnTriggerEnter(Collider other)
         {
             if (completed || session == null || !other.CompareTag("Player")) return;
-            completed = true;
-            session.CompleteOnboarding();
+            completed = session.CompleteOnboarding();
         }
     }
 
@@ -25,8 +24,7 @@ namespace ChristmasRunner.UnityIntegration
         private void OnTriggerEnter(Collider other)
         {
             if (started || session == null || !other.CompareTag("Player")) return;
-            started = true;
-            session.StartBoss();
+            started = session.StartBoss();
         }
     }
 }

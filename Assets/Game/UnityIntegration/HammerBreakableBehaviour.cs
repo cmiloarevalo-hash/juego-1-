@@ -5,6 +5,7 @@ namespace ChristmasRunner.UnityIntegration
 {
     public sealed class HammerBreakableBehaviour : MonoBehaviour
     {
+        [SerializeField] private GameSessionBehaviour session;
         [SerializeField] private GameObject intactVisual;
         [SerializeField] private GameObject brokenVisual;
         private readonly BreakableObstacle obstacle = new BreakableObstacle();
@@ -19,7 +20,7 @@ namespace ChristmasRunner.UnityIntegration
 
         public bool TryUseHammer()
         {
-            return obstacle.TryBreakWithHammer();
+            return session != null && session.UseHammer(obstacle);
         }
 
         private void PresentBroken() => PresentState(true);

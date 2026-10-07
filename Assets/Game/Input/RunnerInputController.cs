@@ -1,3 +1,4 @@
+using ChristmasRunner.UnityIntegration;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -5,6 +6,7 @@ namespace ChristmasRunner.Gameplay.Input
 {
     public sealed class RunnerInputController : MonoBehaviour
     {
+        [SerializeField] private GameSessionBehaviour session;
         [SerializeField] private float lateralSpeed = 5f;
         [SerializeField] private float lateralLimit = 4f;
         [SerializeField] private float forwardSpeed = 4f;
@@ -12,6 +14,12 @@ namespace ChristmasRunner.Gameplay.Input
 
         private void Update()
         {
+            if (session != null && session.IsTerminal)
+            {
+                _lateralIntent = 0f;
+                return;
+            }
+
             var keyboard = Keyboard.current;
             var touch = Touchscreen.current;
             _lateralIntent = 0f;

@@ -1,5 +1,4 @@
 using System;
-using ChristmasRunner.Gameplay.Army;
 using ChristmasRunner.Gameplay.Combat;
 using ChristmasRunner.Gameplay.Run;
 
@@ -21,36 +20,37 @@ namespace ChristmasRunner.Gameplay.Boss
             Boss.Defeated += Complete;
         }
 
-        public void Start()
+        public bool Start()
         {
-            if (Started || _run.IsTerminal) return;
+            if (Started || _run.IsTerminal) return false;
+            if (!_run.BeginBoss()) return false;
+
             Started = true;
-            _run.BeginBoss();
+            return true;
         }
 
         public bool ArmyAttack(int damagePerHelper)
         {
-            if (!Started || Completed) return false;
+            if (!Started || Completed || _run.IsTerminal || _run.Phase != RunPhase.Boss) return false;
             return _combat.TryArmyAttack(_run.Army, Boss, damagePerHelper);
         }
 
         public bool SnowballAttack(int damage)
         {
-            if (!Started || Completed) return false;
+            if (!Started || Completed || _run.IsTerminal || _run.Phase != RunPhase.Boss) return false;
             return _combat.TrySnowballAttack(Boss, damage);
         }
 
         public void ApplyTelegraphedAttack(int helperDamage)
         {
-            if (!Started || Completed || helperDamage <= 0) return;
+            if (!Started || Completed || _run.IsTerminal || _run.Phase != RunPhase.Boss || helperDamage <= 0) return;
             _combat.ApplyEnemyDamageToArmy(_run.Army, helperDamage);
         }
 
         private void Complete()
         {
-            if (Completed) return;
-            Completed = true;
-            _run.Victory();
+            if (Completed || _run.IsTerminal) return;
+            if (_run.Victory()) Completed = true;
         }
     }
 }
