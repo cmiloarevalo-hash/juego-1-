@@ -1,4 +1,3 @@
-using ChristmasRunner.Gameplay.Combat;
 using UnityEngine;
 
 namespace ChristmasRunner.UnityIntegration
@@ -12,19 +11,6 @@ namespace ChristmasRunner.UnityIntegration
         {
             return session != null && enemy != null && session.SnowballEnemy(enemy.State, damage);
         }
-    }
-
-    public sealed class BossEncounterBehaviour : MonoBehaviour
-    {
-        [SerializeField] private GameSessionBehaviour session;
-        [SerializeField, Min(1)] private int armyDamagePerHelper = 1;
-        [SerializeField, Min(1)] private int snowballDamage = 1;
-        [SerializeField, Min(1)] private int telegraphedHelperDamage = 1;
-
-        public void StartEncounter() { if (session != null) session.StartBoss(); }
-        public bool ArmyAttack() => session != null && session.ArmyAttackBoss(armyDamagePerHelper);
-        public bool SnowballAttack() => session != null && session.SnowballBoss(snowballDamage);
-        public void ResolveTelegraphedAttack() { if (session != null) session.ApplyBossAttack(telegraphedHelperDamage); }
     }
 
     internal static class ForwardCombatTargetQuery
