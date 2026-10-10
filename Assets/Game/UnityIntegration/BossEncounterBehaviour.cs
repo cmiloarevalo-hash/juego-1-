@@ -1,4 +1,5 @@
 using ChristmasRunner.Gameplay.Run;
+using ChristmasRunner.Gameplay.Combat;
 using UnityEngine;
 
 namespace ChristmasRunner.UnityIntegration
@@ -16,12 +17,57 @@ namespace ChristmasRunner.UnityIntegration
         private bool telegraphing;
         private float resolveAt;
         private float nextAttackAt;
+        private EnemyState observedBoss;
+        private bool defeatedPresented;
 
         public bool IsTelegraphing => telegraphing;
 
         private void Awake()
         {
             PresentTelegraph(false);
+        }
+
+        private void Start() => ObserveAuthoritativeBoss();
+
+        private void OnEnable() => ObserveAuthoritativeBoss();
+
+        private void OnDisable() => StopObservingBoss();
+
+        private void OnDestroy() => StopObservingBoss();
+
+        private void ObserveAuthoritativeBoss()
+        {
+            // GameSessionBehaviour.Awake can run after our OnEnable; Start retries safely.
+            if (session == null || session.Session == null) return;
+            EnemyState boss = session.Session.Boss.Boss;
+            if (observedBoss != boss)
+            {
+                StopObservingBoss();
+                observedBoss = boss;
+                observedBoss.Defeated += PresentDefeat;
+            }
+            if (boss.IsDefeated) PresentDefeat();
+        }
+
+        private void StopObservingBoss()
+        {
+            if (observedBoss == null) return;
+            observedBoss.Defeated -= PresentDefeat;
+            observedBoss = null;
+        }
+
+        private void PresentDefeat()
+        {
+            if (defeatedPresented) return;
+            defeatedPresented = true;
+            CancelTelegraph();
+            // Presentation only: retain boss root, collision, health and result authority.
+            foreach (Renderer visual in GetComponentsInChildren<Renderer>(true))
+            {
+                if (telegraphVisual != null &&
+                    visual.transform.IsChildOf(telegraphVisual.transform)) continue;
+                visual.enabled = false;
+            }
         }
 
         private void Update()
