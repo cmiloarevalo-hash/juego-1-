@@ -11,6 +11,7 @@ namespace ChristmasRunner.Gameplay.Localization
             ["onboarding.move"] = "Desliza para moverte",
             ["result.victory"] = "¡Victoria!",
             ["result.defeat"] = "Derrota",
+            ["result.helpersRemaining"] = "Ayudantes restantes",
             ["gate.add"] = "Sumar",
             ["gate.multiply"] = "Multiplicar",
             ["boss"] = "Jefe final"
@@ -21,6 +22,7 @@ namespace ChristmasRunner.Gameplay.Localization
             ["onboarding.move"] = "Swipe to move",
             ["result.victory"] = "Victory!",
             ["result.defeat"] = "Defeat",
+            ["result.helpersRemaining"] = "Helpers remaining",
             ["gate.add"] = "Add",
             ["gate.multiply"] = "Multiply",
             ["boss"] = "Final boss"

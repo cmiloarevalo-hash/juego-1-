@@ -9,6 +9,7 @@ namespace ChristmasRunner.UnityIntegration
         [SerializeField] private GameObject resultPanel;
         [SerializeField] private TextMesh resultText;
         [SerializeField] private TextMesh helperCountText;
+        [SerializeField] private TextMesh helperCountLabel;
         private bool presented;
 
         private void OnEnable()
@@ -49,6 +50,8 @@ namespace ChristmasRunner.UnityIntegration
                 string key = result.Outcome == RunPhase.Victory ? "result.victory" : "result.defeat";
                 resultText.text = session != null ? session.Localize(key) : key;
             }
+            if (helperCountLabel != null)
+                helperCountLabel.text = session != null ? session.Localize("result.helpersRemaining") : string.Empty;
             if (helperCountText != null) helperCountText.text = result.HelpersRemaining.ToString();
         }
     }
