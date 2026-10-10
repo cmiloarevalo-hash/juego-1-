@@ -4525,7 +4525,7 @@ MonoBehaviour:
   targetMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  pulseVisualPrefab: {fileID: 0}
+  pulseVisualPrefab: {fileID: 888378004249882967, guid: 39e9d80978032984da56efe077c31413, type: 3}
   pulseVisualLifetime: 0.35
 --- !u!114 &420961861
 MonoBehaviour:
@@ -4548,7 +4548,7 @@ MonoBehaviour:
   targetMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  projectileVisualPrefab: {fileID: 0}
+  projectileVisualPrefab: {fileID: 6147778332821271071, guid: 1831885a42e9eac4baf9471283e8c491, type: 3}
   projectileVisualSpeed: 18
   projectileVisualLifetime: 1.5
 --- !u!1 &421628663
