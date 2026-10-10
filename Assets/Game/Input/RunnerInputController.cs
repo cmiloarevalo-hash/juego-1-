@@ -1,4 +1,5 @@
 using ChristmasRunner.UnityIntegration;
+using ChristmasRunner.Gameplay.Run;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -33,7 +34,9 @@ namespace ChristmasRunner.Gameplay.Input
 
             Vector3 p = transform.position;
             p.x = Mathf.Clamp(p.x + _lateralIntent * lateralSpeed * Time.deltaTime, -lateralLimit, lateralLimit);
-            p.z += forwardSpeed * Time.deltaTime;
+            // Keep lateral control in the boss arena; stop forward auto-run until terminal.
+            if (session == null || session.Phase != RunPhase.Boss)
+                p.z += forwardSpeed * Time.deltaTime;
             transform.position = p;
         }
     }
